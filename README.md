@@ -6,15 +6,23 @@ It uses HTML5 with a modern CSS grid and flex layout. Care has been taken to pro
 
 ![Lighthouse report](https://raw.githubusercontent.com/frjo/hugo-theme-zen/main/images/lighthouse_report.png)
 
+## Metadata
 
-## Demo site
+### Demo and/or documentation site or page
 
-Take a look at the [Zen demo site](https://zen-demo.xdeb.org/) ([GitHub](https://github.com/frjo/zen-demo)).
+Not yet created.
 
-## Quickstart
+### Repository URL
 
-Quickstart a new site with the Zen theme by using the [Zen demo repo as a template](https://github.com/frjo/zen-demo/generate).
+<https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen>
 
+## Features and default configuration
+
+TBD
+
+## Using this theme
+
+TBD
 
 ## Table of contents
 
@@ -32,18 +40,17 @@ Quickstart a new site with the Zen theme by using the [Zen demo repo as a templa
 * [Customise](#customise)
 * [Render hook templates](#render-hook-templates)
 * [Multilingual](#multilingual)
-* [Search](#search)
+* [Search](#search-enable)
 * [Contact form](#contact-form)
 * [Cookie consent](#cookie-consent)
 * [Dates](#dates)
 * [Podcast](#podcast)
 * [Shortcodes](#shortcodes)
-* [Content security policy headers](#Content-security-policy-headers)
+* [Content security policy headers](#content-security-policy-headers)
 * [Choose between using AlpineJS, jQuery or Umbrella JS](#choose-between-using-alpinejs-jquery-or-umbrella-js)
 * [Use npm to lint Sass and JavaScript](#use-npm-to-lint-sass-and-javascript)
-* [Getting help](#getting-help)
-* [Credits](#credits)
-
+* [Getting help](#getting-help-discussing-andor-modifying)
+* [Credits](ACKNOWLEDGEMENTS.md#credits)
 
 ## Version 3.x
 
@@ -118,7 +125,7 @@ Hugo Extended version 0.88.1 or higher is required.
 
 ## Installation
 
-### Hugo module
+### Hugo module (installing)
 
 First of all, you need to turn your new or existing site into a hugo module.
 
@@ -136,7 +143,7 @@ From the root of your site:
 hugo mod get -u github.com/frjo/hugo-theme-zen/v3
 ```
 
-### Git submodule
+### Git submodule (installing)
 
 You can download and unpack the theme manually from Github but it's easier to use git to clone the repo.
 
@@ -157,7 +164,7 @@ git submodule add https://github.com/frjo/hugo-theme-zen.git themes/zen
 
 ## Updating
 
-### Hugo module
+### Hugo module (updating)
 
 From the root of your site:
 
@@ -165,7 +172,7 @@ From the root of your site:
 hugo mod get -u github.com/frjo/hugo-theme-zen
 ```
 
-### Git submodule
+### Git submodule (updating)
 
 From the root of your site:
 
@@ -226,7 +233,7 @@ params:
   alpine:                   # Add AlpineJS, default false.
   cookieConsent: true       # Show cookie consent form, default false.
   contact: "info@example.org"
-  copyright: "This site is licensed under a 
+  copyright: "This site is licensed under a
               [Creative Commons Attribution-ShareAlike 4.0 International
               License](https://creativecommons.org/licenses/by-sa/4.0/)."
   dateformat: ""            # Set the date format, default to "2 January, 2006"
@@ -417,7 +424,7 @@ defaultContentLanguage: "sv"
 ```
 
 
-## Search
+## Search (enable)
 
 Built in integration with the excellent [FlexSearch.js](https://github.com/nextapps-de/flexsearch). A fast full text search that reads a JSON file created by Hugo to index and search the site.
 
@@ -490,7 +497,7 @@ Here follow all the possible podcast frontmatter parameters. Only the first two 
 
 ```yaml
 podcast:
-    mp3:                    # * The path to the mp3 file, 
+    mp3:                    # * The path to the mp3 file,
     duration:               # * Episode duration, e.g 1:04:02 (iTunes).
     image:
         src:                # Episode image src, place inside the assets directory (iTunes).
@@ -669,9 +676,9 @@ Possible parameters are:
 * width (not for inline)
 
 
-### Search
+### Search (shortcode)
 
-Add a search form for the site, [see more above](#search).
+Add a search form for the site, [see more above](#search-enable).
 
 ```
 {{< search >}}
@@ -793,15 +800,14 @@ Node.js software you need. To install them run:
         nmp run lint (project + theme)
 
 
-## Getting help
+## Getting help, discussing, and/or modifying
 
-If you run into an issue that isn't answered by this documentation or the [`exampleSite`](https://github.com/frjo/hugo-theme-zen/tree/main/exampleSite), then visit the [Hugo forum](https://discourse.gohugo.io/). The folks there are helpful and friendly. **Before** asking your question, be sure to read the [requesting help guidelines](https://discourse.gohugo.io/t/requesting-help/9132). Feel free to tag me in your question, my forum username is [@frjo](https://discourse.gohugo.io/u/frjo/summary).
+If you run into an issue that isn't answered by this documentation or the [`exampleSite`](https://gitlab.com//dfd-hugo-theme-zen/tree/main/exampleSite), then visit the [Hugo forum](https://discourse.gohugo.io/). The folks there are helpful and friendly. **Before** asking your question, be sure to read the [requesting help guidelines](https://discourse.gohugo.io/t/requesting-help/9132). Feel free to tag me in your question, my forum username is [@cshoredaniel](https://discourse.gohugo.io/u/cshoredaniel/summary).
 
+-------
 
-## Credits
+## Colophon
 
-This is originally a port of the [Zen](https://www.drupal.org/project/zen) theme by [JohnAlbin](https://www.drupal.org/u/johnalbin), a very popular base theme for Drupal.
-
-Thanks to the [Cupper Hugo theme](https://github.com/zwbetz-gh/cupper-hugo-theme/) for a really good Readme, have copied a lot from it.
-
-Icons from [tabler/tabler-icons: A set of over 850 free MIT-licensed high-quality SVG icons for you to use in your web projects.](https://github.com/tabler/tabler-icons) and [Language Icon](http://www.languageicon.org/).
+* [Copyright and licensing](LICENSE)
+* [Inspirations, information, and source material](ACKNOWLEDGEMENTS.md)
+* [Notes](README-NOTES.md)
