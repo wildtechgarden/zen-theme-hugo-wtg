@@ -6,6 +6,7 @@ plugins:
   - template
 parserOptions:
   ecmaVersion: 12
+  sourceType: module
 globals:
   jQuery: true
   u: true
