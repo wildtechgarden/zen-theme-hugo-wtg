@@ -1,13 +1,17 @@
-name = "Zen"
+name = "DFD-Zen"
 description = "A solid base for your custom Hugo theme with pipes support for Sass and Javascript."
-homepage = "https://github.com/frjo/hugo-theme-zen"
+homepage = "https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen"
 license = "GPLv2"
 licenselink = "http://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 tags = ["accessible", "multilingual", "responsive", "blog", "search", "micro", "podcast"]
 features = ["accessible", "multilingual", "responsive", "grid", "sass", "search", "matamo", "jsonfeed", "subtheme", "podcast"]
 min_version = "0.88.1"
 
-[author]
+[[authors]]
+  name = "Daniel F. Dickinson"
+  homepage = "https://www.danielfdickinson.ca/"
+
+[[authors]]
   name = "Fredrik Jonsson"
   homepage = "https://xdeb.net/"
 

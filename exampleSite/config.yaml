@@ -1,19 +1,13 @@
 ---
 title: "Hugo Zen theme"
 baseURL: "https://example.org/"
-theme: "zen"
-languageCode: "en-GB"
+languageCode: "en-CA"
 defaultContentLanguage: "en"
 pluralizelisttitles: false
 removePathAccents: true
 paginate: 10
 paginatePath: "page"
 rssLimit: 20
-author:
-  name: "Your Name"
-  url: "https://example.org/somepage"
-  avatar: "path/to/some-image.jpg"
-
 outputFormats:
   SearchIndex:
     mediaType: "application/json"
@@ -40,3 +34,12 @@ params:
   realfavicongenerator: true
   sidebar: true
   submitted: true
+  author:
+    name: "Your Name"
+    url: "https://example.org/somepage"
+    avatar: "path/to/some-image.jpg"
+
+module:
+  replacements: "gitlab.com/danielfdickinson/dfd-hugo-theme-zen -> ../.."
+  imports:
+    - path: gitlab.com/danielfdickinson/dfd-hugo-theme-zen
