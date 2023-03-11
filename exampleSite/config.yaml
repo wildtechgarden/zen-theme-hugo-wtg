@@ -8,6 +8,7 @@ removePathAccents: true
 paginate: 10
 paginatePath: "page"
 rssLimit: 20
+
 outputFormats:
   SearchIndex:
     mediaType: "application/json"
@@ -19,8 +20,12 @@ outputs:
   home: ["HTML", "RSS", "JSON", "SearchIndex"]
   section: ["HTML", "RSS", "JSON"]
 
+frontmatter:
+  lastmod: [":git", "lastmod", ":fileModTime", "date", "publishDate"]
+
 params:
   contact: "info@example.org"
+  copyright: "[Daniel F. Dickinson](https://www.danielfdickinson.ca), [Frederick Jonsson](https://xdeb.net/) (original Hugo Zen theme author), and contributors"
   description: "Example site for DFD's fork of the zen theme for Hugo."
   dateformat: "2 January, 2006"
   favicon: "apple-touch-icon.png"
