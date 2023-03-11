@@ -45,10 +45,10 @@ rules:
   max-nesting-depth:
     - 3
     - ignoreAtRules:
-      - each
-      - media
-      - supports
-      - include
+        - each
+        - media
+        - supports
+        - include
   media-feature-name-no-vendor-prefix: true
   media-feature-parentheses-space-inside: never
   no-descending-specificity: null
@@ -60,14 +60,14 @@ rules:
   rule-empty-line-before:
     - always-multi-line
     - except:
-      - first-nested
+        - first-nested
       ignore:
-      - after-comment
+        - after-comment
   scss/at-extend-no-missing-placeholder: true
   scss/at-function-pattern: "^[a-z]+([a-z0-9-]+[a-z0-9]+)?$"
   scss/at-import-no-partial-leading-underscore: true
   scss/at-import-partial-extension-blacklist:
-  - scss
+    - scss
   scss/at-mixin-pattern: "^[a-z]+([a-z0-9-]+[a-z0-9]+)?$"
   scss/at-mixin-argumentless-call-parentheses: null
   scss/at-rule-no-unknown: true
@@ -78,14 +78,14 @@ rules:
   scss/double-slash-comment-empty-line-before: null
   scss/no-global-function-names: null
   scss/percent-placeholder-pattern: "^[a-z0-9-_]+$"
-  #scss/selector-no-redundant-nesting-selector: true
+  # scss/selector-no-redundant-nesting-selector: true
   selector-class-pattern:
     - "^[a-z0-9\\-]+$"
-    - message: Selector should be written in lowercase with hyphens (selector-class-pattern)
+    - message: Selector should be written in lowercase with hyphens (selector-class-pattern) # yamllint disable:line-length
   selector-list-comma-newline-after: always
   selector-max-compound-selectors: 3
   selector-max-id: 0
-  #selector-no-qualifying-type: true
+  # selector-no-qualifying-type: true
   selector-no-vendor-prefix: true
   selector-pseudo-element-colon-notation: double
   selector-pseudo-element-no-unknown: true

@@ -22,8 +22,8 @@ outputFormats:
     notAlternative: true
 
 outputs:
-  home: ["HTML","RSS", "JSON", "SearchIndex"]
-  section: ["HTML","RSS", "JSON"]
+  home: ["HTML", "RSS", "JSON", "SearchIndex"]
+  section: ["HTML", "RSS", "JSON"]
 
 params:
   contact: "info@example.org"
