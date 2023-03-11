@@ -15,7 +15,7 @@
     {{ with site.LanguageCode -}}
     <language>{{ . }}</language>
     {{ end -}}
-    {{ with site.Parmas.author.email -}}
+    {{ with site.Params.author.email -}}
     <managingEditor>{{ . }}{{ with site.Params.author.name }} ({{ . }}){{end}}</managingEditor>
     {{ end -}}
     {{ with site.Params.author.email -}}
