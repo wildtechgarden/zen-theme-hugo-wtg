@@ -1,10 +1,9 @@
-# The Hugo Zen theme
+# The DFD Hugo Zen theme
 
-**Zen** theme strives to be as clean and standard compliant as possible with some neat features. A solid base for your custom [Hugo](https://gohugo.io/) theme.
+**DFD-Zen** theme strives to be as clean and standard compliant as possible with some neat features. A solid base for your custom [Hugo](https://gohugo.io/) theme.
+It is a fork of the [Zen theme for Hugo](https://github.com/frjo/hugo-theme-zen) that has been modified to suite [Daniel F. Dickinson's](https://www.danielfdickinson.ca) websites and blogs.
 
 It uses HTML5 with a modern CSS grid and flex layout. Care has been taken to produce semantic and accessible code.
-
-![Lighthouse report](https://raw.githubusercontent.com/frjo/hugo-theme-zen/main/images/lighthouse_report.png)
 
 ## Metadata
 
@@ -16,32 +15,21 @@ Not yet created.
 
 <https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen>
 
-## Features and default configuration
-
-TBD
-
-## Using this theme
-
-TBD
-
 ## Table of contents
 
-* [Version 3.x](#version-3x)
-* [Version 2.x](#version-2x)
 * [Features](#features)
 * [Minimum Hugo version](#minimum-hugo-version)
 * [Installation](#installation)
 * [Updating](#updating)
 * [Run example site](#run-example-site)
 * [Performance](#performance)
-* [Sites using the Hugo Zen theme](#sites-using-the-hugo-zen-theme)
 * [Screenshots](#screenshots)
 * [Configuration](#configuration)
 * [Customise](#customise)
 * [Render hook templates](#render-hook-templates)
 * [Multilingual](#multilingual)
 * [Search](#search-enable)
-* [Contact form](#contact-form)
+* [Contact form](#contact-form-php)
 * [Cookie consent](#cookie-consent)
 * [Dates](#dates)
 * [Podcast](#podcast)
@@ -51,48 +39,6 @@ TBD
 * [Use npm to lint Sass and JavaScript](#use-npm-to-lint-sass-and-javascript)
 * [Getting help](#getting-help-discussing-andor-modifying)
 * [Credits](ACKNOWLEDGEMENTS.md#credits)
-
-## Version 3.x
-
-* Implement modern CSS like flex, grid and variables throughout.
-* All sass variables now have a css variable version. All styles use the css variable version.
-* Defaults to a System-ui font stack (like GitHub and Stack overflow among others).
-* New setting `params.internalPagination` to use the Hugo built in pagination template instead of the plain Zen version.
-* New setting `params.sassTranspiler`. Defaults to "libsass" but "dartsass" is also supported.
-* New sass components:
-    * cards
-    * center
-    * disabled
-    * flex-group
-    * flex-inline
-    * icon-inline
-    * stretch
-* Remove all use of "typey" lib.
-* Remove unused/outdated components.
-* Only a few small changes to templates.
-
-
-### Upgrade to 3.x
-
-1. Update your projects `_colors.scss` to add the new colours.
-2. Update overridden variables in projects `_extra.scss` so they match changes in themes `_variables.scss`.
-3. Replace `@include font-size(s);` with `font-size: var(--fs-s);`.
-4. Replace `@include typeface(headings);` with `font-family: var(--ff-headings);`.
-5. Replace sass variables with css variables, e.g. `$zen-gutters` with `var(--gutters)`.
-
-
-## Version 2.x
-
-* Replaced "normalize" with slimmer and updated "reset". Removed everything for old IE versions.
-* Use of css4 variables. Colours are now used like this `var(--color-brand)`.
-* The colors, fonts and variables sass files are now in the root sass directory.
-* Use `site` instead of `.Site` and `$.Site`.
-* Use a default line-height of unitless 1.5. For headers it is set to 1.3.
-* Added `_extra.scss` where variables can be overridden.
-* The zen-gutters variable is now a calculated value based on window width.
-* Added max-line-width for readability, default to 70ch.
-* New shortcodes: button, svg, reflink and details.
-
 
 ## Features
 
@@ -135,12 +81,12 @@ From the root of your site:
 hugo mod init github.com/me/my-site
 ```
 
-Afterwards, declare the `zen` theme module as a dependency of your site:
+Afterwards, declare the `dfd-zen` theme module as a dependency of your site:
 
 From the root of your site:
 
 ```shell
-hugo mod get -u github.com/frjo/hugo-theme-zen/v3
+hugo mod get -u gitlab.com/danielfdickinson/dfd-hugo-theme-zen
 ```
 
 ### Git submodule (installing)
@@ -150,7 +96,7 @@ You can download and unpack the theme manually from Github but it's easier to us
 From the root of your site:
 
 ```shell
-git clone https://github.com/frjo/hugo-theme-zen.git themes/zen
+git clone https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen.git themes/dfd-zen
 ```
 
 If you use git to version control your site you can add the zen theme as a submodule.
@@ -158,7 +104,7 @@ If you use git to version control your site you can add the zen theme as a submo
 From the root of your site:
 
 ```shell
-git submodule add https://github.com/frjo/hugo-theme-zen.git themes/zen
+git submodule add https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen.git themes/dfd-zen
 ```
 
 
@@ -169,7 +115,7 @@ git submodule add https://github.com/frjo/hugo-theme-zen.git themes/zen
 From the root of your site:
 
 ```shell
-hugo mod get -u github.com/frjo/hugo-theme-zen
+hugo mod get -u gitlab.com/danielfdickinson/dfd-hugo-theme-zen
 ```
 
 ### Git submodule (updating)
@@ -183,10 +129,10 @@ git submodule update --remote --merge
 
 ## Run example site
 
-From the root of `themes/zen/exampleSite`:
+From the theme (repository) root directory:
 
 ```shell
-hugo server --themesDir ../..
+hugo server --source exampleSite
 ```
 
 
@@ -200,33 +146,21 @@ Performance should be excellent.
 * All scripts loaded in head with "defer"
 * Optimised for HTTP/2
 
-Some performance tools will complain about to many files (js and css files are not concatenated) but with HTTP/2 that can be ignored.
-
-
-## Sites using the Hugo Zen theme
-
-* [BypassCensorship](https://www.bypasscensorship.org/) (multilingual)
-* [Combonetwork development](https://combonet.se/) (multilingual)
-* [DevSecOps Talks](https://devsecops.fm)
-* [Drejargården](https://www.drejargarden.se/)
-* [Helmer Grundström](https://www.helmergrundstrom.se/)
-* [xdeb.org](https://xdeb.org/)
-* [xdeb.net](https://xdeb.net/)
+Some performance tools will complain about too many files (js and css files are not concatenated) but with HTTP/2 that can be ignored.
 
 
 ## Screenshots
 
-![screenshot](https://raw.githubusercontent.com/frjo/hugo-theme-zen/main/images/tn.png)
-
+TBD
 
 ## Configuration
 
-Configurations parameters for the sites config file, in yaml format. All the "params" are optional.
+Configuration parameters for the sites config file, in yaml format. All the "params" are optional.
 
 ```yaml
 baseurl: "https://example.org/"
 title: "SiteTitle"
-theme: "zen"
+theme: "dfd-zen"
 languageCode: "en-GB"       # Set your language code (only needed for none multilingual sites).
 
 params:
@@ -383,7 +317,7 @@ Needed styles are in the `_zen.scss` file.
 
 ## Multilingual
 
-Arabic, Danish, Finnish, English, Hebrew, French, German, Norwegian, Portuguese and Swedish translations are included and you can easily add more to the `i18n` site directory. All but English and Swedish are contributed by users, thanks!
+Partial Arabic, Danish, Finnish, English, Hebrew, French, German, Norwegian, Portuguese and Swedish translations are included and you can easily add more to the `i18n` site directory. All but English and Swedish are contributed by users, thanks!  English and Swedish translations are [Frederick Jonsson](https://xdeb.net/), the author of the [Zen theme for Hugo](https://github.com/frjo/hugo-theme-zen).
 
 A language selector will be included on sites with more than one language. Add `languageName` to your language configuration, this is what will be displayed in the selector.
 
@@ -451,7 +385,7 @@ Your search page will now have a search field where all the posts of the site ca
 The only setting is "searchLimit" that defaults to 20.
 
 
-## Contact form
+## Contact form (PHP)
 
 If your server support php with the mail() command (very common) you can use the included contact form feature to get a contact form for your site.
 
@@ -570,7 +504,7 @@ blablabla # Displayed below of the image.
 
 ### Contact
 
-Insert a html5 contact form, [see more above](#contact-form).
+Insert a html5 contact form, [see more above](#contact-form-php).
 
 ```
 {{< contact >}}
@@ -578,7 +512,7 @@ Insert a html5 contact form, [see more above](#contact-form).
 
 ### Details and Summary
 
-Insert a html5 contact form, [see more above](#contact-form).
+Insert a 'details' element. (Only shows the summary unless the user chooses to open the widget and view the full details).
 
 ```
 {{< details summary="The summary text here" >}}
@@ -728,13 +662,15 @@ The **content** that should be wrapped. Some more content.
 
 ## Content security policy headers
 
-Includes tracking code for Matomo or Google in a way that supports Content security policy headers. Read more in my blog post [Content security policy headers when using Matomo or Google analytics](https://xdeb.org/post/2020/01/14/content-security-policy-headers-when-using-matomo-or-google-analytics/).
+Includes tracking code for Matomo or Google in a way that supports Content security policy headers. Read more in Frederik's blog post [Content security policy headers when using Matomo or Google analytics](https://xdeb.org/post/2020/01/14/content-security-policy-headers-when-using-matomo-or-google-analytics/).
 
 ## Choose between using AlpineJS, jQuery or Umbrella JS
 
 To add AlpineJS, jQuery or Umbrella JS, set the related parameter to true in the configuration file or in the front matter of specific pages. No problem having them loaded on the same page.
 
-Personally I use vanilla JS nowadays and I'm playing around with AlpineJS.
+### Frederick
+
+> Personally I use vanilla JS nowadays and I'm playing around with AlpineJS.
 
 This is the way I construct my JavaScript files.
 
@@ -802,7 +738,7 @@ Node.js software you need. To install them run:
 
 ## Getting help, discussing, and/or modifying
 
-If you run into an issue that isn't answered by this documentation or the [`exampleSite`](https://gitlab.com//dfd-hugo-theme-zen/tree/main/exampleSite), then visit the [Hugo forum](https://discourse.gohugo.io/). The folks there are helpful and friendly. **Before** asking your question, be sure to read the [requesting help guidelines](https://discourse.gohugo.io/t/requesting-help/9132). Feel free to tag me in your question, my forum username is [@cshoredaniel](https://discourse.gohugo.io/u/cshoredaniel/summary).
+If you run into an issue that isn't answered by this documentation or the [`exampleSite`](https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen/-/tree/main/exampleSite), then visit the [Hugo forum](https://discourse.gohugo.io/). The folks there are helpful and friendly. **Before** asking your question, be sure to read the [requesting help guidelines](https://discourse.gohugo.io/t/requesting-help/9132). Feel free to tag me in your question, my forum username is [@cshoredaniel](https://discourse.gohugo.io/u/cshoredaniel/summary).
 
 -------
 

@@ -1,5 +1,5 @@
 ---
-title: "Hugo Zen theme"
+title: "DFD Hugo Zen theme"
 baseURL: "https://example.org/"
 languageCode: "en-CA"
 defaultContentLanguage: "en"
@@ -21,7 +21,7 @@ outputs:
 
 params:
   contact: "info@example.org"
-  description: "The zen theme for Hugo example site."
+  description: "Example site for DFD's fork of the zen theme for Hugo."
   dateformat: "2 January, 2006"
   favicon: "apple-touch-icon.png"
   feedlinks: true
