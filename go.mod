@@ -1,3 +1,3 @@
-module github.com/frjo/hugo-theme-zen/v3
+module gitlab.com/danielfdickinson/dfd-hugo-theme-zen
 
 go 1.18
