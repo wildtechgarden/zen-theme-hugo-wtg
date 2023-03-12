@@ -1,7 +1,7 @@
-public/**
-!public/blog/
-public/blog/page/
-!public/about/
-!public/index.html
-!public/about-midland-2018-qa/
-!public/search/
+exampleSite/public/**
+!exampleSite/public/documentation/
+exampleSite/public/documentation/page/
+!exampleSite/public/about/
+!exampleSite/public/contact/
+!exampleSite/public/search/
+!exampleSite/public/index.html
