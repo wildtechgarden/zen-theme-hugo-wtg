@@ -1,0 +1,17 @@
+{{- $ctx := . -}}
+{{- $pctx := .Page -}}
+{{- $caller := .Caller -}}
+{{- $showSummaries := or (cond (isset $caller.Params "showSummaries") ($caller.Params.showSummaries) true) (cond (isset site.Params "showSummaries") (site.Params.showSummaries) true) -}}
+<article class="list-view{{ with $pctx.Section }} list-view--{{ . | urlize }}{{ end }}">
+<header>
+<h2 class="title {{ if $pctx.Param "submitted" | default false }}title-submitted{{ end }}"><a href="{{ .RelPermalink }}">{{ $pctx.Title }}</a></h2>
+{{ if $showSummaries }}
+{{ if $pctx.Param "submitted" | default false }}{{ partial "submitted.html" $pctx -}}{{ end }}
+{{ end }}
+</header>
+{{ if $showSummaries }}
+<div class="content">
+<p>{{ $pctx.Summary }}</p>
+</div>
+{{ end }}
+</article>

@@ -1,6 +1,16 @@
+{{ define "title" }}{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} – {{ site.Title }}{{ end }}{{ end }}
+
 {{ define "main" -}}
+{{- $pctx := .Page -}}
+{{- $showChildPages := or (cond (isset .Params "showChildPages") (.Params.showChildPages) true) (cond (isset site.Params "showChildPages") (site.Params.showChildPages) true) -}}
+{{- if .IsHome -}}
+  {{- $showChildPages = or (cond (isset .Params "showChildPages") (.Params.showChildPages) false) (cond (isset site.Params "showChildPages") (site.Params.showChildPages) false) -}}
+{{- end -}}
+
 <main class="main layout__main">
-<h1 class="title">{{ .Title }}</h1>
+{{ if not .IsHome -}}
+  <h1 class="title">{{ .Title }}</h1>
+{{- end }}
 
 {{ with .Content }}
 <div class="content">
@@ -8,11 +18,21 @@
 </div>
 {{ end }}
 
-{{ $paginator := .Paginate (.Pages) -}}
-{{ range $paginator.Pages -}}
-{{ .Render "summary"}}
+{{- if $showChildPages }}
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- $paginator := .Paginate $pages -}}
+{{- range $paginator.Pages -}}
+{{ partial "summary" (dict "Page" . "Caller" $pctx) }}
 {{ end -}}
 
 {{ partial "pagination.html" . }}
+{{ end }}
+
+{{- if .Page.Params.pageEndnote }}
+<hr>
+<blockquote>
+{{ .Page.Params.pageEndnote | .Page.RenderString }}
+</blockquote>
+{{ end -}}
 </main>
 {{ end }}
