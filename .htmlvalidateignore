@@ -1,6 +1,6 @@
 exampleSite/public/**
 !exampleSite/public/documentation/
-exampleSite/public/documentation/page/
+exampleSite/public/**/page/
 !exampleSite/public/about/
 !exampleSite/public/contact/
 !exampleSite/public/search/
