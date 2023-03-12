@@ -1,0 +1,13 @@
+{{- $omitableList := .omitableList | default false -}}
+{{- $pagesOldestFirst := .pagesOldestFirst | default false -}}
+{{- $siblings := (slice) -}}
+{{- $pages := (.Pages.ByPublishDate).Reverse -}}
+{{- if $pagesOldestFirst }}
+  {{- $pages = .Pages.ByPublishDate -}}
+{{- end -}}
+{{- range $pages -}}
+  {{- if or (ne .Params.omitFromList true) (ne $omitableList true) -}}
+    {{- $siblings = $siblings | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- return $siblings -}}
