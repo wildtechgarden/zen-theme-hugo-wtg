@@ -45,7 +45,7 @@
 <script defer src="{{ $contact.RelPermalink }}"></script>
 {{ end -}}
 
-{{ if .HasShortcode "search" -}}
+{{ if or (.HasShortcode "search") (or .Page.Params.enableSearch false) (eq .TranslationKey "404") -}}
 {{ $flexsearch := resources.Get "vendor/flexsearch.compact.js" | fingerprint -}}
 <script defer src="{{ $flexsearch.RelPermalink }}"></script>
 {{ $search_opts := dict "minify" true "params" (dict "searchLimit" (site.Params.searchLimit | default 20)) -}}
