@@ -108,3 +108,18 @@ other = "Only necessary"
 
 [privacy_policy]
 other = "Privacy policy"
+
+[page_you_seek_not_here]
+other = "The page which you seek is not here"
+
+[or_prefer_to_view]
+other = "Or, you may prefer to view"
+
+[or_go_to]
+other = "Or, go to"
+
+[the_sitemap]
+other = "the sitemap"
+
+[the_home_page]
+other = "the 'home' page"
