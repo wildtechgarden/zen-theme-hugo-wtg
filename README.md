@@ -13,6 +13,10 @@ It uses HTML5 with a modern CSS grid and flex layout. Care has been taken to pro
 
 <https://dfd-hugo-theme-zen.wildtechgarden.ca/>
 
+##### Netlify status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b60bf3bf-3508-4dff-8ad5-c9d78bfcac41/deploy-status)](https://app.netlify.com/sites/dfd-hugo-zen-theme/deploys)
+
 #### Documentation
 
 <https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen/-/blob/main/README.md>
