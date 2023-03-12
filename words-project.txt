@@ -27,6 +27,7 @@ cshoredaniel
 delsp
 desciption
 deserunt
+disqus
 efter
 eiusmod
 elit
