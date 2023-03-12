@@ -70,6 +70,7 @@ params:
   poweredby: true
   realfavicongenerator: true
   sassTranspiler: libsass
+  searchAllPages: true
   sidebar: true
   submitted: true
   # useBaseURL: false
