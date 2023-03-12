@@ -1,13 +1,35 @@
 ---
 title: "DFD Hugo Zen theme"
 baseURL: "https://example.org/"
-languageCode: "en-CA"
 defaultContentLanguage: "en"
+enableGitInfo: true
+languageCode: "en-CA" # non-multilingual only
 pluralizelisttitles: false
-removePathAccents: true
 paginate: 10
 paginatePath: "page"
+removePathAccents: true
 rssLimit: 20
+
+taxonomies:
+  tag: tags
+  series: series
+
+frontmatter:
+  lastmod: [":git", "lastmod", ":fileModTime", "date", "publishDate"]
+
+permalinks:
+  "/": "/:sections/:slug"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: false
+  highlight:
+    codeFences: true
+    # noClasses: false
+  tableOfContents:
+    startLevel: 2
+    endLevel: 5
 
 outputFormats:
   SearchIndex:
@@ -20,31 +42,54 @@ outputs:
   home: ["HTML", "RSS", "JSON", "SearchIndex"]
   section: ["HTML", "RSS", "JSON"]
 
-frontmatter:
-  lastmod: [":git", "lastmod", ":fileModTime", "date", "publishDate"]
-
 params:
+  author:
+    name: "Your Name"
+    url: "https://example.org/somepage"
+    avatar: "path/to/some-image.jpg"
   contact: "info@example.org"
-  copyright: "[Daniel F. Dickinson](https://www.danielfdickinson.ca), [Frederick Jonsson](https://xdeb.net/) (original Hugo Zen theme author), and contributors"
-  description: "Example site for DFD's fork of the zen theme for Hugo."
+  copyright: |
+    Copyright [Daniel F. Dickinson](https://www.danielfdickinson.ca/),
+    [Frederik Jonsson](https://xdeb.net/)
+    (original Hugo Zen theme author),
+    and contributors. Licensed under the [Gnu Public License v2 or
+    later](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
+  description: "Example site for DFD's fork of the Zen theme for Hugo."
   dateformat: "2 January, 2006"
   favicon: "apple-touch-icon.png"
   feedlinks: true
   icon: "apple-touch-icon.png"
   image: "apple-touch-icon.png"
   imageMaxWidth: 400
+  logoHeight: 64
   logoWidth: 64
+  mainSections:
+    - documentation
   mobileMenu: true
+  pageCanonical: false
   poweredby: true
   realfavicongenerator: true
+  sassTranspiler: libsass
   sidebar: true
   submitted: true
-  author:
-    name: "Your Name"
-    url: "https://example.org/somepage"
-    avatar: "path/to/some-image.jpg"
+  # useBaseURL: false
+
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    disable: true
+  instagram:
+    disable: true
+  twitter:
+    disable: true
+  vimeo:
+    disable: true
+  youtube:
+    disable: true
 
 module:
   replacements: "gitlab.com/danielfdickinson/dfd-hugo-theme-zen -> ../.."
   imports:
     - path: gitlab.com/danielfdickinson/dfd-hugo-theme-zen
+...
