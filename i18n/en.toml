@@ -22,6 +22,9 @@ other = "Updated:"
 [created]
 other = "Created:"
 
+[published]
+other = "Published:"
+
 [search_placeholder]
 other = "Enter the terms you wish to search for."
 

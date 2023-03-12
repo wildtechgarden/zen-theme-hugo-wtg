@@ -24,8 +24,8 @@
     {{ with site.Copyright -}}
     <copyright>{{ . }}</copyright>
     {{ end -}}
-    {{ if not .PublishDate.IsZero -}}
-    <lastBuildDate>{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+    {{ if not .Lastmod.IsZero -}}
+    <lastBuildDate>{{ .Lastmod.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
     {{ end -}}
     {{ with .OutputFormats.Get "RSS" -}}
       {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
