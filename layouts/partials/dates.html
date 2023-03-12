@@ -1,7 +1,7 @@
 <div class="content-dates meta">
 {{ i18n "last_mod" }} {{ .Lastmod.Format ($.Param "dateformat" | default "2 January, 2006") }}<br>
 {{- if not .Date.IsZero }}
-{{ i18n "created" }} {{ .Date.Format ($.Param "dateformat" | default "2 January, 2006") }}
+{{ i18n "created" }} {{ .Date.Format ($.Param "dateformat" | default "2 January, 2006") }}<br>
 {{ end -}}
 {{- if not .PublishDate.IsZero }}
 {{ i18n "published" }} {{ .PublishDate.Format ($.Param "dateformat" | default "2 January, 2006") }}
