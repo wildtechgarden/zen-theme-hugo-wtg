@@ -9,7 +9,13 @@ It uses HTML5 with a modern CSS grid and flex layout. Care has been taken to pro
 
 ### Demo and/or documentation site or page
 
-Not yet created.
+#### Demo
+
+<https://dfd-hugo-theme-zen.wildtechgarden.ca/>
+
+#### Documentation
+
+<https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen/-/blob/main/README.md>
 
 ### Repository URL
 
@@ -744,6 +750,6 @@ If you run into an issue that isn't answered by this documentation or the [`exam
 
 ## Colophon
 
-* [Copyright and licensing](LICENSE)
+* [Copyright and licensing](LICENSE.txt)
 * [Inspirations, information, and source material](ACKNOWLEDGEMENTS.md)
 * [Notes](README-NOTES.md)
