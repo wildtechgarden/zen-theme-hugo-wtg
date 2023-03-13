@@ -20,9 +20,13 @@
 <img src="{{ with $.Param "logopath" }}{{ . | relURL }}{{ else }}{{ "images/logo.png" | relURL }}{{ end }}"{{ with $.Param "logowidth" }} width="{{ . }}"{{ end }}{{ with $.Param "logoheight" }} height="{{ . }}"{{ end }} alt="Home" class="header__logo-image">
 </a>
 {{ end -}}
-<h1 class="header__site-name">
+{{- $pageTitleElement := "div" -}}
+{{- if .IsHome -}}
+{{- $pageTitleElement = "h1" -}}
+{{- end -}}
+{{- (printf "<%s class=\"header__site-name\">" $pageTitleElement | safeHTML) -}}
 <a href="{{ "/" | relLangURL }}" title="Home" class="header__site-link" rel="home"><span>{{ site.Title }}</span></a>
-</h1>
+{{- (printf "</%s>" $pageTitleElement | safeHTML) -}}
 <div class="region header__region">
 {{ if site.IsMultiLingual }}{{ partial "language-selector.html" . }}{{ end -}}
 {{ if $.Param "menuinheader" }}{{ partial "menu.html" . }}{{ end -}}
