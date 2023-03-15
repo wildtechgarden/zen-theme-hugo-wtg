@@ -52,6 +52,7 @@ matamo
 matomo
 menuinheader
 msapplication
+nheaders
 nojs
 noopener
 noreferrer

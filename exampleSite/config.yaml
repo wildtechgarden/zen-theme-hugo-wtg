@@ -41,13 +41,19 @@ outputFormats:
     baseName: _redirects
     isPlainText: true
     mediaType: "text/nredirects"
+  nheaders:
+    baseName: _headers
+    isPlainText: true
+    mediaType: "text/nheaders"
 
 mediaTypes:
+  "text/nheaders":
+    suffixes: ""
   "text/nredirects":
     suffixes: ""
 
 outputs:
-  home: ["HTML", "RSS", "JSON", "SearchIndex", "nredirects"]
+  home: ["HTML", "RSS", "JSON", "SearchIndex", "nredirects", "nheaders"]
   section: ["HTML", "RSS", "JSON"]
 
 params:
