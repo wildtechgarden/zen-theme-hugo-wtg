@@ -1,12 +1,12 @@
 {{ $alt := .Get "alt" -}}
 {{ $class := .Get "class" -}}
 {{/* When noImageConvert is false, convert all images to specified format (default 'webp') */ -}}
-{{ $convertTo := .Get "convertTo" | default (cond (ne .Page.Param "noImageConvert" false) "" (.Page.Param "imageConvertTo" | default "webp")) -}}
+{{ $convertTo := .Get "convertTo" | default (cond (ne (.Page.Param "noImageConvert") false) "" (.Page.Param "imageConvertTo" | default "webp")) -}}
 {{ $height := .Get "height" -}}
 {{ $link := .Get "link" -}}
 {{ $size := .Get "size" | default .Page.Params.imageSize | default site.Params.imageSize -}}
 {{ $src := .Get "src" -}}
-{{ $srcset := .Get "srcset" | default (cond (ne .Page.Param "noSrcSetDefault" false) "" (.Page.Param "imageSrcSet" | default "480 720 1080 1280 1600 2048")) -}}
+{{ $srcset := .Get "srcset" | default (cond (ne (.Page.Param "noSrcSetDefault") false) "" (.Page.Param "imageSrcSet" | default "480 720 1080 1280 1600 2048")) -}}
 {{ $width := .Get "width" -}}
 
 {{ $maxwidth := site.Params.imageMaxWidth -}}
