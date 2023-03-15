@@ -1,5 +1,7 @@
-{{/* Control how the image is rendered with these variables.  */}}
+{{/* Control how the image is rendered with these variables. */}}
 {{ $class := "" -}}
+{{/* When noImageConvert is false, convert all Markdown images to specified format (default 'webp') */ -}}
+{{ $convertTo := cond (ne .Page.Param "noImageConvert" false) "" (.Page.Param "imageConvertTo" | default "webp") -}}
 {{ $size := "" -}}
 {{/* When noSrcSetMarkdown is false, use specified breakpoints for a srcset (default below) */ -}}
 {{ $srcset := cond (ne .Page.Param "noSrcSetMarkdown" false) "" (.Page.Param "imageSrcSet" | default "480 720 1080 1280 1600 2048") -}}
@@ -34,7 +36,7 @@
 
 {{ if $resource -}}
   {{ if $size -}}
-    {{ $image := $resource.Resize $size -}}
+    {{ $image := $resource.Resize (printf "%s %s" $size $convertTo) -}}
     {{ $src = $image.RelPermalink -}}
     {{ $width = $image.Width -}}
     {{ $height = $image.Height -}}
@@ -48,7 +50,7 @@
   {{ end -}}
   {{ if $srcset -}}
     {{ range $set := split $srcset " " -}}
-      {{ $image := $resource.Resize (printf "%sx" $set) -}}
+      {{ $image := $resource.Resize (printf "%sx %s" $set $convertTo) -}}
       {{ $srcsetw = $srcsetw | append (printf "%s %sw" $image.RelPermalink $set) }}
     {{ end }}
     {{ $width = "" -}}
