@@ -34,6 +34,7 @@ eiusmod
 elit
 enim
 eqeqeq
+errorf
 frjo
 fugiat
 gohugo
