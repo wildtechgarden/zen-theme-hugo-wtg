@@ -3,11 +3,17 @@
     "development"
   ],
   "hints": {
-    "axe/language": [
+    "axe/language": "off",
+    "axe/structure": "off",
+    "apple-touch-icons": "off",
+    "compat-api/html": [
       "default",
       {
-        "html-lang-valid": "off"
+        "ignore": [
+          "meta[name=theme-color]"
+        ]
       }
-    ]
+    ],
+    "manifest-file-extension": "off"
   }
 }
