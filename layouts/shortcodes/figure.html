@@ -5,9 +5,9 @@
 {{ $class := .Get "class" -}}
 {{ $height := .Get "height" -}}
 {{ $link := .Get "link" -}}
-{{ $size := .Get "size" -}}
+{{ $size := .Get "size" | default .Page.Params.imageSize | default site.Params.imageSize -}}
 {{ $src := .Get "src" -}}
-{{ $srcset := .Get "srcset" -}}
+{{ $srcset := .Get "srcset" | default (cond (ne .Page.Param "noSrcSetDefault" false) "" (.Page.Param "imageSrcSet" | default "480 720 1080 1280 1600 2048")) -}}
 {{ $title := .Get "title" -}}
 {{ $width := .Get "width" -}}
 
