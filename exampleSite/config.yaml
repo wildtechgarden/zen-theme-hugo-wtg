@@ -37,9 +37,17 @@ outputFormats:
     baseName: "searchindex"
     isPlainText: true
     notAlternative: true
+  nredirects:
+    baseName: _redirects
+    isPlainText: true
+    mediaType: "text/nredirects"
+
+mediaTypes:
+  "text/nredirects":
+    suffixes: ""
 
 outputs:
-  home: ["HTML", "RSS", "JSON", "SearchIndex"]
+  home: ["HTML", "RSS", "JSON", "SearchIndex", "nredirects"]
   section: ["HTML", "RSS", "JSON"]
 
 params:
@@ -69,6 +77,10 @@ params:
   pageCanonical: false
   poweredby: true
   realfavicongenerator: true
+  redirectsDomains:
+    - "http://dfd-hugo-zen-theme.netlify.app https://dfd-hugo-theme-zen.wildtechgarden.ca"
+    - "https://dfd-hugo-zen-theme.netlify.app https://dfd-hugo-theme-zen.wildtechgarden.ca"
+    - "http://dfd-hugo-theme-zen.wildtechgarden.ca https://dfd-hugo-theme-zen.wildtechgarden.ca"
   sassTranspiler: libsass
   searchAllPages: true
   sidebar: true
