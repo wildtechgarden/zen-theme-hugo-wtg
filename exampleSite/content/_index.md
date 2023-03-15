@@ -1,5 +1,5 @@
 ---
-title: "Make the Web Fun Again"
+title: "DFD Hugo Zen theme"
 cascade:
     weight: 10000
     pageCanonical: false
