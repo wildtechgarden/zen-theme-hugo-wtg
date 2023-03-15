@@ -23,6 +23,11 @@
 
   // The name of the website.
   &__site-name {
+    color: var(--color-headings);
+    font-family: var(--ff-headings);
+    font-size: var(--fs-xxl);
+    font-weight: var(--fw-headings);
+    line-height: var(--heading-line-height);
     margin: 0;
   }
 
