@@ -2,6 +2,7 @@
 title: "Make the Web Fun Again"
 cascade:
     weight: 10000
+    pageCanonical: false
 ---
 
 ## Hugo
