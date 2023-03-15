@@ -4,5 +4,5 @@
 {{- end -}}
 /*
   X-Frame-Options: SAMEORIGIN
-  Content-Security-Policy: default-src 'self' {{ $deployedBaseURL }}; connect-src 'self' {{ $deployedBaseURL }}; frame-ancestors 'self' {{ $deployedBaseURL }}; img-src 'self' {{ $deployedBaseURL }}'; script-src 'self' {{ $deployedBaseURL }}; script-src-elem 'self' {{ $deployedBaseURL }}; script-src-attr 'self' {{ $deployedBaseURL }}; style-src 'self' {{ $deployedBaseURL }}; style-src-elem 'self' {{ $deployedBaseURL }}; style-src-attr 'self' {{ $deployedBaseURL }}
+  Content-Security-Policy: default-src 'self' {{ $deployedBaseURL }}; connect-src 'self' {{ $deployedBaseURL }}; frame-ancestors 'self' {{ $deployedBaseURL }}; img-src 'self' {{ $deployedBaseURL }}; script-src 'self' {{ $deployedBaseURL }}; script-src-elem 'self' {{ $deployedBaseURL }}; script-src-attr 'self' {{ $deployedBaseURL }}; style-src 'self' {{ $deployedBaseURL }}; style-src-elem 'self' {{ $deployedBaseURL }}; style-src-attr 'self' {{ $deployedBaseURL }}
   X-Content-Type-Options: nosniff
