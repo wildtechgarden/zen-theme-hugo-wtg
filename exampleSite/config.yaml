@@ -33,9 +33,9 @@ markup:
 
 outputFormats:
   SearchIndex:
-    mediaType: "application/json"
     baseName: "searchindex"
     isPlainText: true
+    mediaType: "application/json"
     notAlternative: true
   nredirects:
     baseName: _redirects
