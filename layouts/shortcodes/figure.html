@@ -3,6 +3,8 @@
 {{ $attrlink := .Get "attrlink" -}}
 {{ $caption := .Get "caption" -}}
 {{ $class := .Get "class" -}}
+{{/* When noImageConvert is false, convert all images to specified format (default 'webp') */ -}}
+{{ $convertTo := .Get "convertTo" | default (cond (ne .Page.Param "noImageConvert" false) "" (.Page.Param "imageConvertTo" | default "webp")) -}}
 {{ $height := .Get "height" -}}
 {{ $link := .Get "link" -}}
 {{ $size := .Get "size" | default .Page.Params.imageSize | default site.Params.imageSize -}}
@@ -37,7 +39,7 @@
 
 {{ if $resource -}}
   {{ if $size -}}
-    {{ $image := $resource.Resize $size -}}
+    {{ $image := $resource.Resize (printf "%s %s" $size $convertTo) -}}
     {{ $src = $image.RelPermalink -}}
     {{ $width = $image.Width -}}
     {{ $height = $image.Height -}}
@@ -51,7 +53,7 @@
   {{ end -}}
   {{ if $srcset -}}
     {{ range $set := split $srcset " " -}}
-      {{ $image := $resource.Resize (printf "%sx" $set) -}}
+      {{ $image := $resource.Resize (printf "%sx %s" $set $convertTo) -}}
       {{ $srcsetw = $srcsetw | append (printf "%s %sw" $image.RelPermalink $set) }}
     {{ end }}
     {{ $width = "" -}}
