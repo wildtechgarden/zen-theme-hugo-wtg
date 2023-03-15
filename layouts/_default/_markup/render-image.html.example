@@ -4,7 +4,7 @@
 {{ $srcset := "" -}}
 {{ $width := "" -}}
 
-{{/* Only change the below code if you know what you are doing. */}}
+{{/* Only change the code below if you know what you are doing. */}}
 {{ $height := "" -}}
 {{ $maxwidth := site.Params.imageMaxWidth -}}
 {{ $realwidth := 0 -}}
