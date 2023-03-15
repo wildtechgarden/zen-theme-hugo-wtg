@@ -1,7 +1,8 @@
 {{/* Control how the image is rendered with these variables.  */}}
 {{ $class := "" -}}
 {{ $size := "" -}}
-{{ $srcset := "" -}}
+{{/* When noSrcSetMarkdown is false, use specified breakpoints for a srcset (default below) */ -}}
+{{ $srcset := cond (ne .Page.Param "noSrcSetMarkdown" false) "" (.Page.Param "imageSrcSet" | default "480 720 1080 1280 1600 2048") -}}
 {{ $width := "" -}}
 
 {{/* Only change the code below if you know what you are doing. */}}
