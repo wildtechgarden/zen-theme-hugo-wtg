@@ -1,5 +1,6 @@
 ---
 title: "About"
+showSummaries: false
 weight: 9999
 ---
 
