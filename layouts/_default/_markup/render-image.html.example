@@ -78,4 +78,4 @@
   {{ $height = (math.Round $height) -}}
 {{ end -}}
 
-<img class="image{{ with $class }} {{ . }}{{ end }}" src="{{ $src }}" alt="{{ .Text }}"{{ with $srcsetw }} srcset="{{ delimit  .  ", " }}"{{ end }}{{ with $width }} width="{{ . }}"{{ end }}{{ with $height }} height="{{ . }}"{{ end }}{{ with .Title}} title="{{ . }}"{{ end }}>
+<img class="image{{ with $class }} {{ . }}{{ end }}" src="{{ $src }}" alt="{{ .Text }}"{{ with $srcsetw }} srcset="{{ delimit . ", " }}"{{ end }}{{ with $width }} width="{{ . }}"{{ end }}{{ with $height }} height="{{ . }}"{{ end }}{{ with .Title}} title="{{ . }}"{{ end }}>
