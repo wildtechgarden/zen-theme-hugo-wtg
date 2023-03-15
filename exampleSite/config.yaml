@@ -27,6 +27,7 @@ markup:
       unsafe: false
   highlight:
     codeFences: true
+    style: monokailight
     # noClasses: false
   tableOfContents:
     startLevel: 2
@@ -75,12 +76,14 @@ params:
   feedlinks: true
   icon: "apple-touch-icon.png"
   image: "apple-touch-icon.png"
-  imageMaxWidth: 400
+  # imageMaxWidth: 400
   logoHeight: 64
   logoWidth: 64
   mainSections:
     - documentation
   mobileMenu: true
+  noImageConvert: false
+  noSrcSetDefault: false
   pageCanonical: false
   poweredby: true
   realfavicongenerator: true
