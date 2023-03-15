@@ -8,6 +8,7 @@ pluralizelisttitles: false
 paginate: 10
 paginatePath: "page"
 removePathAccents: true
+enableRobotsTXT: true
 rssLimit: 20
 
 taxonomies:
