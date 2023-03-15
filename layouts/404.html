@@ -3,12 +3,12 @@
 <article class="single-view single-view--404">
 <h2 class="notice notice__title">{{ i18n "page_you_seek_not_here" }}</h2>
 <div class="notice notice__box">
-<div class="notice notice__message">{{- with .GetPage (site.Params.search404 | default "/search") }}
+<div class="notice notice__message">{{- with .GetPage (site.Params.search404 | default "/about/search") }}
 {{ partial "search.html" . }}
 <hr class="notice notice__separator">
 {{- end }}
 </div>
-{{- with .GetPage (site.Params.sitemap404 | default "/user-sitemap") }}
+{{- with .GetPage (site.Params.sitemap404 | default "/about/user-sitemap") }}
 <div class="notice notice__message">{{ i18n "or_prefer_to_view" }} <a href="{{ .RelPermalink }}">{{ i18n "the_sitemap" }}</a></div>
 {{- end }}
 <div class="notice notice__message">{{ i18n "or_go_to" }} <a href="/">{{ i18n "the_home_page" }}</a></div>
