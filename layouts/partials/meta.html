@@ -1,4 +1,4 @@
-{{ range .AlternativeOutputFormats -}}
+{{ range where .AlternativeOutputFormats "Name" "not in" (slice "nheaders" "nredirects" ) -}}
 <link rel="{{ .Rel }}" {{ printf "type=%q" .MediaType.Type | safeHTMLAttr }} title="{{ .Name }}" href="{{ .Permalink | safeURL }}">
 {{ end -}}
 <meta name="description" content="{{ with (.Description | default (replaceRE "\n" " " (.Plain | truncate 170))) }}{{ . }}{{ end }}">
