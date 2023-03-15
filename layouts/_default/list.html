@@ -1,7 +1,7 @@
 {{ define "title" }}{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} – {{ site.Title }}{{ end }}{{ end }}
 
 {{ define "main" -}}
-{{- $pctx := .Page -}}
+{{- $pctx := . -}}
 {{- $showChildPages := or (cond (isset .Params "showChildPages") (.Params.showChildPages) true) (cond (isset site.Params "showChildPages") (site.Params.showChildPages) true) -}}
 {{- if .IsHome -}}
   {{- $showChildPages = or (cond (isset .Params "showChildPages") (.Params.showChildPages) false) (cond (isset site.Params "showChildPages") (site.Params.showChildPages) false) -}}
@@ -18,11 +18,14 @@
 </div>
 {{ end }}
 
+{{- $pages := $pctx.Data.Pages -}}
+{{- if $pctx.IsHome -}}
+{{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- end -}}
 {{- if $showChildPages }}
-{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{- $paginator := .Paginate $pages -}}
 {{- range $paginator.Pages -}}
-{{ partial "summary" (dict "Page" . "Caller" $pctx) }}
+{{ partial "summary.html" (dict "Page" . "Caller" $pctx) }}
 {{ end -}}
 
 {{ partial "pagination.html" . }}

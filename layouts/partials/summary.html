@@ -1,7 +1,10 @@
 {{- $ctx := . -}}
 {{- $pctx := .Page -}}
 {{- $caller := .Caller -}}
-{{- $showSummaries := or (cond (isset $caller.Params "showSummaries") ($caller.Params.showSummaries) true) (cond (isset site.Params "showSummaries") (site.Params.showSummaries) true) -}}
+{{- $showSummaries := (cond (isset $caller.Params "showsummaries") ($caller.Params.showSummaries) true) -}}
+{{- if not (isset $caller.Params "showsummaries") -}}
+  {{- $showSummaries = (cond (isset site.Params "showsummaries") (site.Params.showSummaries) true) -}}
+{{- end -}}
 <article class="list-view{{ with $pctx.Section }} list-view--{{ . | urlize }}{{ end }}">
 <header>
 <h2 class="title {{ if $pctx.Param "submitted" | default false }}title-submitted{{ end }}"><a href="{{ .RelPermalink }}">{{ $pctx.Title }}</a></h2>
