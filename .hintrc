@@ -20,6 +20,8 @@
           "width: fit-content"
         ]
       }
-    ]
+    ],
+    "apple-touch-icons": "off",
+    "manifest-file-extension": "off"
   }
 }
