@@ -49,6 +49,10 @@
       {{ $src = $resource.RelPermalink -}}
       {{ $realwidth = $resource.Width -}}
       {{ $realheight = $resource.Height -}}
+      {{ $image := $resource.Resize (printf "%dx%d %s" $realwidth $realheight $convertTo) -}}
+      {{ $src = $image.RelPermalink -}}
+      {{ $width = $image.Width -}}
+      {{ $height = $image.Height -}}
     {{ end -}}
     {{ if $srcset -}}
       {{ range $set := split $srcset " " -}}
