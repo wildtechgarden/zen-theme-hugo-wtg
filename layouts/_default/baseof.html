@@ -17,7 +17,23 @@
 <header class="header layout__header">
 {{ if $.Param "logo" | default true -}}
 <a href="{{ "" | relLangURL }}" title="Home" rel="home" class="header__logo">
-<img src="{{ with $.Param "logopath" }}{{ . | relURL }}{{ else }}{{ "images/logo.png" | relURL }}{{ end }}"{{ with $.Param "logowidth" }} width="{{ . }}"{{ end }}{{ with $.Param "logoheight" }} height="{{ . }}"{{ end }} alt="Home" class="header__logo-image">
+{{ $src := ($.Param "logoPath") | default "images/logo.png" -}}
+{{/* Control how the logo is rendered with these variables. */}}
+{{/* When noImageConvert is false, convert logo to specified format (default 'webp') */ -}}
+{{ $convertTo := cond (ne (.Page.Param "noImageConvert") false) "" (.Page.Param "imageConvertTo" | default "webp") -}}
+{{/* When noSrcSetDefault is false, use specified breakpoints for a srcset (default below) */ -}}
+{{ $logoWidth := ($.Param "logoWidth") -}}
+{{ $logoHeight := ($.Param "logoHeight") -}}
+{{ $finalImage := (partial "helpers/process-images.html" (dict
+  "convertTo" $convertTo
+  "height" $logoHeight
+  "Page" .Page
+  "size" ""
+  "src" $src
+  "srcset" ""
+  "width" $logoWidth
+)) -}}
+<img src="{{ $finalImage.src }}"{{ with $logoWidth }} width="{{ $logoWidth }}"{{ end }}{{ with $logoHeight }} height="{{ $logoHeight }}"{{ end }}{{ with .Title}} title="{{ . }}"{{ end }} alt="Home"  class="header__logo-image">
 </a>
 {{ end -}}
 {{- $pageTitleElement := "div" -}}
