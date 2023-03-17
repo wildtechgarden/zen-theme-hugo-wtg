@@ -114,4 +114,24 @@ module:
   replacements: "gitlab.com/danielfdickinson/dfd-hugo-theme-zen -> ../.."
   imports:
     - path: gitlab.com/danielfdickinson/dfd-hugo-theme-zen
+      mounts:
+        - source: archetypes
+          target: archetypes
+        - source: assets
+          target: assets
+        - source: i18n
+          target: i18n
+        - source: layouts
+          target: layouts
+        - source: static
+          target: static
+  mounts:
+    - source: assets
+      target: assets
+    - source: i18n
+      target: i18n
+    - source: layouts
+      target: layouts
+    - source: static
+      target: static
 ...
