@@ -30,8 +30,22 @@
     "description": {{ . }},
     {{ end -}}
     {{ end -}}
-    {{ with $.Param "image" -}}
-    "image" : {{ . | absURL }},
+    {{ $pctx := . -}}
+    {{ with $pctx.Param "image" -}}
+      {{/* When noImageConvert is false, convert all og images to specified format (default 'webp') */ -}}
+      {{ $convertTo := cond (ne ($pctx.Param "noImageConvert") false) "" ($pctx.Param "imageConvertTo" | default "webp") -}}
+      {{ $size := $pctx.Params.imageSize | default site.Params.imageSize | default "1200x630" -}}
+      {{ $src := . -}}
+      {{ $finalImage := partial "helpers/process-images.html" (dict
+        "convertTo" $convertTo
+        "height" ""
+        "Page" $pctx.Page
+        "size" $size
+        "src" $src
+        "srcset" ""
+        "width" ""
+      ) -}}
+      {{ with $finalImage.src }}"image" : {{ . | absURL }},{{ end -}}
     {{ end -}}
     {{ with $.Page.Params.author | default site.Params.author.name -}}
     "author": {

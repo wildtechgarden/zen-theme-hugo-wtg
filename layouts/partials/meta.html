@@ -20,7 +20,23 @@
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
-{{ with $.Param "image" }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+{{ $pctx := . -}}
+{{ with $pctx.Param "image" -}}
+  {{/* When noImageConvert is false, convert all og images to specified format (default 'webp') */ -}}
+  {{ $convertTo := cond (ne ($pctx.Param "noImageConvert") false) "" ($pctx.Param "imageConvertTo" | default "webp") -}}
+  {{ $size := $pctx.Params.imageSize | default site.Params.imageSize | default "1200x630" -}}
+  {{ $src := . -}}
+  {{ $finalImage := partial "helpers/process-images.html" (dict
+    "convertTo" $convertTo
+    "height" ""
+    "Page" $pctx.Page
+    "size" $size
+    "src" $src
+    "srcset" ""
+    "width" ""
+  ) -}}
+  {{ with $finalImage.src }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+{{ end -}}
 {{ hugo.Generator }}
 <meta name="msapplication-TileColor" content="{{ $.Param "themecolor" | default "#ffffff" }}">
 <meta name="theme-color" content="{{ $.Param "themecolor" | default "#ffffff" }}">
