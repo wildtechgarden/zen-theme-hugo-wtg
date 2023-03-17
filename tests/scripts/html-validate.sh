@@ -10,7 +10,7 @@ if [ -d exampleSite ]; then
 fi
 
 if echo y | npx html-validate -c .htmlvalidate.json \
-  "${SITEROOT}"/${SITESRC}public 2>&1 | tee html-validate.log; then
+  "${SITEROOT}"/${SITESRC}public/** 2>&1 | tee html-validate.log; then
   echo "ok"
   exit 0
 else
