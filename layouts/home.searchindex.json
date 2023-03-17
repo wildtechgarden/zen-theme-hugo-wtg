@@ -4,6 +4,6 @@
   {{- $pages = site.Pages -}}
 {{- end -}}
 {{- range $index, $element := where $pages "Params.exclude_search" nil -}}
-    {{- $.Scratch.Add "searchindex" (dict "id" $index "title" $element.Title "permalink" $element.RelPermalink "tags" (delimit ($element.Params.tags | default "") " ") "content" $element.Plain "summary" $element.Summary "date" (cond $element.PublishDate.IsZero ("") ($element.PublishDate.Format ($.Param "dateformat" | default "2 January, 2006")))) -}}
+    {{- $.Scratch.Add "searchindex" (dict "id" $index "title" $element.Title "permalink" $element.RelPermalink "tags" (delimit ($element.Params.tags | default "") " ") "content" $element.Plain "summary" ($element.Param "summary" | default ($element.Summary | plainify)) "date" (cond $element.PublishDate.IsZero ("") ($element.PublishDate.Format ($.Param "dateformat" | default "2 January, 2006")))) -}}
 {{- end -}}
 {{- $.Scratch.Get "searchindex" | jsonify -}}

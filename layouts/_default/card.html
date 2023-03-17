@@ -1,8 +1,5 @@
-<article class="card{{ with .Section }} card--{{ . | urlize }}{{ end }}">
-<header>
-<h2 class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-</header>
-<div class="content">
-<p>{{ .Summary }}</p>
-</div>
-</article>
+{{- partial "summary.html" (dict
+  "Page" .Page
+  "Caller" .Parent
+  "class" .card | default (printf "%s%s" "card" (printf "card--%s" ( . | urlize )))
+) -}}

@@ -1,3 +1,12 @@
+{{ if not (eq .TranslationKey "404") -}}
+  {{ if not .Description -}}
+    {{ warnf "Page '%s' does not have a description" .TranslationKey }}
+  {{ else if lt (len .Description) 50  -}}
+    {{ warnf "Page '%s' description less than 50 characters" .TranslationKey }}
+  {{ else if gt (len .Description) 160  -}}
+    {{ warnf "Page '%s' description more than 160 characters" .TranslationKey }}
+  {{ end -}}
+{{ end -}}
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -7,7 +16,7 @@
     "datePublished": {{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" }},
     "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }},
     "url" : {{ .Permalink }},
-    {{ with (.Description | default (replaceRE "\n" " " (.Plain | truncate 170))) -}}
+    {{ with .Description -}}
     "description": {{ . }},
     {{ end -}}
     {{ with .Params.tags -}}

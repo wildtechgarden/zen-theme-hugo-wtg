@@ -1,14 +1,23 @@
+{{ if not (eq .TranslationKey "404") -}}
+  {{ if not .Description -}}
+    {{ warnf "Page '%s' does not have a description" .TranslationKey }}
+  {{ else if lt (len .Description) 50  -}}
+    {{ warnf "Page '%s' description less than 50 characters" .TranslationKey }}
+  {{ else if gt (len .Description) 160  -}}
+    {{ warnf "Page '%s' description more than 160 characters" .TranslationKey }}
+  {{ end -}}
+{{ end -}}
 {{ range where .AlternativeOutputFormats "Name" "not in" (slice "nheaders" "nredirects" ) -}}
 <link rel="{{ .Rel }}" {{ printf "type=%q" .MediaType.Type | safeHTMLAttr }} title="{{ .Name }}" href="{{ .Permalink | safeURL }}">
 {{ end -}}
-<meta name="description" content="{{ with (.Description | default (replaceRE "\n" " " (.Plain | truncate 170))) }}{{ . }}{{ end }}">
+<meta name="description" content="{{ with .Description }}{{ . }}{{ end }}">
 <meta name="created" {{ printf "content=%q" (.PublishDate.Format "2006-01-02T15:04:05-0700") | safeHTMLAttr }}>
 <meta name="modified" {{ printf "content=%q" (.Lastmod.Format "2006-01-02T15:04:05-0700") | safeHTMLAttr }}>
 {{ with $.Page.Params.author | default site.Params.author.name }}<meta name="author" content="{{ . }}">{{ end }}
 {{ with $.Param "contact" }}<meta name="contact" content="{{ . }}">{{ end }}
 <meta property="og:site_name" content="{{ site.Title }}">
 <meta property="og:title" content="{{ .Title }}">
-<meta property="og:description" content="{{ with (.Description | default (replaceRE "\n" " " (.Plain | truncate 170))) }}{{ . }}{{ end }}">
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 {{ with $.Param "image" }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
