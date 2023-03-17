@@ -27,8 +27,7 @@ markup:
       unsafe: false
   highlight:
     codeFences: true
-    style: monokailight
-    # noClasses: false
+    noClasses: false
   tableOfContents:
     startLevel: 2
     endLevel: 5
