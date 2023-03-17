@@ -15,8 +15,12 @@
 {{ $static := false -}}
 
 {{ with $page -}}
-  {{ if and $src (fileExists (path.Join "/static" $src)) -}}
-    {{ with (imageConfig (path.Join "/static" $src)) -}}
+  {{ $srcPath := path.Join "/static" $src -}}
+  {{ $srcDir := path.Dir $srcPath -}}
+  {{ $dirFiles := readDir $srcDir -}}
+  {{ $fileInDir := in $dirFiles (path.Base $srcPath) -}}
+  {{ if and $src (fileExists (path.Join "/static" $src)) $fileInDir -}}
+    {{- with (imageConfig (path.Join "static" $src)) -}}
       {{ $realwidth = .Width -}}
       {{ $realheight = .Height -}}
     {{ end -}}
