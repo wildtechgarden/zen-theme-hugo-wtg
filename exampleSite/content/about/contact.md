@@ -5,4 +5,6 @@ aliases:
 - /contact/
 ---
 
+## This form is not active; Send is not connected to a live script
+
 {{< contact >}}
