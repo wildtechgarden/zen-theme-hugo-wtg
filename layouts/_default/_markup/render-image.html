@@ -1,10 +1,10 @@
 {{/* Control how the image is rendered with these variables. */}}
 {{ $class := "" -}}
 {{ $height := "" -}}
-{{/* When noImageConvert is false, convert all Markdown images to specified format (default 'webp') */ -}}
+{{/* When noImageConvert is false, convert all images to specified format (default 'webp') */ -}}
 {{ $convertTo := cond (ne (.Page.Param "noImageConvert") false) "" (.Page.Param "imageConvertTo" | default "webp") -}}
 {{ $size := .Page.Params.imageSize | default site.Params.imageSize | default "" -}}
-{{/* When noSrcSetMarkdown is false, use specified breakpoints for a srcset (default below) */ -}}
+{{/* When noSrcSetDefault is false, use specified breakpoints for a srcset (default below) */ -}}
 {{ $src := .Destination -}}
 {{ $srcset := cond (ne (.Page.Param "noSrcSetDefault") false) "" (.Page.Param "imageSrcSet" | default "480 720 1080 1280 1600 2048") -}}
 {{ $width := "" -}}
