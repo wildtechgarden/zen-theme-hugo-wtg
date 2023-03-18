@@ -239,3 +239,43 @@ figure {
     }
   }
 }
+
+.header {
+  &__site-link {
+    &:link,
+    &:visited {
+      color: var(--color-text-bg);
+    }
+  }
+}
+
+.layout {
+  &__header {
+    color: var(--color-text-bg);
+
+    .header {
+      &__logo,
+      &__region {
+        background-color: var(--color-header-bg);
+        color: var(--color-text-bg);
+      }
+
+      &__region {
+        background-color: var(--color-text-bg);
+        color: var(--color-header-bg);
+      }
+    }
+  }
+
+  &__footer {
+    color: var(--color-text-bg);
+
+    p a {
+      color: var(--color-brand-light);
+    }
+  }
+}
+
+.card {
+  background-color: var(--color-backdrop);
+}

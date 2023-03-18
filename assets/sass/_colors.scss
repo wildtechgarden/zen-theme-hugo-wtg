@@ -2,13 +2,16 @@
 // stylelint-disable scss/dollar-variable-colon-space-after, scss/dollar-variable-empty-line-before
 
 // Base colors.
-$black:                 #000;
+$black:                 lighten(#000, 2%); // off-black
 $nearblack:             lighten($black, 20%); // #333
-$grey-dark:             lighten($black, 40%); // #666
+$grey-dark:             lighten($black, 30%);
+$grey-lessdark:         lighten($black, 40%);
+$grey-medium:           lighten($black, 50%);
 $grey:                  lighten($black, 60%); // #999
 $grey-light:            lighten($black, 80%); // #ccc
 $grey-extra-light:      lighten($black, 93.33%); // #eee
-$white:                 #fff;
+$white:                 darken(#fff, 2%); // off-white
+$truewhite:             #fff;
 
 $blue:                  #0072b9;
 $red:                   #c00;
@@ -28,7 +31,7 @@ $colors: (
   brand-dark:             $brand-dark,
 
   text:                   $black,
-  text-bg:                $white,
+  text-bg:                $truewhite,
   text-meta:              $grey-dark,
 
   link:                   $black,
@@ -51,8 +54,8 @@ $colors: (
   autocomplete-select-bg: $blue,
 
   body-bg:                $white,
-  header-bg:              $white,
-  footer-bg:              $white,
+  header-bg:              $grey-dark,
+  footer-bg:              $brand,
   backdrop:               $grey-extra-light,
 
   mobile-menu:            $brand,
