@@ -29,8 +29,9 @@ markup:
     codeFences: true
     noClasses: false
   tableOfContents:
-    startLevel: 2
     endLevel: 5
+    ordered: true
+    startLevel: 2
 
 outputFormats:
   SearchIndex:

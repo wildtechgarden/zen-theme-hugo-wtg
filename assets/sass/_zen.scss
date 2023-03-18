@@ -299,3 +299,13 @@ figure {
     }
   }
 }
+
+.toc {
+  background-color: var(--color-brand-light);
+  padding-bottom: .1rem;
+  padding-top: .1rem;
+
+  nav {
+    font-family: var(--ff-body);
+  }
+}
