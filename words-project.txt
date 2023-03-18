@@ -36,6 +36,7 @@ disqus
 efter
 eiusmod
 elit
+emojify
 enim
 eqeqeq
 errorf
