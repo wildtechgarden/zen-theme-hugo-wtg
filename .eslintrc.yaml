@@ -7,7 +7,6 @@ plugins:
   - template
 parserOptions:
   ecmaVersion: 12
-  sourceType: module
 globals:
   jQuery: true
   u: true
@@ -137,7 +136,6 @@ rules:
   spaced-comment:
     - "error"
     - always
-  strict: 0
   valid-jsdoc:
     - "warn"
     - prefer:

@@ -10,6 +10,7 @@
 {{ partial "meta_json_ld.html" . }}
 {{ partial "scripts.html" . }}
 {{ partialCached "tracking.html" . }}
+{{ if $.Param "math" }}{{ partialCached "math.html" . }}{{ end -}}
 </head>
 
 <body class="{{ if .IsPage }}single-page{{ else }}list-page{{ end }}{{ if .IsHome }} front{{ end }}{{ with $.Param "bodyclass" }} {{ . }}{{ end }}">
@@ -62,8 +63,8 @@
 {{ with $.Param "footer" }}<p>{{ . | markdownify }}</p>{{ end }}
 {{ if $.Param "poweredby" }}<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen">DFD-Zen theme</a>.</p>{{ end }}
 </footer>
-{{ if $.Param "cookieconsent" }}{{ partial "cookieconsent.html" . }}{{ end -}}
 
+{{ if $.Param "cookieconsent" }}{{ partialCached "cookieconsent.html" . }}{{ end -}}
 </div>
 </body>
 </html>

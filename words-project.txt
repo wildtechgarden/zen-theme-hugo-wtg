@@ -11,6 +11,7 @@ Hugos
 JTAG
 Javs
 Jonsson
+Katex
 Matamo
 Matomo
 NOQUOTES
