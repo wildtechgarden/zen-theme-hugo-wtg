@@ -43,6 +43,7 @@ errorf
 frjo
 fugiat
 gohugo
+iframe
 img
 incididunt
 irure
