@@ -279,3 +279,23 @@ figure {
 .card {
   background-color: var(--color-backdrop);
 }
+
+.sidebar {
+  .menu {
+    background-color: var(--color-brand-light);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding-bottom: .1rem;
+    padding-left: var(--gutters);
+    padding-right: var(--gutters);
+    padding-top: .1rem;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
