@@ -51,6 +51,7 @@ irure
 isset
 jsdoc
 jsonify
+jsvendor
 laboris
 laborum
 lozad

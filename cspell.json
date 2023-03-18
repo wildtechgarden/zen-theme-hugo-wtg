@@ -17,7 +17,7 @@
     "./assets/assets/**",
     "./assets/files/**",
     "./assets/images/**",
-    "./assets/vendor/**",
+    "./assets/jsvendor/**",
     "./i18n/**",
     "./node_modules",
     "./tests/scripts/**",

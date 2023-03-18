@@ -8,3 +8,4 @@ exampleSite/public/
 .env
 .disabled-env
 /hugo-cache
+vendor/

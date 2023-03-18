@@ -44,7 +44,7 @@ repos:
   - id: no-commit-to-branch # - don't commit to branch
     args:
     - --branch
-    - main
+    - main-full
     - --branch
     - "v[0-9].[0-9]" # yamllint disable-line
   - id: pretty-format-json
@@ -72,7 +72,7 @@ repos:
     args:
     - -c
     - .eslintrc.yaml
-    exclude: ^(assets/vendor/.*\.js$)
+    exclude: ^(assets/jsvendor/.*\.js$)
 
 - repo: "https://github.com/awebdeveloper/pre-commit-stylelint"
   rev: 0.0.2
@@ -115,7 +115,7 @@ repos:
     alias: ec
     args:
     - -no-color
-    exclude: ^(LICENSE.txt$|README.md$|assets/vendor/|package(-lock)?.json$|static/|assets/sass/layouts/_layouts\.scss$) # yamllint disable-line
+    exclude: ^(LICENSE.txt$|README.md$|assets/jsvendor/|package(-lock)?.json$|static/|assets/sass/layouts/_layouts\.scss$) # yamllint disable-line
 
 - repo: "https://github.com/streetsidesoftware/cspell-cli"
   rev: v6.28.0
