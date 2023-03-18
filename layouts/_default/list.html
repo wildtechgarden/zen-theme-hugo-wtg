@@ -7,6 +7,8 @@
   {{- $showChildPages = or (cond (isset .Params "showChildPages") (.Params.showChildPages) false) (cond (isset site.Params "showChildPages") (site.Params.showChildPages) false) -}}
 {{- end -}}
 
+{{- $showChildCards := or (.Param "showChildCards") false -}}
+
 <main class="main layout__main">
 {{ if not .IsHome -}}
   <h1 class="title">{{ .Title }}</h1>
@@ -22,7 +24,13 @@
 {{- if $pctx.IsHome -}}
 {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{- end -}}
-{{- if $showChildPages }}
+{{- if $showChildCards -}}
+<div class="cards">
+{{ range where $pages "Params.card" "eq" true }}
+  {{ partial "card.html" (dict "Page" . "Caller" $pctx) -}}
+{{ end -}}
+</div>
+{{- else if $showChildPages }}
 {{- $paginator := .Paginate $pages -}}
 {{- range $paginator.Pages -}}
 {{ partial "summary.html" (dict "Page" . "Caller" $pctx) }}
