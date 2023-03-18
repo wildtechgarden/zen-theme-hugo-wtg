@@ -1,7 +1,7 @@
 {{- $ctx := . -}}
 {{- $pctx := .Page -}}
 {{- $caller := .Caller -}}
-{{- $class := .class | default (printf "%s%s" "list-view" (cond (ne $pctx.Section "") (printf "list-view--%s"  (. | urlize )) "")) -}}
+{{- $class := .class | default (printf "%s %s" "list-view" (cond (ne $pctx.Section "") (printf "list-view--%s"  ($pctx.Section | urlize )) "")) -}}
 {{- $showSummaries := (cond (isset $caller.Params "showsummaries") ($caller.Params.showSummaries) true) -}}
 {{- if not (isset $caller.Params "showsummaries") -}}
   {{- $showSummaries = (cond (isset site.Params "showsummaries") (site.Params.showSummaries) true) -}}

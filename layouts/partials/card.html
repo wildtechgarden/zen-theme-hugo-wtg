@@ -1,0 +1,5 @@
+{{- partial "summary.html" (dict
+  "Page" .Page
+  "Caller" .Caller
+  "class" (.class | default (printf "%s%s" "card" (cond (ne .Page.Section "") (printf " card--%s" (.Page.Section | urlize )) (""))))
+) -}}
