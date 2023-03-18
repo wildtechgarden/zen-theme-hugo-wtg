@@ -7,6 +7,7 @@ publishDate: 2023-03-15T12:26:59-04:00
 summary: Examples of three ways of adding images to a page with the DFD-Zen theme
 pageCanonical: true
 image: /images/backgarden-tulipsrocks-banner.png
+card: true
 ---
 
 ## Examples of three methods of adding images to a page when using the DFD-Zen theme

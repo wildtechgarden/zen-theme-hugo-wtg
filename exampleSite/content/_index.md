@@ -1,12 +1,15 @@
 ---
 title: "DFD Hugo Zen theme"
 description: Example site for DFD's fork of the Zen theme for Hugo.
+showChildCards: true
 cascade:
     weight: 10000
     pageCanonical: false
 ---
 
 ## Hugo
+
+{{< details-toc >}}
 
 ### Make the Web Fun Again
 
