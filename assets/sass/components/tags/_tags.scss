@@ -1,5 +1,8 @@
-.tags {
+.tags,
+%tags {
   ul {
-    margin: 0;
+    @extend %flex-inline;
+    @extend %flex-inline--inline;
+    margin-block: 0;
   }
 }
