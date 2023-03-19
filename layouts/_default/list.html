@@ -2,9 +2,9 @@
 
 {{ define "main" -}}
 {{- $pctx := . -}}
-{{- $showChildPages := or (cond (isset .Params "showChildPages") (.Params.showChildPages) true) (cond (isset site.Params "showChildPages") (site.Params.showChildPages) true) -}}
+{{- $showChildPages := (cond (isset .Params "showchildpages") (.Params.showChildPages) (cond (isset site.Params "showchildpages") (site.Params.showChildPages) true))  -}}
 {{- if .IsHome -}}
-  {{- $showChildPages = or (cond (isset .Params "showChildPages") (.Params.showChildPages) false) (cond (isset site.Params "showChildPages") (site.Params.showChildPages) false) -}}
+  {{- $showChildPages = or (cond (isset .Params "showchildpages") (.Params.showChildPages) false) (cond (isset site.Params "showchildpages") (site.Params.showChildPages) false) -}}
 {{- end -}}
 
 {{- $showChildCards := or (.Param "showChildCards") false -}}
