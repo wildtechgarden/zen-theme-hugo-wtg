@@ -330,6 +330,7 @@ figure {
 .content .sitemap-view {
   ul {
     display: block;
+    width: 100%;
 
     li {
       margin-left: 0;
@@ -355,12 +356,12 @@ figure {
     background-color: var(--color-backdrop);
     border-style: solid;
     border-width: 1px;
-    margin-bottom: .2rem;
+    margin-bottom: .8rem;
     margin-top: .2rem;
     padding-bottom: .2rem;
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-top: .2rem;
+    padding-top: .3rem;
   }
 }
 
