@@ -5,12 +5,14 @@
 {{- with .Get "data" -}}
   {{- $path := . -}}
   {{- $fragment := . -}}
+  {{- $query := . -}}
   {{- with urls.Parse . -}}
     {{- if or .Host .Scheme -}}
       {{- $external = true -}}
     {{- end -}}
     {{- $path = .Path -}}
-  {{- $fragment = .Fragment -}}
+    {{- $fragment = .Fragment -}}
+    {{- $query = .Query -}}
   {{- else -}}
     {{- errorf printf "Unable to parse pdf src '%s'" . -}}
   {{- end -}}
@@ -43,8 +45,11 @@
     {{- if and $fragment $dataResourceLink -}}
       {{- $dataResourceLink = printf "%s#%s" $dataResourceLink $fragment -}}
     {{- end -}}
+    {{- if and $query $dataResourceLink -}}
+      {{- $dataResourceLink = printf "%s?%s" $dataResourceLink $query -}}
+    {{- end -}}
   {{- else -}}
     {{- $dataResourceLink = . -}}
   {{- end -}}
 {{- end -}}
-<div{{ with .Get "class"}} class="{{ . }}"{{ end }}><iframe{{ with .Get "pdf-iframe-class" }} class="{{ . }}"{{ end }}{{ with $dataResourceLink }} src="{{ . }}"{{ end }}{{ if .Get "width" }} width="{{ .Get "width" }}"{{ end }}{{ if .Get "height" }} height="{{ .Get "height" }}"{{ end }} type="application/pdf"{{ with (.Get "title") }} title="{{ . }}"{{ end }}{{ with (.Get "aria-label") }} alt="{{ . }}"{{ end }}></iframe></div>
+<div{{ with .Get "class"}} class="{{ . }}"{{ end }}><iframe{{ with .Get "iframe-class" }} class="{{ . }}"{{ end }}{{ with $dataResourceLink }} src="{{ . }}"{{ end }}{{ if .Get "width" }} width="{{ .Get "width" }}"{{ end }}{{ if .Get "height" }} height="{{ .Get "height" }}"{{ end }} type="application/pdf"{{ with (.Get "title") }} title="{{ . }}"{{ end }}{{ with (.Get "aria-label") }} alt="{{ . }}"{{ end }}></iframe></div>
