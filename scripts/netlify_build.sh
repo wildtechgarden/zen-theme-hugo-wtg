@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$CONTEXT" = "$PRODUCTION" ]; then
+if [ "$CONTEXT" = "production" ]; then
   export HUGO_PARAMS_DEPLOYEDBASEURL="$URL"
 else
   export HUGO_PARAMS_DEPLOYEDBASEURL="$DEPLOY_URL"
