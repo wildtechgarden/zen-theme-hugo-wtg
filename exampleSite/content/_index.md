@@ -2,6 +2,7 @@
 title: "DFD Hugo Zen theme"
 description: Example site for DFD's fork of the Zen theme for Hugo.
 showChildCards: true
+page_endnote: "A test of an endnote with _markdown_"
 cascade:
     weight: 10000
     pageCanonical: false
