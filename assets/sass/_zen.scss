@@ -241,6 +241,20 @@ figure {
 }
 
 .header {
+  &__brand {
+    display: flex;
+    flex: 1 1 100%;
+    max-width: 82%;
+  }
+
+  &__logo {
+    display: block;
+  }
+
+  &__site-name {
+    margin-left: 1rem;
+  }
+
   &__site-link {
     &:link,
     &:visited {
