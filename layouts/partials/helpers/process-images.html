@@ -59,8 +59,6 @@
         {{ $image := $resource.Resize (printf "%sx %s" $set $convertTo) -}}
         {{ $srcsetw = $srcsetw | append (printf "%s %sw" $image.RelPermalink $set) }}
       {{ end }}
-      {{ $width = "" -}}
-      {{ $height = "" -}}
     {{ end -}}
   {{ end -}}
 
