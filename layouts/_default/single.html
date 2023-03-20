@@ -10,6 +10,13 @@
 {{ .Content }}
 </div>
 
+{{ $pctx := . }}
+{{ with .Param "page_endnote" -}}
+<div class="content content--endnote">
+{{ . | $pctx.RenderString }}
+</div>
+{{ end -}}
+
 <div class="content content--bottom">
 {{ if $.Param "relatedposts" | default false }}{{ partial "related.html" . }}{{ end -}}
 

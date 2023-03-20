@@ -18,6 +18,16 @@
 <div class="content">
 {{ . }}
 </div>
+
+{{ with $pctx.Param "page_endnote" -}}
+<div class="content content--endnote">
+{{ . | $pctx.RenderString }}
+</div>
+{{ end -}}
+
+<div class="content content--bottom">
+  {{ if ne $pctx.Lastmod $pctx.PublishDate }}{{ partial "dates.html" $pctx }}{{ end -}}
+</div>
 {{ end }}
 
 {{- $pages := $pctx.Data.Pages -}}
@@ -38,12 +48,5 @@
 
 {{ partial "pagination.html" . }}
 {{ end }}
-
-{{- if .Page.Params.pageEndnote }}
-<hr>
-<blockquote>
-{{ .Page.Params.pageEndnote | .Page.RenderString }}
-</blockquote>
-{{ end -}}
 </main>
 {{ end }}

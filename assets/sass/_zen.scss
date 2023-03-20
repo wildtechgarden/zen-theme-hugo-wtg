@@ -465,3 +465,10 @@ main table tbody tr:nth-of-type(even) {
 .image.three-quarter-width {
   width: 75%;
 }
+
+.content--endnote {
+  border-top: 1px solid;
+  margin-left: auto;
+  padding: 1.5rem;
+  width: fit-content;
+}
