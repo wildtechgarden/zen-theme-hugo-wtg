@@ -25,14 +25,14 @@ CROOT="${1:-https://www.example.com/}"
 SITEROOT="$(pwd)"
 
 if [ -d exampleSite ]; then
-  SITESRC=exampleSite
+  SITESRC="$(pwd)"/exampleSite
 else
   SITESRC=${SITEROOT}
 fi
 
 if grep -q baseURL "${SITESRC}"/config.yaml; then
   CROOT="$(grep baseURL "${SITESRC}"/config.yaml | \
-  sed -e 's/^[^=]*= *\('\''\|"\)\([^'\''"]*\)\('\''\|"\)\( \|\n\)*$/\2/')"
+  sed -e 's/^[^:]*: *\(.*\)$/\1/')"
 fi
 
 echo "Using ${CROOT} as canonicalRoot"
@@ -43,11 +43,7 @@ for skip in ${SKIP_CHECK_PATTERNS}; do \
   SKIPS="${SKIPS}${SKIPS:+ }--skip \"${skip}\""
 done
 
-URLBASE="${SITEROOT}"/public/sitemap.xml
-
-if [ ! -e "$URLBASE" ]; then
-  URLBASE="${SITEROOT}"/public/index.html
-fi
+URLBASE="${SITESRC}"/public/index.html
 
 # shellcheck disable=SC2090,SC2086
 if echo y | npx hyperlink "$URLBASE" --canonicalRoot "${CROOT}" \
