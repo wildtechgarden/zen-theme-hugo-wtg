@@ -1,6 +1,6 @@
 {{ define "title" }}
 {{- $pageTitle := printf "%s - %s" .Title site.Title -}}
-{{- if gt (len $pageTitle) 70 -}}
+{{- if gt (len ($pageTitle | htmlEscape)) 70 -}}
 {{- $pageTitle = .Title -}}
 {{- end -}}
 {{- if .IsHome }}{{ site.Title }}{{ else }}{{ $pageTitle }}{{ end }}{{ end }}

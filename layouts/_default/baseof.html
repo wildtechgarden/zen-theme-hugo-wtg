@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title>{{ block "title" . }}{{- $pageTitle := printf "%s - %s" .Title site.Title -}}
-  {{- if gt (len $pageTitle) 70 -}}
+  {{- if gt (len ($pageTitle | htmlEscape)) 70 -}}
   {{- $pageTitle = .Title -}}
   {{- end -}}
   {{- $pageTitle -}}{{ end }}</title>
@@ -18,7 +18,7 @@
 </head>
 
 {{ $pageTitle := printf "%s - %s" .Title site.Title -}}
-{{ if gt (len $pageTitle) 70 -}}
+{{ if gt (len ($pageTitle | htmlEscape)) 70 -}}
 {{ $pageTitle = .Title -}}
 {{ end -}}
 <body class="{{ if .IsPage }}single-page{{ else }}list-page{{ end }}{{ if .IsHome }} front{{ end }}{{ with $.Param "bodyclass" }} {{ . }}{{ end }}">
