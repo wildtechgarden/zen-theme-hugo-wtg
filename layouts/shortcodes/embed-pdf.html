@@ -33,8 +33,7 @@
       {{- end -}}
     {{- end -}}
     {{- /* Prefer page bundle assets */ -}}
-    {{- $pdfResources := $curPage.Resources.ByType "application/pdf" -}}
-    {{- $dataResource = $pdfResources.GetMatch (printf "*%s*" $path) -}}
+    {{- $dataResource = $curPage.Resources.GetMatch (printf "%s" $path) -}}
     {{- /* Next prefer assets from 'assets' directory */ -}}
     {{- if not $dataResource -}}
       {{- $dataResource = resources.Get $path -}}
