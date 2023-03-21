@@ -1,5 +1,3 @@
-{{ define "title" }}{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} – {{ site.Title }}{{ end }}{{ end }}
-
 {{ define "main" -}}
 {{- $pctx := . -}}
 {{- $showChildPages := (cond (isset .Params "showchildpages") (.Params.showChildPages) (cond (isset site.Params "showchildpages") (site.Params.showChildPages) true))	-}}
