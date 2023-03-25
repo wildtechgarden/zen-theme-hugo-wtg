@@ -55,6 +55,9 @@ jsonify
 jsvendor
 laboris
 laborum
+lnlinks
+lntable
+lntd
 lozad
 lozadinit
 lozadmin

@@ -2,13 +2,15 @@
 title: "DFD Hugo Zen theme"
 baseURL: "https://example.org/"
 defaultContentLanguage: "en"
+disableKinds: [taxonomy, terms]
 enableGitInfo: true
+enableRobotsTXT: true
+ignoreErrors: ["error-disable-taxonomy"]
 languageCode: "en-CA" # non-multilingual only
 pluralizelisttitles: false
 paginate: 10
 paginatePath: "page"
 removePathAccents: true
-enableRobotsTXT: true
 rssLimit: 20
 
 taxonomies:
@@ -57,6 +59,8 @@ mediaTypes:
 outputs:
   home: ["HTML", "RSS", "JSON", "SearchIndex", "nredirects", "nheaders"]
   section: ["HTML", "RSS", "JSON"]
+  taxonomy: ["HTML", "RSS", "JSON"]
+  term: ["HTML", "RSS", "JSON"]
 
 params:
   author:
@@ -68,7 +72,7 @@ params:
     Copyright [Daniel F. Dickinson](https://www.danielfdickinson.ca/),
     [Frederik Jonsson](https://xdeb.net/)
     (original Hugo Zen theme author),
-    and contributors. Licensed under the [Gnu Public License v2 or
+    and contributors. Licensed under the [GNU Public License v2 or
     later](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
   description: "Example site for DFD's fork of the Zen theme for Hugo."
   dateformat: "2 January, 2006"
@@ -88,13 +92,15 @@ params:
   poweredby: true
   realfavicongenerator: true
   redirectsDomains:
-    - "http://dfd-hugo-zen-theme.netlify.app https://dfd-hugo-theme-zen.wildtechgarden.ca"
-    - "https://dfd-hugo-zen-theme.netlify.app https://dfd-hugo-theme-zen.wildtechgarden.ca"
-    - "http://dfd-hugo-theme-zen.wildtechgarden.ca https://dfd-hugo-theme-zen.wildtechgarden.ca"
+    - "http://dfd-hugo-zen-theme.netlify.app https://dfd-hugo-theme-zen.wildtechgarden.ca 301!"
+    - "https://dfd-hugo-zen-theme.netlify.app https://dfd-hugo-theme-zen.wildtechgarden.ca 301!"
+    - "http://dfd-hugo-theme-zen.wildtechgarden.ca https://dfd-hugo-theme-zen.wildtechgarden.ca 301!"
+  relatedposts: true
   sassTranspiler: libsass
   searchAllPages: true
   sidebar: true
   submitted: true
+  # themeColor: #aaa
   # useBaseURL: false
 
 privacy:
