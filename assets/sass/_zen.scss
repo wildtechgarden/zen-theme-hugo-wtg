@@ -663,3 +663,47 @@ main table tbody tr:nth-of-type(even) {
   padding: 1.5rem;
   width: fit-content;
 }
+
+// All HTML headings, `<h1>` through `<h6>`, are available. `%h1` through `%h6`
+// classes are also available, for when you want to match the font styling of a
+// heading but not be a heading.
+h1,
+%h1,
+h2,
+%h2,
+h3,
+%h3,
+h4,
+%h4,
+h5,
+%h5,
+h6,
+%h6 {
+  @include margin-block(.5);
+  color: var(--color-headings);
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-headings);
+  line-height: var(--heading-line-height);
+
+  // Set max text line width in main for readability.
+  .main & {
+    max-width: var(--max-line-width);
+  }
+}
+
+// Paragraphs that are titles (as in sidebar)
+
+p.title {
+  // Add vertical rhythm margins.
+  @include margin-block(.5);
+}
+
+// Lists
+
+dl,
+ol,
+ul,
+menu {
+  // Add vertical rhythm margins.
+  @include margin-block(1 .75);
+}
