@@ -72,7 +72,7 @@ repos:
     args:
     - -c
     - .eslintrc.yaml
-    exclude: ^(assets/jsvendor/.*\.js$)
+    exclude: ^(assets/libs/.*\.js$)
 
 - repo: "https://github.com/awebdeveloper/pre-commit-stylelint"
   rev: 0.0.2
@@ -129,6 +129,6 @@ repos:
     - --show-context
     - --show-suggestions
     - --validate-directives
-    exclude: ^(cspell.json$|exampleSite/assets/sass/_custom.scss$) # yamllint disable-line
+    exclude: ^(cspell.json$|exampleSite/assets/sass/_custom.scss$|assets/libs/) # yamllint disable-line
 # yamllint enable rule:key-ordering
 ...
