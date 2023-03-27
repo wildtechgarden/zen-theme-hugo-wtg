@@ -698,13 +698,13 @@ The **content** that should be wrapped. Some more content.
 
 ## Content security policy headers
 
-Includes tracking code for Matomo or Google in a way that supports Content security policy headers. Read more in Frederik's blog post [Content security policy headers when using Matomo or Google analytics](https://xdeb.org/post/2020/01/14/content-security-policy-headers-when-using-matomo-or-google-analytics/).
+Includes tracking code for Matomo or Google in a way that supports Content security policy headers. Read more in Fredrik's blog post [Content security policy headers when using Matomo or Google analytics](https://xdeb.org/post/2020/01/14/content-security-policy-headers-when-using-matomo-or-google-analytics/).
 
 ## Choose between using AlpineJS, jQuery or Umbrella JS
 
 To add AlpineJS, jQuery or Umbrella JS, set the related parameter to true in the configuration file or in the front matter of specific pages. No problem having them loaded on the same page.
 
-### Frederick
+### Fredrick
 
 > Personally I use vanilla JS nowadays and I'm playing around with AlpineJS.
 
