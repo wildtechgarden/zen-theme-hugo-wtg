@@ -45,7 +45,7 @@ textarea {
   width: Min(30em, 100%);
 }
 
-// For forms with multibple fields show submit button below the form.
+// For forms with multiple fields show submit button below the form.
 input:not(:only-of-type),
 textarea {
   & + [type='submit'] {
