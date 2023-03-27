@@ -26,9 +26,9 @@
 {{ end -}}
 
 <div class="content content--bottom">
-{{ if $.Param "relatedposts" | default false }}{{ partial "related.html" . }}{{ end -}}
-
 {{ if ne .Lastmod .PublishDate }}{{ partial "dates.html" . }}{{ end -}}
+
+{{ if $.Param "relatedposts" | default false }}{{ partial "related.html" . }}{{ end -}}
 </div>
 </article>
 </main>

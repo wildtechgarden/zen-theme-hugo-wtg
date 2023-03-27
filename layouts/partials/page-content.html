@@ -20,8 +20,8 @@
 {{ end -}}
 
 <div class="content content--bottom">
-  {{ if $pctx.Param "relatedposts" | default false }}{{ partial "related.html" $pctx }}{{ end -}}
-
   {{ if ne $pctx.Lastmod $pctx.PublishDate }}{{ partial "dates.html" $pctx }}{{ end -}}
+
+  {{ if $pctx.Param "relatedposts" | default false }}{{ partial "related.html" $pctx }}{{ end -}}
 </div>
 {{ end }}
