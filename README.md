@@ -11,7 +11,7 @@ It uses HTML5 with a modern CSS grid and flex layout. Care has been taken to pro
 
 #### Demo
 
-<https://dfd-hugo-theme-zen.wildtechgarden.ca/>
+<https://dfd-hugo-theme-zen.demo.wildtechgarden.com/>
 
 ##### Netlify status
 
