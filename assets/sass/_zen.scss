@@ -434,9 +434,13 @@ figure {
 
   &__logo {
     display: block;
+    margin-bottom: auto;
+    margin-top: auto;
   }
 
   &__site-name {
+    font-size: var(--fs-xl);
+    line-height: 1;
     margin-left: 1rem;
   }
 
@@ -451,6 +455,7 @@ figure {
 .layout {
   &__header {
     color: var(--color-text-bg);
+    padding-block: .7em;
 
     .header {
       &__logo,
