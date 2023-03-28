@@ -24,6 +24,4 @@ checks_a:
       pre-commit install --install-hooks
   - >
       pre-commit run --all-files
-  - >
-      bash tests/scripts/hugo-audit.sh
 ...
