@@ -73,7 +73,8 @@
       {{- $linkResource = $page.CurrentSection.Resources.GetMatch $destination -}}
     {{- end -}}
     {{- if not $linkResource -}}
-      {{- $linkResource = resources.GetMatch $destination -}}
+      {{- $destinationPath := strings.TrimLeft "/" $destination -}}
+      {{- $linkResource = resources.GetMatch (printf "%s%s%s" "*" $destinationPath "*") -}}
     {{- end -}}
     {{- if $linkResource -}}
       {{- $finalDestination = $linkResource.RelPermalink -}}
