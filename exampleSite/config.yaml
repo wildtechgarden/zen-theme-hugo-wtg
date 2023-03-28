@@ -81,8 +81,8 @@ params:
   icon: "apple-touch-icon.png"
   image: "apple-touch-icon.png"
   # imageMaxWidth: 400
-  logoHeight: 64
-  logoWidth: 64
+  logoHeight: 32
+  logoWidth: 32
   mainSections:
     - documentation
   mobileMenu: true
