@@ -1,6 +1,9 @@
 #!/bin/bash
 
-pip install --user pre-commit
+set -e
+set -o pipefail
+
+pip install pre-commit
 
 pre-commit install --install-hooks
 pre-commit run --all-files
