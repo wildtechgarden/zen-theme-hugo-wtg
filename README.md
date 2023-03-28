@@ -159,11 +159,6 @@ Performance should be excellent.
 Some performance tools will complain about too many files (js and css files are not concatenated) but with HTTP/2 that can be ignored.
 
 
-## Nice forks of the Zen theme
-
-* [DFD-Zen theme for Hugo](https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen)
-
-
 ## Screenshots
 
 TBD
