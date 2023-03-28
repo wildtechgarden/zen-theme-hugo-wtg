@@ -15,24 +15,26 @@
 {{ $static := false -}}
 
 {{ with $page -}}
-  {{ $srcPath := path.Join "/static" $src -}}
-  {{ $srcDir := path.Dir $srcPath -}}
-  {{ $dirFiles := readDir $srcDir -}}
-  {{ $fileInDir := in $dirFiles (path.Base $srcPath) -}}
-  {{ if and $src (fileExists (path.Join "/static" $src)) $fileInDir -}}
-    {{- with (imageConfig (path.Join "static" $src)) -}}
-      {{ $realwidth = .Width -}}
-      {{ $realheight = .Height -}}
-    {{ end -}}
-    {{ $static = true -}}
-    {{ $src = relURL $src -}}
-  {{ else if $src -}}
-    {{ $src = strings.TrimLeft "/" $src -}}
-    {{ with resources.Get $src -}}
-      {{ $resource = . -}}
-    {{ end -}}
-    {{ with .Resources.GetMatch $src -}}
-      {{ $resource = . -}}
+  {{ if not (partial "helpers/is-external-destination.html" (dict "Destination" $src)).isExternal -}}
+    {{ $srcPath := path.Join "/static" $src -}}
+    {{ $srcDir := path.Dir $srcPath -}}
+    {{ $dirFiles := readDir $srcDir -}}
+    {{ $fileInDir := in $dirFiles (path.Base $srcPath) -}}
+    {{ if and $src (fileExists (path.Join "/static" $src)) $fileInDir -}}
+      {{- with (imageConfig (path.Join "static" $src)) -}}
+        {{ $realwidth = .Width -}}
+        {{ $realheight = .Height -}}
+      {{ end -}}
+      {{ $static = true -}}
+      {{ $src = relURL $src -}}
+    {{ else if $src -}}
+      {{ $src = strings.TrimLeft "/" $src -}}
+      {{ with resources.Get $src -}}
+        {{ $resource = . -}}
+      {{ end -}}
+      {{ with .Resources.GetMatch $src -}}
+        {{ $resource = . -}}
+      {{ end -}}
     {{ end -}}
   {{ end -}}
 
