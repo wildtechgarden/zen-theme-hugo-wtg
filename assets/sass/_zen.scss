@@ -260,6 +260,7 @@ article {
   code {
     font-size: var(--fs-xs);
     overflow-wrap: break-word;
+    overflow-wrap: anywhere;
   }
 
   pre {
@@ -591,6 +592,7 @@ pre {
 pre,
 pre code {
   overflow-wrap: break-word;
+  overflow-wrap: anywhere;
   word-break: break-all;
 }
 
@@ -611,6 +613,7 @@ pre code {
 
 .main .highlight > .chroma > code > span {
   word-break: break-all;
+  overflow-wrap: break-word;
   overflow-wrap: anywhere;
 }
 
@@ -706,4 +709,17 @@ ul,
 menu {
   // Add vertical rhythm margins.
   @include margin-block(1 .75);
+}
+
+.main .content {
+  ol,
+  ul {
+    width: 100%;
+
+    & > li {
+      width: 100%;
+      overflow-wrap: break-word;
+      overflow-wrap: anywhere;
+    }
+  }
 }
