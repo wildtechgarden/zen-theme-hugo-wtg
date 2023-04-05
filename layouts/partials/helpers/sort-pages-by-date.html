@@ -1,4 +1,4 @@
-{{- $omitableList := .omitableList | default false -}}
+{{- $omittableList := .omittableList | default false -}}
 {{- $pagesOldestFirst := .pagesOldestFirst | default false -}}
 {{- $siblings := (slice) -}}
 {{- $pages := (.Pages.ByPublishDate).Reverse -}}
@@ -6,7 +6,7 @@
   {{- $pages = .Pages.ByPublishDate -}}
 {{- end -}}
 {{- range $pages -}}
-  {{- if or (ne .Params.omitFromList true) (ne $omitableList true) -}}
+  {{- if or (ne .Params.omitFromList true) (ne $omittableList true) -}}
     {{- $siblings = $siblings | append . -}}
   {{- end -}}
 {{- end -}}

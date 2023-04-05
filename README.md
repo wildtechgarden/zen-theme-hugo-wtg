@@ -344,7 +344,7 @@ If a Hugo main menu is defined (.Sites.Menu.main) the menu template will use it 
 
 If the default sidebar is activated it will display each section with all its pages listed below.
 
-They are set up in `layouts/partials/menu.html`, `layouts/partials/mobilmenu.html` and `layouts/partials/sidebar.html`.
+They are set up in `layouts/partials/menu.html`, `layouts/partials/mobilemenu.html` and `layouts/partials/sidebar.html`.
 
 
 ### CSS grid for layout

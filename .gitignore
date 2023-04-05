@@ -9,7 +9,7 @@ exampleSite/public/
 .disabled-env
 /hugo-cache
 vendor/
-# Avoid accidentally commiting files that ought to be in a demo site with LFS
+# Avoid accidentally committing files that ought to be in a demo site with LFS
 *.jpg
 *.png
 *.jpeg

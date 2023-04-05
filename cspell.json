@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
-  "allowCompoundWords": true,
+  "allowCompoundWords": false,
   "dictionaries": [
     "project-words"
   ],
@@ -19,6 +19,12 @@
     "./assets/images/**",
     "./assets/libs/**",
     "./assets/sass/_chroma.scss",
+    "./exampleSite/content/_index.md",
+    "./exampleSite/content/about/_index.md",
+    "./exampleSite/content/documentation/create-theme.md",
+    "./exampleSite/content/documentation/configuration.md",
+    "./exampleSite/content/documentation/install.md",
+    "./exampleSite/content/documentation/quickstart.md",
     "./i18n/**",
     "./node_modules",
     "./tests/scripts/**",

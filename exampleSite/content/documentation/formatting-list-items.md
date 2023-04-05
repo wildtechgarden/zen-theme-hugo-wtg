@@ -16,7 +16,7 @@ toc = true
 
 ## Test cases
 
-### List item formating test 1
+### List item formatting test 1
 
 * To test this we need very long lines that have words like antidisestablishmentarianism so that we can detect the failure to wrap the lines.
 * As well as regular lines, for filler.
@@ -27,7 +27,7 @@ What happens if we have a paragraph in the middle?
     * `And some really, excessively long and drawn out antidisestablishmentarianism-based code blocks following in a sub-list`
     * `Like these ones, and on a real site, even more`
 
-### List item formating test 2
+### List item formatting test 2
 
 [The second test required another page](formatting-list-items-take-2.md)
 
