@@ -485,39 +485,22 @@ figure {
   background-color: var(--color-backdrop);
 }
 
-.sidebar .menu {
-  background-color: var(--color-brand-light);
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-  padding-bottom: .1rem;
-  padding-left: var(--gutters);
-  padding-right: var(--gutters);
-  padding-top: .1rem;
+.sidebar {
+  .menu {
+    background-color: var(--color-brand-light);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding-bottom: .1rem;
+    padding-left: var(--gutters);
+    padding-right: var(--gutters);
+    padding-top: .1rem;
 
-  &:first-of-type {
-    margin-top: 0;
-  }
+    &:first-of-type {
+      margin-top: 0;
+    }
 
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-
-  ul {
-    list-style-position: inside;
-    list-style-type: none;
-    margin-left: 0;
-    margin-top: 0;
-    padding-left: 0;
-
-    li {
-      list-style-position: inside;
-      list-style-type: none;
-      padding-left: 0;
-
-      &::before {
-        content: '';
-        padding-right: 0;
-      }
+    &:last-of-type {
+      margin-bottom: 0;
     }
   }
 }
@@ -665,33 +648,6 @@ main table tbody tr:nth-of-type(even) {
   margin-left: auto;
   padding: 1.5rem;
   width: fit-content;
-}
-
-// All HTML headings, `<h1>` through `<h6>`, are available. `%h1` through `%h6`
-// classes are also available, for when you want to match the font styling of a
-// heading but not be a heading.
-h1,
-%h1,
-h2,
-%h2,
-h3,
-%h3,
-h4,
-%h4,
-h5,
-%h5,
-h6,
-%h6 {
-  @include margin-block(.5);
-  color: var(--color-headings);
-  font-family: var(--ff-headings);
-  font-weight: var(--fw-headings);
-  line-height: var(--heading-line-height);
-
-  // Set max text line width in main for readability.
-  .main & {
-    max-width: var(--max-line-width);
-  }
 }
 
 // Paragraphs that are titles (as in sidebar)
