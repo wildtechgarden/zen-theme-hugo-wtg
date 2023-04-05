@@ -47,30 +47,82 @@ It uses HTML5 with a modern CSS grid and flex layout. Care has been taken to pro
 * [Content security policy headers](#content-security-policy-headers)
 * [Choose between using AlpineJS, jQuery or Umbrella JS](#choose-between-using-alpinejs-jquery-or-umbrella-js)
 * [Use npm to lint Sass and JavaScript](#use-npm-to-lint-sass-and-javascript)
+* [Math typesetting with KaTeX](#math-typesetting-with-katex)
 * [Getting help](#getting-help-discussing-andor-modifying)
 * [Credits](ACKNOWLEDGEMENTS.md#credits)
+
+
+## Version 3.x
+
+* Implement modern CSS like flex, grid and variables throughout.
+* All sass variables now have a css variable version. All styles use the css variable version.
+* Defaults to a System-ui font stack (like GitHub and Stack overflow among others).
+* New setting `params.internalPagination` to use the Hugo built in pagination template instead of the plain Zen version.
+* New setting `params.sassTranspiler`. Defaults to "libsass" but "dartsass" is also supported.
+* Split sass "reset" dir into "base" dir and pure "reset" file.
+* Added margin top/bottom/block classes, mt--m/mb--m/mtb--m, for all "spacing" variables.
+* New sass components:
+    * cards
+    * center
+    * disabled
+    * flex-group
+    * flex-inline
+    * footer
+    * grid-group
+    * grid-stack
+    * icon-inline
+    * meta
+    * spacing
+    * stretch
+    * tags
+* Remove all use of "typey" lib.
+* Remove unused/outdated components.
+* Only a few small changes to templates.
+
+
+### Upgrade to 3.x
+
+1. Update your projects `_colors.scss` to add the new colours.
+2. Update overridden variables in projects `_extra.scss` so they match changes in themes `_variables.scss`.
+3. Replace `@include font-size(s);` with `font-size: var(--fs-s);` etc.
+4. Replace `@include typeface(headings);` with `font-family: var(--ff-headings);` etc.
+5. Replace sass variables with css variables, e.g. `$zen-gutters` with `var(--gutters)`.
+
+
+## Version 2.x
+
+* Replaced "normalize" with slimmer and updated "reset". Removed everything for old IE versions.
+* Use of css4 variables. Colours are now used like this `var(--color-brand)`.
+* The colors, fonts and variables sass files are now in the root sass directory.
+* Use `site` instead of `.Site` and `$.Site`.
+* Use a default line-height of unitless 1.5. For headers it is set to 1.3.
+* Added `_extra.scss` where variables can be overridden.
+* The zen-gutters variable is now a calculated value based on window width.
+* Added max-line-width for readability, default to 70ch.
+* New shortcodes: button, svg, reflink and details.
+
 
 ## Features
 
 * A mobile menu
 * AlpineJS 3
-* Analytics with Matamo (Piwik)
+* Analytics with Matomo (Piwik)
 * Cookie consent
 * Commands for linting of css and js
 * Contact form (PHP)
-* CSS grid and flex for layout
+* CSS grid and flex throughout
 * HTML5
-* Hugo Pipes for js and sass
+* Hugo Pipes for images, js and sass
 * jQuery 3
+* Math typesetting with KaTeX
 * Micro.blog
 * Meta tags and JSON-LD
 * Multilingual (i18n)
-* Normalize CSS
+* Modern CSS reset
 * Podcast
 * Responsive design
 * RSS and JSON feeds with full content
 * Search with FlexSearch.js
-* Sub theme support (Theme Components)
 * Umbrella JS 3 (tiny jQuery replacement, 2.5kB when gzipped)
 
 
@@ -198,12 +250,12 @@ params:
   mainSections:             # The sections you want to have listed on the front page.
     - "section1"            # Default to the section with most content if not set.
     - "section2"            # Set to empty if no section should be listed.
-  math: true                # Turn on math typesetting with Katex, default false.
+  math: true                # Turn on math typesetting with KaTeX, default false.
   menuInHeader: true        # Move the main menu to the header, default false.
   microUsername: ""         # Your micro.blog username.
   mobileMenu: true          # Turn on a mobile menu on small screens, default false.
-  piwikSiteId:              # Matamo site id
-  piwikTrackerUrl: ""       # Matamo url, schemaless and no slash on end (example.org/matamo).
+  piwikSiteId:              # Matomo site id
+  piwikTrackerUrl: ""       # Matomo url, schemaless and no slash on end (example.org/matomo).
   plausibleSiteID: ""       # Plausible site id/domain.
   plausibleTrackerURL: ""   # Plausible url, schemaless and no slash on end. Optional, defaults to "plausible.io/…"
   poweredby: true           # Show powered by hugo in footer
@@ -766,7 +818,8 @@ Node.js software you need. To install them run:
         npm run lint-project
         nmp run lint (project + theme)
 
-## Math typesetting with Katex
+
+## Math typesetting with KaTeX
 
 Download the latest release from <https://github.com/KaTeX/KaTeX/releases>. Unpack and place the resulting "katex" directory in the root `static` directory.
 
