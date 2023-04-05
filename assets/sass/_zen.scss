@@ -1,6 +1,6 @@
 // Zen custom styles
 
-// DFD custom styles
+/// DFD-Zen custom styles
 
 .presentation-pdf {
   margin-left: auto;
@@ -74,11 +74,6 @@
   }
 }
 
-li > p {
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
 .main .introduction-card {
   align-self: flex-start;
   flex: 1 1 45%;
@@ -144,17 +139,6 @@ li > p {
   }
 }
 
-.main .content li sup a {
-  min-height: unset;
-  min-width: unset;
-}
-
-.main .content li a {
-  display: inline-block;
-  min-height: 40px;
-  min-width: 40px;
-}
-
 .side-by-figure.image {
   display: inline-block;
   vertical-align: top;
@@ -180,17 +164,35 @@ li > p {
   width: 75%;
 }
 
+article .highlight .chroma {
+  background-color: var(--color-code-bg);
+}
+
+// DFD-Zen Overrides
+
+li > p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.main .content li sup a {
+  min-height: unset;
+  min-width: unset;
+}
+
+.main .content li a {
+  display: inline-block;
+  min-height: 40px;
+  min-width: 40px;
+}
+
 .header .header {
   &__brand {
     max-width: 75%;
   }
 }
 
-article .highlight .chroma {
-  background-color: var(--color-code-bg);
-}
-
-// Page
+// Zen: Page
 
 body {
   background-color: var(--color-backdrop);
@@ -204,7 +206,7 @@ body {
   border-top: 2px solid var(--color-border);
 }
 
-// Apply smaller text to blocks, footer etc.
+// Zen: Apply smaller text to blocks, footer etc.
 
 th,
 label,
@@ -218,7 +220,7 @@ figcaption {
   font-size: var(--fs-xs);
 }
 
-// Apply heading font stack and colour to labels etc.
+// Zen: Apply heading font stack and colour to labels etc.
 
 th,
 nav,
@@ -235,16 +237,11 @@ label {
   font-weight: var(--fw-headings);
 }
 
-// Article and content.
+// Zen: Article and content.
 
-article > .content,
 aside {
   ul {
     @extend %ul-straight-left;
-  }
-
-  ol {
-    @extend %ol-straight-left;
   }
 }
 
@@ -257,17 +254,20 @@ article {
     }
   }
 
+  // DFD-Zen override
   code {
     font-size: var(--fs-xs);
     overflow-wrap: break-word;
     overflow-wrap: anywhere;
   }
 
+  // DFD-Zen override
   pre {
     border-radius: var(--radius-xs);
     padding: 5px;
     border: 1px solid var(--color-border-light);
     background-color: var(--color-text-bg);
+    hyphens: none;
     overflow: auto;
     max-height: 300px;
     max-width: 90vw;
@@ -284,11 +284,13 @@ article {
   }
 }
 
+// DFD-Zen overrides
+
 .content-dates {
   text-align: right;
 }
 
-// Figure and image.
+// Zen: Figure and image.
 
 figure,
 img {
@@ -356,7 +358,7 @@ figure {
   }
 }
 
-// Navigation
+// Zen: Navigation
 
 .main-menu {
   margin-top: .75rem;
@@ -391,14 +393,14 @@ figure {
   text-decoration: none;
 }
 
-// Search
+// Zen: Search
 
 .search-text {
   font-size: var(--fs-l);
   max-width: 80%;
 }
 
-// Form
+// Zen: Form
 
 .content {
   input,
@@ -426,6 +428,8 @@ figure {
   }
 }
 
+// DFD-Zen overrides
+
 .header {
   &__brand {
     display: flex;
@@ -452,6 +456,8 @@ figure {
     }
   }
 }
+
+// DFD-Zen overrides
 
 .layout {
   &__header {
@@ -485,6 +491,8 @@ figure {
   background-color: var(--color-backdrop);
 }
 
+// DFD-Zen overrides
+
 .sidebar {
   .menu {
     background-color: var(--color-brand-light);
@@ -505,6 +513,8 @@ figure {
   }
 }
 
+// DFD-Zen additions
+
 .toc {
   background-color: var(--color-brand-light);
   padding-bottom: .1rem;
@@ -514,6 +524,8 @@ figure {
     font-family: var(--ff-body);
   }
 }
+
+// DFD-Zen additions
 
 .content .sitemap-view {
   ul {
@@ -553,6 +565,8 @@ figure {
   }
 }
 
+// DFD-Zen additions
+
 blockquote {
   border-left: solid 4px;
   padding-left: 1rem;
@@ -567,10 +581,14 @@ blockquote {
   }
 }
 
+// DFD-Zen additions
+
 code,
 pre {
   tab-size: 3;
 }
+
+// DFD-Zen additions
 
 pre,
 pre code {
@@ -579,20 +597,29 @@ pre code {
   word-break: break-all;
 }
 
+// DFD-Zen additions
+
 pre,
 .pre {
   white-space: pre-wrap;
 }
 
+// DFD-Zen additions
+
 pre code {
   display: block;
   line-height: 2;
   white-space: pre-wrap;
+  width: 100%;
 }
+
+// DFD-Zen additions
 
 .main .highlight > .chroma > code {
   white-space: pre-wrap;
 }
+
+// DFD-Zen additions
 
 .main .highlight > .chroma > code > span {
   word-break: break-all;
@@ -600,11 +627,15 @@ pre code {
   overflow-wrap: anywhere;
 }
 
+// DFD-Zen overrides
+
 main table {
   border-collapse: collapse;
   margin-bottom: 1rem;
   width: 100%;
 }
+
+// DFD-Zen overrides
 
 main table tr {
   th {
@@ -618,15 +649,21 @@ main table tr {
   }
 }
 
+// DFD-Zen overrides
+
 @supports (text-align: start) {
   main table tr th {
     text-align: start;
   }
 }
 
+// DFD-Zen overrides
+
 main table tr th:last-of-type {
   border-right: 4px ridge;
 }
+
+// DFD-Zen overrides
 
 main table tr td {
   border-bottom: 2px solid;
@@ -634,14 +671,20 @@ main table tr td {
   width: max-content;
 }
 
+// DFD-Zen overrides
+
 main table tr td:last-of-type {
   border-right: 2px solid;
   min-width: 50%;
 }
 
+// DFD-Zen overrides
+
 main table tbody tr:nth-of-type(even) {
   background-color: var(--color-backdrop);
 }
+
+// DFD-Zen overrides
 
 .content--endnote {
   border-top: 1px solid;
@@ -650,14 +693,14 @@ main table tbody tr:nth-of-type(even) {
   width: fit-content;
 }
 
-// Paragraphs that are titles (as in sidebar)
+// DFD-Zen: Paragraphs that are titles (as in sidebar)
 
 p.title {
   // Add vertical rhythm margins.
   @include margin-block(.5);
 }
 
-// Lists
+// Zen: Lists
 
 dl,
 ol,
@@ -666,6 +709,8 @@ menu {
   // Add vertical rhythm margins.
   @include margin-block(1 .75);
 }
+
+// DFD-Zen overrides
 
 .main .content {
   ol,
@@ -678,4 +723,11 @@ menu {
       overflow-wrap: anywhere;
     }
   }
+}
+
+// DFD-Zen overrides
+
+.chroma .line {
+  border: 1px dashed;
+  width: 100%;
 }
