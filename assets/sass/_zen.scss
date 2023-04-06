@@ -192,6 +192,28 @@ li > p {
   }
 }
 
+.sidebar .menu {
+  background-color: var(--color-brand-light);
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding-bottom: .1rem;
+  padding-left: var(--gutters);
+  padding-right: var(--gutters);
+  padding-top: .1rem;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  ul {
+    @extend %ul-straight-left;
+  }
+}
+
 // Zen: Page
 
 body {
@@ -238,12 +260,6 @@ label {
 }
 
 // Zen: Article and content.
-
-aside {
-  ul {
-    @extend %ul-straight-left;
-  }
-}
 
 article {
   .submitted,
@@ -491,28 +507,6 @@ figure {
   background-color: var(--color-backdrop);
 }
 
-// DFD-Zen overrides
-
-.sidebar {
-  .menu {
-    background-color: var(--color-brand-light);
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    padding-bottom: .1rem;
-    padding-left: var(--gutters);
-    padding-right: var(--gutters);
-    padding-top: .1rem;
-
-    &:first-of-type {
-      margin-top: 0;
-    }
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-  }
-}
-
 // DFD-Zen additions
 
 .toc {
@@ -715,12 +709,19 @@ menu {
 .main .content {
   ol,
   ul {
-    width: 100%;
-
     & > li {
-      width: 100%;
       overflow-wrap: break-word;
-      overflow-wrap: anywhere;
+    }
+  }
+}
+
+@supports (overflow-wrap: anywhere) {
+  .main .content {
+    ol,
+    ul {
+      & > li {
+        overflow-wrap: anywhere;
+      }
     }
   }
 }

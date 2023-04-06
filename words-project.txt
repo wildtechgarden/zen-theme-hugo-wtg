@@ -188,6 +188,7 @@ veniam
 videocam
 voluptate
 warnf
+wbr
 webp
 wordwrap
 xdeb
