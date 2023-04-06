@@ -9,8 +9,8 @@
 {{- $pages := partial "helpers/find-ordered-pages.html" (dict "Page" $curPage "Pages" $curPages "pagesOldestFirst" $pagesOldestFirst) -}}
 {{- range $pages -}}
   {{- $pageMetadata := .Title }}
-  <li>
-    <a href="{{ .RelPermalink }}">{{ .Title -}}
+  <li{{ if .IsSection }} class="section-list-item"{{ end }}>
+    <a{{ if .IsSection }} class="section-link"{{ end }} href="{{ .RelPermalink }}"><span>{{ .Title -}}</span>
   {{- if or .Pages .Sections -}}
     {{- $numBelow := len (union .Pages .Sections) -}}
     {{- if and $showNumBelow (gt $numBelow 1) (gt $curDepth 1) }} ({{ $numBelow }}){{ end }}
