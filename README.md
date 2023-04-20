@@ -846,11 +846,9 @@ Lorem {{< math >}}E=mc^2{{< /math >}} ipsum
 
  and math codeblocks for block math:
 
-```
-\`\`\` math  
-[ \int_0^1 \frac{dx}{e^x} =  \frac{e-1}{e} ]  
-\'\'\'
-```
+    ``` math  
+    [ \int_0^1 \frac{dx}{e^x} =  \frac{e-1}{e} ]  
+    ```
 
 
 ## Getting help, discussing, and/or modifying
