@@ -1,1 +1,1 @@
-npx.cmd html-validate -c .htmlvalidate.json exampleSite/public/**/*.html exampleSite/public/*.html
+npx.cmd html-validate -c .htmlvalidate.json public/**/*.html public/*.html
