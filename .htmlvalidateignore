@@ -1,5 +1,5 @@
-exampleSite/public/*
-!exampleSite/public/documentation/
-exampleSite/public/**/page/
-!exampleSite/public/about/
-!exampleSite/public/index.html
+public/*
+!public/documentation/
+public/**/page/
+!public/about/
+!public/index.html
