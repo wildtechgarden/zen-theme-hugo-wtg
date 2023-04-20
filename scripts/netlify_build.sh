@@ -21,4 +21,4 @@ else
   export BASEURL="$DEPLOY_PRIME_URL"
 fi
 
-HUGO_RESOURCEDIR="$(pwd)/resources" hugo --gc --minify -b $BASEURL --source exampleSite
+HUGO_RESOURCEDIR="$(pwd)/resources" hugo --gc --minify -b $BASEURL --source exampleSite --destination "$(pwd)/public"
