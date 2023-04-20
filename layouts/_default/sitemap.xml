@@ -4,21 +4,29 @@ xmlns:xhtml="http://www.w3.org/1999/xhtml">
 {{ range .Data.Pages }}
 {{- $pageCanonical := and (.Param "pageCanonical") true -}}
 {{- $omitFromSitemap := or (not $pageCanonical) (or (.Param "omitFromSitemap") false) -}}
-{{- if and .Permalink (not $omitFromSitemap) -}}
+{{- $defaultCanonical := .Permalink -}}
+{{- if isset site.Params "defaultcanonical" -}}
+  {{- $defaultCanonical = replace .Permalink site.BaseURL site.Params.defaultCanonical -}}
+{{- end -}}
+{{- if and $defaultCanonical (not $omitFromSitemap) -}}
 <url>
-<loc>{{ .Permalink }}</loc>{{ if not .Lastmod.IsZero }}
+<loc>{{ $defaultCanonical }}</loc>{{ if not .Lastmod.IsZero }}
 <lastmod>{{ safeHTML ( .Lastmod.Format "2006-01-02T15:04:05-07:00" ) }}</lastmod>{{ end }}{{ with .Sitemap.ChangeFreq }}
 <changefreq>{{ . }}</changefreq>{{ end }}{{ if ge .Sitemap.Priority 0.0 }}
 <priority>{{ .Sitemap.Priority }}</priority>{{ end }}{{ if .IsTranslated }}{{ range .Translations }}
+{{- $defaultLangCanonical := .Permalink -}}
+{{- if isset site.Params "defaultcanonical" -}}
+  {{- $defaultLangCanonical = replace .Permalink site.BaseURL site.Params.defaultCanonical -}}
+{{- end -}}
 <xhtml:link
   rel="alternate"
   hreflang="{{ .Language.Lang }}"
-  href="{{ .Permalink }}"
+  href="{{ $defaultLangCanonical }}"
 />{{ end }}
 <xhtml:link
   rel="alternate"
   hreflang="{{ .Language.Lang }}"
-  href="{{ .Permalink }}"
+  href="{{ $defaultCanonical }}"
 />{{ end }}
 </url>
 {{- end -}}

@@ -54,6 +54,7 @@ dartsass
 dateformat
 datetime
 davidsneighbour
+defaultcanonical
 delsp
 deployedbaseurl
 desciption
@@ -78,6 +79,7 @@ goldmark
 hreflang
 htmlspecialchars
 iframe
+iframes
 img
 incididunt
 internalpagination
