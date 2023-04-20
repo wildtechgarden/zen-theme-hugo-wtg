@@ -58,6 +58,8 @@
 {{ if $.Param "mobilemenu" }}{{ partial "mobilemenu.html" . }}{{ end -}}
 </header>
 
+{{ if not ($.Param "omitBreadcrumbs") }}{{ partial "breadcrumbs.html" . }}{{ end -}}
+
 {{ if not ($.Param "menuinheader") }}{{ partial "menu.html" . }}{{ end -}}
 
 {{ block "main" . }}{{ end }}

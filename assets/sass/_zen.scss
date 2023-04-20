@@ -781,3 +781,157 @@ menu {
   border: 1px dashed;
   width: 100%;
 }
+
+.main > .title,
+.main > article > header > .title {
+  margin-top: .2em;
+}
+
+.breadcrumb {
+  background-color: var(--color-brand);
+  color: var(--color-headings);
+  grid-area: breadcrumb;
+  padding-inline: var(--gutters);
+  outline: 0;
+
+  ul {
+    color: var(--color-headings);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    list-style: none inside;
+    margin: 0;
+    padding-inline: .6em;
+
+    li {
+      display: block;
+      min-height: 40px;
+      min-width: 40px;
+      padding-block: 8px;
+
+      &:last-child::after {
+        content: '';
+      }
+
+      &::after {
+        background-color: var(--color-brand);
+        color: var(--color-text-bg);
+        content: '>';
+        min-width: 40px;
+        padding-inline: .1em;
+      }
+    }
+
+    a {
+      background-color: var(--color-brand);
+      color: var(--color-text-bg);
+      display: inline;
+      flex: 1 0 40px;
+      padding-inline: .1em;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        background-color: var(--color-brand-dark);
+        text-decoration: underline;
+      }
+
+      &:active {
+        background-color: var(--color-brand-light);
+        color: var(--color-text);
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@supports (display: grid) {
+  .layout {
+    &__page {
+      display: grid;
+      grid-template-areas:
+        'head'
+        'breadcrumb'
+        'nav'
+        'top'
+        'main'
+        'side1'
+        'side2'
+        'bottom'
+        'foot'
+        'notice';
+      grid-template-rows:
+        auto
+        auto
+        auto
+        auto
+        1fr
+        auto
+        auto
+        auto
+        auto
+        auto;
+      grid-template-columns: 1fr;
+    }
+
+    @include respond-to(xl) {
+      &__page {
+        grid-template-rows:
+          auto
+          auto
+          auto
+          auto
+          1fr
+          auto
+          auto
+          auto;
+      }
+
+      &__sidebar-first {
+        grid-template-areas:
+          'head head'
+          'breadcrumb breadcrumb'
+          'nav nav'
+          'side1 top'
+          'side1 main'
+          'side1 bottom'
+          'foot foot'
+          'notice notice';
+        grid-template-columns:
+          1fr
+          2fr;
+      }
+
+      &__sidebar-second {
+        grid-template-areas:
+          'head head'
+          'breadcrumb breadcrumb'
+          'nav nav'
+          'top side2'
+          'main side2'
+          'bottom side2'
+          'foot foot'
+          'notice notice';
+        grid-template-columns:
+          2fr
+          1fr;
+      }
+
+      &__sidebar-two {
+        grid-template-areas:
+          'head head head'
+          'breadcrumb breadcrumb breadcrumb'
+          'nav nav nav'
+          'side1 top side2'
+          'side1 main side2'
+          'side1 bottom side2'
+          'foot foot foot'
+          'notice notice notice';
+        grid-template-columns:
+          1fr
+          2fr
+          1fr;
+      }
+    }
+  }
+}
