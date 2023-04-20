@@ -825,6 +825,34 @@ Download the latest release from <https://github.com/KaTeX/KaTeX/releases>. Unpa
 
 The resulting path should be `static/katex`. Then set the `math` param to "true" and write some math to be typeset.
 
+Wrap inline math in single "$":
+
+```
+Lorem $E=mc^2$ ipsum
+```
+
+and block math in double "$$":
+
+```
+$$
+[ \int_0^1 \frac{dx}{e^x} =  \frac{e-1}{e} ]
+$$
+```
+Markdown rendering will in some instances mess with the math. To avoid this use the math shortcode for inline math:
+
+```
+Lorem {{< math >}}E=mc^2{{< /math >}} ipsum
+```
+
+ and math codeblocks for block math:
+
+```
+\`\`\` math  
+[ \int_0^1 \frac{dx}{e^x} =  \frac{e-1}{e} ]  
+\'\'\'
+```
+
+
 ## Getting help, discussing, and/or modifying
 
 If you run into an issue that isn't answered by this documentation or the [`exampleSite`](https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen/-/tree/main/exampleSite), then visit the [Hugo forum](https://discourse.gohugo.io/). The folks there are helpful and friendly. **Before** asking your question, be sure to read the [requesting help guidelines](https://discourse.gohugo.io/t/requesting-help/9132). Feel free to tag me in your question, my forum username is [@cshoredaniel](https://discourse.gohugo.io/u/cshoredaniel/summary).
