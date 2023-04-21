@@ -1,8 +1,8 @@
 {{ if not (eq .TranslationKey "404") -}}
   {{ if not .Description -}}
     {{ warnf "Page '%s' does not have a description" .TranslationKey }}
-  {{ else if lt (len .Description) 100  -}}
-    {{ warnf "Page '%s' description less than 100 characters" .TranslationKey }}
+  {{ else if lt (len .Description) 110  -}}
+    {{ warnf "Page '%s' description less than 110 characters" .TranslationKey }}
   {{ else if gt (len .Description) 160  -}}
     {{ warnf "Page '%s' description more than 160 characters" .TranslationKey }}
   {{ end -}}
