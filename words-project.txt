@@ -87,6 +87,7 @@ irure
 isset
 jsdoc
 jsonfeed
+jsonified
 jsonify
 jsvendor
 laboris
