@@ -7,7 +7,6 @@ enableGitInfo: true
 enableRobotsTXT: true
 ignoreErrors: ["error-disable-taxonomy"]
 languageCode: "en-CA" # non-multilingual only
-pluralizelisttitles: false
 paginate: 10
 paginatePath: "page"
 removePathAccents: true
@@ -85,7 +84,7 @@ params:
   logoWidth: 32
   mainSections:
     - documentation
-  mobileMenu: true
+    - post
   noImageConvert: false
   noSrcSetDefault: false
   pageCanonical: false
