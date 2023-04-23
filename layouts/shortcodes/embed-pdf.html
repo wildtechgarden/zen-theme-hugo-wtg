@@ -40,7 +40,7 @@
     {{- end -}}
   {{- end -}}
   {{- if $dataResource -}}
-    {{- $dataResourceLink = $dataResource.Permalink -}}
+    {{- $dataResourceLink = $dataResource.RelPermalink -}}
     {{- if and $fragment $dataResourceLink -}}
       {{- $dataResourceLink = printf "%s#%s" $dataResourceLink $fragment -}}
     {{- end -}}
