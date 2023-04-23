@@ -121,6 +121,7 @@ mstile
 navclose
 navopen
 nearblack
+nearwhite
 newfeed
 newtab
 nheaders

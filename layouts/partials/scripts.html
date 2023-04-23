@@ -33,10 +33,15 @@
 <script defer src="{{ $listsort.RelPermalink }}"></script>
 {{- end -}}
 
+{{- if $.Param "tables" -}}
+{{- $tables := resources.Get "js/tables.js" | minify | fingerprint }}
+<script defer src="{{ $tables.RelPermalink }}"></script>
+{{- end -}}
+
 {{- if .HasShortcode "contact" -}}
 {{- $contact := resources.Get "js/contact.js" | minify | fingerprint }}
 <script defer src="{{ $contact.RelPermalink }}"></script>
-{{ end -}}
+{{- end -}}
 
 {{- if or (.HasShortcode "search") (or .Page.Params.enableSearch false) (eq .TranslationKey "404") -}}
 {{- $flexsearch := resources.Get "libs/flexsearch.compact.js" | fingerprint }}

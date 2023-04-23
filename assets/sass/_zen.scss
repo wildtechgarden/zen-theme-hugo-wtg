@@ -266,7 +266,7 @@ article {
   .tags {
     @include respond-to(s) {
       display: inline-block;
-      padding-right: 1rem;
+      padding-inline-end: 1rem;
     }
   }
 
@@ -303,7 +303,7 @@ article {
 // DFD-Zen overrides
 
 .content-dates {
-  text-align: right;
+  text-align: end;
 }
 
 // Zen: Figure and image.
@@ -311,20 +311,24 @@ article {
 figure,
 img {
   &.image {
+    --padding: .75rem;
+
     @include respond-to(s) {
       &.center {
         margin-inline: auto;
       }
 
       &.left {
-        padding: 0 .75rem .75rem 0;
+        padding-inline-end: var(--padding);
+        padding-block-end: var(--padding);
         margin: 0;
         float: left;
         clear: both;
       }
 
       &.right {
-        padding: 0 0 .75rem .75rem;
+        padding-inline-start: var(--padding);
+        padding-block-end: var(--padding);
         margin: 0;
         float: right;
         clear: both;
@@ -335,10 +339,15 @@ img {
 
 figure {
   &.image {
+    --padding: .75rem;
+
     figcaption {
+      padding-block-start: var(--padding);
+
       @include respond-to(s) {
         display: table-caption;
         caption-side: bottom;
+        padding-block-start: 0;
       }
 
       p {
@@ -349,19 +358,17 @@ figure {
     @include respond-to(s) {
       display: table;
 
-      img {
-        display: block;
-      }
-
       &.left {
         figcaption {
-          padding: 0 .75rem .75rem 0;
+          padding-inline-end: var(--padding);
+          padding-block-end: var(--padding);
         }
       }
 
       &.right {
         figcaption {
-          padding: 0 0 .75rem .75rem;
+          padding-inline-start: var(--padding);
+          padding-block-end: var(--padding);
         }
       }
     }
