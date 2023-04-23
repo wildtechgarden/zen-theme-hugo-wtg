@@ -9,13 +9,13 @@
   {{- end -}}
   {{- $pageTitle = .Title -}}
 {{- $pageTitle -}}{{ end }}</title>
-{{ partial "meta.html" . }}
-{{ partialCached "styles.html" . }}
+{{- partial "meta.html" . }}
+{{- partialCached "styles.html" . }}
 {{- block "head" . }}{{ end }}
-{{ partial "meta_json_ld.html" . }}
-{{ partial "scripts.html" . }}
-{{ partial "math.html" . }}
-{{ partialCached "tracking.html" . }}
+{{- partial "meta_json_ld.html" . }}
+{{- partial "scripts.html" . }}
+{{- partial "math.html" . }}
+{{- partialCached "tracking.html" . -}}
 </head>
 
 <body class="{{ if .IsPage }}single-page{{ else }}list-page{{ end }}{{ if .IsHome }} front{{ end }}{{ with $.Param "bodyclass" }} {{ . }}{{ end }}">

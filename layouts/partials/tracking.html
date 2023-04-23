@@ -1,4 +1,4 @@
-{{ $opts := dict
+{{- $opts := dict
   "minify" true
   "params" (dict
     "cookieConsent" site.Params.cookieConsent
@@ -6,18 +6,18 @@
     "piwikSiteID" site.Params.piwikSiteID
     "plausibleSiteID" site.Params.plausibleSiteID
     "GoogleAnalytics" site.GoogleAnalytics) -}}
-{{ if and site.Params.piwikTrackerUrl site.Params.piwikSiteID -}}
-{{ $script := resources.Get "js/tracking.js" | js.Build $opts | fingerprint -}}
+{{- if and site.Params.piwikTrackerUrl site.Params.piwikSiteID -}}
+{{- $script := resources.Get "js/tracking.js" | js.Build $opts | fingerprint }}
 <script src="{{ $script.RelPermalink }}"></script>
 <script defer src="https://{{ site.Params.piwikTrackerUrl }}/matomo.js"></script>
-{{ end -}}
+{{- end -}}
 
-{{ if site.Params.plausibleSiteID -}}
+{{- if site.Params.plausibleSiteID }}
 <script async defer data-domain="{{ site.Params.plausibleSiteID }}" src="{{ site.Params.plausibleTrackerURL | default "https://plausible.io/js/plausible.js" }}"></script>
-{{ end -}}
+{{- end -}}
 
-{{ if site.GoogleAnalytics -}}
-{{ $script := resources.Get "js/tracking.js" | js.Build $opts | fingerprint -}}
+{{- if site.GoogleAnalytics -}}
+{{- $script := resources.Get "js/tracking.js" | js.Build $opts | fingerprint }}
 <script src="{{ $script.RelPermalink }}"></script>
-{{ template "_internal/google_analytics.html" . }}
+{{- template "_internal/google_analytics.html" . }}
 {{ end -}}

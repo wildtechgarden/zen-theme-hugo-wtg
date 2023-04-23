@@ -1,12 +1,12 @@
-{{ if not (eq .TranslationKey "404") -}}
+{{- if not (eq .TranslationKey "404") -}}
   {{ if not .Description -}}
-    {{ warnf "Page '%s' does not have a description" .TranslationKey }}
+    {{ warnf "Page '%s' does not have a description" .TranslationKey -}}
   {{ else if lt (len .Description) 110  -}}
-    {{ warnf "Page '%s' description less than 110 characters" .TranslationKey }}
+    {{ warnf "Page '%s' description less than 110 characters" .TranslationKey -}}
   {{ else if gt (len .Description) 160  -}}
-    {{ warnf "Page '%s' description more than 160 characters" .TranslationKey }}
+    {{ warnf "Page '%s' description more than 160 characters" .TranslationKey -}}
   {{ end -}}
-{{ end -}}
+{{- end -}}
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -49,7 +49,7 @@
       ) -}}
       {{ with $finalImage.src }}"image" : {{ . | absURL }},{{ end -}}
     {{ end -}}
-    {{ with $.Page.Params.author | default site.Params.author.name -}}
+    {{- with $.Page.Params.author | default site.Params.author.name }}
     "author": {
       "@type": "Person",
       "name": {{ . }}
