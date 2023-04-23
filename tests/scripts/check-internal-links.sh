@@ -43,7 +43,7 @@ for skip in ${SKIP_CHECK_PATTERNS}; do \
   SKIPS="${SKIPS}${SKIPS:+ }--skip \"${skip}\""
 done
 
-URLBASE="${SITESRC}"/public/index.html
+URLBASE="${SITEROOT}"/public/index.html
 
 # shellcheck disable=SC2090,SC2086
 if echo y | npx hyperlink "$URLBASE" --canonicalRoot "${CROOT}" \
