@@ -66,6 +66,9 @@ params:
     name: "Your Name"
     url: "https://example.org/somepage"
     avatar: "path/to/some-image.jpg"
+  breadcrumbSections:
+    - about
+    - documentation
   contact: "info@example.org"
   copyright: |
     Copyright [Daniel F. Dickinson](https://www.danielfdickinson.ca/),

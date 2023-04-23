@@ -57,8 +57,12 @@
 </div>
 {{ if $.Param "mobilemenu" }}{{ partial "mobilemenu.html" . }}{{ end -}}
 </header>
+{{- $blogSections := site.Params.blogSections | default (slice "blog" "post") }}
+{{- $breadcrumbSections := site.Params.breadcrumbSections | default (slice) }}
 
-{{ if not ($.Param "omitBreadcrumbs") }}{{ partial "breadcrumbs.html" . }}{{ end -}}
+{{- if or (not .IsPage) (and (.IsPage) (not (in $blogSections .Section))) -}}
+{{ if (in $breadcrumbSections .Section) }}{{ partial "breadcrumbs.html" . }}{{ end -}}
+{{- end }}
 
 {{ if not ($.Param "menuinheader") }}{{ partial "menu.html" . }}{{ end -}}
 
