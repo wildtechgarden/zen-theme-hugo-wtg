@@ -9,6 +9,8 @@ pre-commit install --install-hooks
 pre-commit run --all-files
 
 bash ./tests/scripts/hugo-audit.sh
+bash ./tests/scripts/check-internal-links.sh
+
 rm -rf public exampleSite/public
 
 export HUGO_PARAMS_DEFAULTCANONICAL="$URL"

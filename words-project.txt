@@ -40,6 +40,7 @@ blablabla
 bodyclass
 browserconfig
 changefreq
+checklinks
 cillum
 compat
 cond
