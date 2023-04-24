@@ -1,19 +1,19 @@
-{{- if .Ancestors }}
 <nav class="breadcrumb" aria-label="breadcrumb">
   <ul>
-    {{- range (first 1 .Ancestors.Reverse) }}
+{{- if .Ancestors }}
+  {{- range (first 1 .Ancestors.Reverse) }}
     <li>
       <a href="{{ .RelPermalink }}">≡</a>
     </li>
-    {{- end }}
-    {{- range (last (sub (len .Ancestors) 1) (.Ancestors.Reverse)) }}
+  {{- end }}
+  {{- range (last (sub (len .Ancestors) 1) (.Ancestors.Reverse)) }}
     <li>
       <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
     </li>
-    {{- end }}
+  {{- end }}
+{{- end }}
     <li class="active-page">
       <a aria-current="page" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
     </li>
   </ul>
 </nav>
-{{- end -}}
