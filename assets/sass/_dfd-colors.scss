@@ -2,9 +2,11 @@
 // stylelint-disable scss/dollar-variable-colon-space-after, scss/dollar-variable-empty-line-before
 
 // Base colors.
-$black:                 #000;
+$black:                 lighten(#000, 2%); // off-black
 $nearblack:             lighten($black, 20%); // #333
-$grey-dark:             lighten($black, 40%); // #666
+$grey-dark:             lighten($black, 30%);
+$grey-lessdark:         lighten($black, 40%);
+$grey-medium:           lighten($black, 50%);
 $grey:                  lighten($black, 60%); // #999
 $grey-light:            lighten($black, 80%); // #ccc
 $grey-extra-light:      lighten($black, 93.33%); // #eee
@@ -16,10 +18,10 @@ $red:                   #c00;
 $green:                 #43a808;
 $yellow:                #fd0;
 
-$brand:                 $nearblack;
+$brand:                 $grey-dark;
 $brand-alt:             $grey;
 $brand-light:           $grey-light;
-$brand-dark:            $grey-dark;
+$brand-dark:            $nearblack;
 
 // Colour map.
 $colors: (
@@ -28,41 +30,41 @@ $colors: (
   brand-light:            $brand-light,
   brand-dark:             $brand-dark,
 
-  text:                   $black,
-  text-bg:                $white,
+  text:                   $nearblack,
+  text-bg:                $nearwhite,
   text-meta:              $grey-dark,
 
   link:                   $black,
   link-visited:           $black,
-  link-hover:             $brand,
-  link-active:            $red,
+  link-hover:             $brand-dark,
+  link-active:            $grey-extra-light,
 
-  link-inverted:          $white,
-  link-visited-inverted:  $white,
-  link-hover-inverted:    $white,
-  link-active-inverted:   $red,
+  link-inverted:          $nearwhite,
+  link-visited-inverted:  $nearwhite,
+  link-hover-inverted:    $nearwhite,
+  link-active-inverted:   $grey-lessdark,
 
   border:                 $brand,
   border-light:           $brand-light,
   border-dark:            $brand-dark,
 
   autocomplete:           $black,
-  autocomplete-bg:        $white,
-  autocomplete-select:    $white,
+  autocomplete-bg:        $nearwhite,
+  autocomplete-select:    $nearwhite,
   autocomplete-select-bg: $blue,
 
-  body-bg:                $white,
-  header-bg:              $white,
-  footer-bg:              $white,
+  body-bg:                $nearwhite,
+  header-bg:              $brand-dark,
+  footer-bg:              $brand-dark,
   backdrop:               $grey-extra-light,
 
-  mobile-menu:            $brand,
+  mobile-menu:            $brand-dark,
   mobile-menu-cover:      rgba($black, .2),
 
-  button:                 $brand,
-  button-hover:           $brand-dark,
-  button-text:            $white,
-  button-text-hover:      $white,
+  button:                 $brand-dark,
+  button-hover:           $brand,
+  button-text:            $nearwhite,
+  button-text-hover:      $nearwhite,
   button-disabled:        $grey,
 
   form-error:             $red,
@@ -80,8 +82,8 @@ $colors: (
 
   status:                 $green,
   status-bg:              lighten($green, 62%),
-  status-highlight:       $black,
-  warning:                $black,
+  status-highlight:       $nearblack,
+  warning:                $nearblack,
   warning-bg:             lighten($yellow, 45%),
   warning-border:         $yellow,
   error:                  $red,
