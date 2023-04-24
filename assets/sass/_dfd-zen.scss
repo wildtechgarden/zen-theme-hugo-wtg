@@ -343,6 +343,22 @@ li > p {
 
 .card {
   background-color: var(--color-backdrop);
+
+  header {
+    &:hover,
+    &:focus {
+      background-color: var(--color-link-inverted);
+
+      a {
+        background-color: var(--color-link-hover-inverted);
+
+        &:hover,
+        &:focus {
+          color: var(--color-brand);
+        }
+      }
+    }
+  }
 }
 
 // DFD-Zen additions
@@ -595,7 +611,7 @@ menu {
 }
 
 .breadcrumb {
-  background-color: var(--color-brand);
+  background-color: var(--color-brand-dark);
   color: var(--color-headings);
   grid-area: breadcrumb;
   padding-inline: var(--gutters);
@@ -621,7 +637,7 @@ menu {
       }
 
       &::after {
-        background-color: var(--color-brand);
+        background-color: var(--color-brand-dark);
         color: var(--color-text-bg);
         content: '>';
         min-width: 40px;
@@ -630,7 +646,7 @@ menu {
     }
 
     a {
-      background-color: var(--color-brand);
+      background-color: var(--color-brand-dark);
       color: var(--color-text-bg);
       display: inline;
       flex: 1 0 40px;
@@ -639,7 +655,7 @@ menu {
 
       &:hover,
       &:focus {
-        background-color: var(--color-brand-dark);
+        background-color: var(--color-brand);
         text-decoration: underline;
       }
 
