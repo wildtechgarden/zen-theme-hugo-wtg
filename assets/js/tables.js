@@ -8,7 +8,7 @@
 
   'use strict';
 
-  const tables = document.querySelectorAll('.responsive-table');
+  const tables = document.querySelectorAll('table:not(.no-responsive-table)');
 
   tables.forEach(function (table) {
     const headers = table.querySelectorAll('th');
