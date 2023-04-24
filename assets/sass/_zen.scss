@@ -300,12 +300,6 @@ article {
   }
 }
 
-// DFD-Zen overrides
-
-.content-dates {
-  text-align: end;
-}
-
 // Zen: Figure and image.
 
 figure,
@@ -680,58 +674,27 @@ pre code {
 // DFD-Zen overrides
 
 main table {
-  border-collapse: collapse;
-  margin-bottom: 1rem;
-  width: 100%;
+  background: var(--color-backdrop);
+  border: solid 2px;
 }
 
-// DFD-Zen overrides
+main table:not(.no-responsive-table) {
+  @extend %responsive-table;
+}
+
+main table:not(.no-zebra-table) {
+  @extend %zebra-table;
+}
 
 main table tr {
+  td,
   th {
-    background-color: var(--color-brand-light);
-    border-bottom: 4px ridge;
-    border-left: 4px ridge;
-    border-top: 4px ridge;
-    color: var(--color-headings);
-    text-align: left;
-    width: max-content;
+    border: solid 1px;
   }
-}
 
-// DFD-Zen overrides
-
-@supports (text-align: start) {
-  main table tr th {
-    text-align: start;
+  th {
+    border-bottom: 3px groove;
   }
-}
-
-// DFD-Zen overrides
-
-main table tr th:last-of-type {
-  border-right: 4px ridge;
-}
-
-// DFD-Zen overrides
-
-main table tr td {
-  border-bottom: 2px solid;
-  border-left: 2px solid;
-  width: max-content;
-}
-
-// DFD-Zen overrides
-
-main table tr td:last-of-type {
-  border-right: 2px solid;
-  min-width: 50%;
-}
-
-// DFD-Zen overrides
-
-main table tbody tr:nth-of-type(even) {
-  background-color: var(--color-backdrop);
 }
 
 // DFD-Zen overrides
