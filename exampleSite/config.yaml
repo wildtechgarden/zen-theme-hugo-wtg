@@ -24,6 +24,9 @@ permalinks:
 
 markup:
   goldmark:
+    parser:
+      attribute:
+        block: true
     renderer:
       unsafe: false
   highlight:
@@ -105,6 +108,7 @@ params:
   searchAllPages: true
   sidebar: true
   submitted: true
+  tables: true
   # themeColor: #aaa
   # useBaseURL: false
 
