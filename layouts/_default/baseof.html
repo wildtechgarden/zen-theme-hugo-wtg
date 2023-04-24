@@ -7,7 +7,6 @@
   {{- if gt (len ($pageTitle | htmlEscape)) 70 -}}
     {{- errorf "%s title '%'s > 70 characters" .TranslationKey $pageTitle -}}
   {{- end -}}
-  {{- $pageTitle = .Title -}}
 {{- $pageTitle -}}{{ end }}</title>
 {{- partial "meta.html" . }}
 {{- partialCached "styles.html" . }}
