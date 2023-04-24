@@ -8,7 +8,7 @@
 </header>
 <div class="content">
 {{ if and (.Param "toc") (not (.HasShortcode "details-toc")) }}
-<details>
+<details class="print-none">
   <summary>What is in this article</summary>
   <div class="toc">
   {{- .Page.TableOfContents -}}

@@ -780,3 +780,17 @@ a {
     color: var(--color-brand-dark);
   }
 }
+
+header.header.layout {
+  &__header {
+    @extend %print-none;
+  }
+}
+
+h1 + .submitted.meta {
+  @extend %print-none;
+}
+
+.content-dates.meta {
+  @extend %print-none;
+}
