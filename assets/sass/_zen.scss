@@ -91,7 +91,7 @@
 
 .main .introduction-card img,
 .main .about-photo img {
-  border: 1px solid var(--color-brand);
+  border: 1px solid var(--color-border);
   display: block;
   box-sizing: border-box;
   margin: 0;
@@ -388,19 +388,19 @@ figure {
 
   a {
     display: block;
-    background-color: var(--color-brand);
+    background-color: var(--color-brand-dark);
     color: var(--color-text-bg);
     padding: 2px 8px;
     text-decoration: none;
 
     &:hover,
     &:focus {
-      background-color: var(--color-brand-dark);
+      background-color: var(--color-brand);
     }
 
     &:active,
     &.active {
-      background-color: var(--color-brand);
+      background-color: var(--color-brand-dark);
       text-decoration: underline;
     }
   }
@@ -802,7 +802,7 @@ menu {
 
       &:hover,
       &:focus {
-        background-color: var(--color-brand-dark);
+        background-color: var(--color-brand);
         text-decoration: underline;
       }
 

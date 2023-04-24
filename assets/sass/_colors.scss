@@ -18,10 +18,10 @@ $red:                   #c00;
 $green:                 #43a808;
 $yellow:                #fd0;
 
-$brand:                 $nearblack;
+$brand:                 $grey-dark;
 $brand-alt:             $grey;
 $brand-light:           $grey-light;
-$brand-dark:            $grey-dark;
+$brand-dark:            $nearblack;
 
 // Colour map.
 $colors: (
@@ -36,7 +36,7 @@ $colors: (
 
   link:                   $black,
   link-visited:           $black,
-  link-hover:             $brand,
+  link-hover:             $brand-dark,
   link-active:            $red,
 
   link-inverted:          $nearwhite,
@@ -54,15 +54,15 @@ $colors: (
   autocomplete-select-bg: $blue,
 
   body-bg:                $white,
-  header-bg:              $grey-dark,
-  footer-bg:              $brand,
+  header-bg:              $brand-dark,
+  footer-bg:              $brand-dark,
   backdrop:               $grey-extra-light,
 
-  mobile-menu:            $brand,
+  mobile-menu:            $brand-dark,
   mobile-menu-cover:      rgba($black, .2),
 
-  button:                 $brand,
-  button-hover:           $brand-dark,
+  button:                 $brand-dark,
+  button-hover:           $brand,
   button-text:            $white,
   button-text-hover:      $white,
   button-disabled:        $grey,
