@@ -1,3 +1,5 @@
+@import 'components/print-none/print-none';
+
 /// DFD-Zen custom styles
 
 .presentation-pdf {
@@ -210,6 +212,10 @@ li > p {
   ul {
     @extend %ul-straight-left;
   }
+
+  p.title ~ ul {
+    margin-block-start: 0;
+  }
 }
 
 .article {
@@ -246,6 +252,8 @@ li > p {
 // Zen: Navigation (with DFD-Zen overrides)
 
 .main-menu {
+  margin-top: 1em;
+
   a {
     background-color: var(--color-brand-dark);
     color: var(--color-text-bg);
@@ -260,6 +268,22 @@ li > p {
     &:focus {
       background-color: var(--color-brand-light);
       color: var(--color-link-hover);
+    }
+  }
+
+  .navbar {
+    margin-block-end: 1em;
+    min-height: 48px;
+
+    li {
+      margin-block: auto;
+
+      a {
+        align-items: center;
+        display: inline-flex;
+        flex-flow: row wrap;
+        min-height: 40px;
+      }
     }
   }
 }
@@ -306,7 +330,7 @@ li > p {
 .layout {
   &__header {
     color: var(--color-text-bg);
-    padding-block: .7em;
+    padding-block: 1em;
 
     .header {
       &__logo,
@@ -566,16 +590,6 @@ p.title {
   @include margin-block(.5);
 }
 
-// Zen: Lists
-
-dl,
-ol,
-ul,
-menu {
-  // Add vertical rhythm margins.
-  @include margin-block(1 .75);
-}
-
 // DFD-Zen overrides
 
 .main .content {
@@ -793,4 +807,8 @@ h1 + .submitted.meta {
 
 .content-dates.meta {
   @extend %print-none;
+}
+
+.main > header > .title {
+  margin-block-start: 0;
 }
