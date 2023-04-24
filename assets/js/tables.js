@@ -7,11 +7,11 @@
 
   'use strict';
 
-  const tables = document.querySelectorAll('.responsive-table');
+  const tables = document.querySelectorAll('table:not(.no-responsive-table)');
 
   tables.forEach(function (table) {
     const headers = table.querySelectorAll('th');
-    const rows = table.querySelectorAll('tr:has(td)');
+    const rows = table.querySelectorAll('tbody tr');
 
     rows.forEach(function (row) {
       const cells = row.querySelectorAll('td');
@@ -23,6 +23,5 @@
       });
     });
   });
-
 
 })();
