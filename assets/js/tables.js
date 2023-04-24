@@ -16,6 +16,7 @@
 
     rows.forEach(function (row) {
       const cells = row.querySelectorAll('td');
+
       cells.forEach(function (cell, i) {
         cell.setAttribute('role','cell');
         if (headers[i].innerText) {
@@ -24,6 +25,5 @@
       });
     });
   });
-
 
 })();
