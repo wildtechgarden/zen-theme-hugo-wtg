@@ -1,6 +1,110 @@
+// stylelint-disable function-name-case
+
 @import 'components/print-none/print-none';
 
-/// DFD-Zen custom styles
+.main .cards {
+  --column-min: 300px;
+}
+
+.layout {
+  &__page {
+    max-width: unset;
+  }
+
+  &__header {
+    background-color: var(--color-headings-bg-inverted);
+    color: var(--color-headings-inverted);
+    padding-block: 1em;
+
+    .header {
+      &__logo,
+      &__region {
+        background-color: inherit;
+        color: inherit;
+      }
+
+      &__region {
+        background-color: inherit;
+        color: inherit;
+      }
+    }
+  }
+
+  &__footer {
+    background-color: var(--color-footers-bg-inverted);
+    color: var(--color-footers-inverted);
+
+    p a {
+      background-color: var(--color-footers-bg-link-inverted);
+      color: var(--color-footers-link-inverted);
+    }
+  }
+
+  .layout {
+    &__header {
+      p a {
+        color: var(--color-brand-extra-light);
+      }
+    }
+  }
+}
+
+.card {
+  background-color: var(--color-backdrop);
+
+  header {
+    &:hover,
+    &:focus {
+      background-color: var(--color-link-hover-bg);
+
+      .meta,
+      .page-count {
+        color: var(--color-brand-light);
+      }
+
+      a {
+        background-color: var(--color-link-hover-bg);
+        color: var(--color-link-hover);
+
+        &:hover,
+        &:focus {
+          color: var(--color-brand-extra-light);
+        }
+      }
+    }
+  }
+}
+
+.main h2.subtitle {
+  font-size: var(--fs-xxl);
+  margin-block-start: 0;
+}
+
+@media screen and (min-width: 120ch) {
+  .columns .main .content {
+    column-count: 2;
+    margin-bottom: 2em;
+  }
+
+  .cards,
+  .columns,
+  .codeblock,
+  .tables,
+  .search,
+  :has(.cards, pre code, table) {
+    --line-width: 12fr;
+    --content-line-padding: 0;
+    --sidebar-left-padding: 0;
+  }
+
+  body {
+    --line-width: 9fr;
+    --content-line-padding: 1fr;
+    --sidebar-left-padding: 1fr;
+  }
+}
+
+// DFD-Zen custom styles
 
 .presentation-pdf {
   margin-left: auto;
@@ -255,19 +359,25 @@ li > p {
   margin-top: 1em;
 
   a {
-    background-color: var(--color-brand-dark);
-    color: var(--color-text-bg);
+    background-color: var(--color-menu-bg);
+    color: var(--color-menu);
 
     &:active,
     &.active {
-      background-color: var(--color-brand-light);
-      color: var(--color-link);
+      background-color: var(--color-menu-active-bg-inverted);
+      color: var(--color-menu-active-inverted);
+
+      &:hover,
+      &:focus {
+        background-color: var(--color-menu-active-inverted);
+        color: var(--color-menu-active-bg-inverted);
+      }
     }
 
     &:hover,
     &:focus {
-      background-color: var(--color-brand-light);
-      color: var(--color-link-hover);
+      background-color: var(--color-menu-hover-bg-inverted);
+      color: var(--color-menu-hover-inverted);
     }
   }
 
@@ -293,8 +403,45 @@ li > p {
 .header {
   &__brand {
     display: flex;
-    flex: 1 1 100%;
+    flex: 0 1 auto;
     max-width: 75%;
+    overflow-y: hidden;
+
+    .header {
+      &__site-name,
+      &__logo {
+        line-height: var(--heading-line-height);
+      }
+
+      &__logo-image {
+        vertical-align: middle;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-brand-dark);
+      color: var(--color-brand-extra-light);
+
+      a {
+        background-color: var(--color-brand-dark);
+        color: var(--color-brand-extra-light);
+
+        &:hover,
+        &:focus {
+          background-color: var(--color-brand-dark);
+          color: var(--color-brand-extra-light);
+        }
+      }
+    }
+
+    a {
+      &:hover,
+      &:focus {
+        background-color: var(--color-brand-light);
+        color: var(--color-link-hover-inverted);
+      }
+    }
   }
 
   &__logo {
@@ -312,7 +459,7 @@ li > p {
   &__site-link {
     &:link,
     &:visited {
-      color: var(--color-text-bg);
+      color: var(--color-link-visited-inverted);
     }
   }
 }
@@ -320,68 +467,8 @@ li > p {
 .sidebar .menu a {
   &:hover,
   &:focus {
-    background-color: var(--color-brand-dark);
-    color: var(--color-link-hover-inverted);
-  }
-}
-
-// DFD-Zen overrides
-
-.layout {
-  &__header {
-    color: var(--color-text-bg);
-    padding-block: 1em;
-
-    .header {
-      &__logo,
-      &__region {
-        background-color: var(--color-header-bg);
-        color: var(--color-text-bg);
-      }
-
-      &__region {
-        background-color: var(--color-text-bg);
-        color: var(--color-header-bg);
-      }
-
-      &__brand {
-        a {
-          &:hover,
-          &:focus {
-            background-color: var(--color-brand-light);
-            color: var(--color-inverted-link-hover);
-          }
-        }
-      }
-    }
-  }
-
-  &__footer {
-    color: var(--color-text-bg);
-
-    p a {
-      color: var(--color-brand-light);
-    }
-  }
-}
-
-.card {
-  background-color: var(--color-backdrop);
-
-  header {
-    &:hover,
-    &:focus {
-      background-color: var(--color-link-inverted);
-
-      a {
-        background-color: var(--color-link-hover-inverted);
-
-        &:hover,
-        &:focus {
-          color: var(--color-brand);
-        }
-      }
-    }
+    background-color: var(--color-link-hover-bg);
+    color: var(--color-link-hover);
   }
 }
 
@@ -438,15 +525,18 @@ li > p {
       &:not(section-list-item) > a {
         &:hover,
         &:active {
-          color: var(--color-text-bg);
+          background-color: var(--color-link-hover-bg);
+          color: var(--color-link-hover);
         }
 
         &:active {
-          background-color: var(--color-link-active);
+          background-color: var(--color-link-active-inverted);
+          color: var(--color-link-active);
         }
 
         &:hover {
-          background-color: var(--color-link-hover);
+          background-color: var(--color-link-hover-bg);
+          color: var(--color-link-hover);
         }
       }
     }
@@ -466,17 +556,19 @@ li > p {
     border: 1px solid var(--color-border);
     margin-bottom: .4em;
 
-    &:hover,
-    &:active {
-      color: var(--color-text-bg);
+    &:hover {
+      background-color: var(--color-link-hover-bg);
+      color: var(--color-link-hover);
     }
 
     &:active {
       background-color: var(--color-link-active);
+      color: var(--color-link-active-inverted);
     }
 
-    &:hover {
-      background-color: var(--color-link-hover);
+    &:active:hover {
+      background-color: var(--color-link-hover-bg);
+      color: var(--color-link-hover);
     }
   }
 }
@@ -770,28 +862,49 @@ p.title {
           1fr;
       }
     }
+
+    @include respond-to(xxxl) {
+      &__sidebar-second {
+        grid-template-areas:
+          'head head head head'
+          'breadcrumb breadcrumb breadcrumb breadcrumb'
+          'nav nav nav nav'
+          'pad1 top pad2 side2'
+          'pad1 main pad2 side2'
+          'pad1 bottom pad2 side2'
+          'foot foot foot foot'
+          'notice notice notice notice';
+        grid-template-columns:
+          var(--content-line-padding)
+          var(--line-width)
+          var(--sidebar-left-padding)
+          5fr;
+      }
+    }
   }
 }
 
 a {
   &:hover,
   &:focus {
-    background-color: var(--color-brand-light);
+    background-color: var(--color-link-hover-bg);
+    color: var(--color-link-hover);
   }
 }
 
 .toc li a {
   &:hover,
   &:focus {
-    background-color: var(--color-brand);
-    color: var(--color-link-hover-inverted);
+    background-color: var(--color-link-hover-inverted);
+    color: var(--color-link-hover-bg-inverted);
   }
 }
 
 .footer a {
   &:hover,
   &:focus {
-    color: var(--color-brand-dark);
+    background-color: var(--color-link-hover-bg-inverted);
+    color: var(--color-link-hover-inverted);
   }
 }
 
@@ -811,4 +924,12 @@ h1 + .submitted.meta {
 
 .main > header > .title {
   margin-block-start: 0;
+}
+
+article .highlight pre.chroma {
+  overflow-x: hidden;
+}
+
+[type='email'] {
+  width: Min(30em, 100%);
 }

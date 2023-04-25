@@ -1,102 +1,112 @@
-// stylelint-disable color-no-hex, value-list-max-empty-lines
-// stylelint-disable scss/dollar-variable-colon-space-after, scss/dollar-variable-empty-line-before
+// stylelint-disable value-list-max-empty-lines
 
-// Base colors.
-$black:                 #000; // black
-$nearblack:             lighten($black, 2%); // off-black
-$grey-darker:           lighten($black, 20%); // #333
-$grey-dark:             lighten($black, 30%);
-$grey-lessdark:         lighten($black, 40%);
-$grey-medium:           lighten($black, 50%);
-$grey:                  lighten($black, 60%); // #999
-$grey-light:            lighten($black, 85%);
-$grey-extra-light:      lighten($black, 93.33%); // #eee
-$nearwhite:             lighten($black, 97%); // #f7f7f7
-$white:                 #fff;
-
-$blue:                  #0072b9;
-$red:                   #c00;
-$green:                 #43a808;
-$yellow:                #fd0;
-
-$brand:                 $grey-dark;
-$brand-alt:             $grey-lessdark;
-$brand-light:           $grey-light;
-$brand-medium:          $grey-medium;
-$brand-dark:            $nearblack;
+@import 'dfd-color-variables';
 
 // Colour map.
 $colors: (
-  brand:                  $brand,
-  brand-alt:              $brand-alt,
-  brand-light:            $brand-light,
-  brand-medium:           $brand-medium,
-  brand-dark:             $brand-dark,
+  black: $black,
+  brand-nearblack: $brand-nearblack,
+  brand-darker: $brand-darker,
+  brand-dark: $brand-dark,
+  brand-alt: $brand-alt,
+  brand-medium: $brand-medium,
+  brand: $brand,
+  brand-light: $brand-light,
+  brand-extra-light: $brand-extra-light,
+  brand-nearwhite: $brand-nearwhite,
+  white: $white,
 
-  text:                   $nearblack,
-  text-bg:                $nearwhite,
-  text-meta:              $grey-dark,
+  text: $brand-nearblack,
+  text-bg: $brand-nearwhite,
+  text-meta: $brand-darker,
 
-  link:                   $black,
-  link-visited:           $black,
-  link-hover:             $brand-dark,
-  link-active:            $grey-extra-light,
+  link: $brand-darker,
+  link-visited: $brand-nearblack,
+  link-hover: $brand-light,
+  link-active: $grey-extra-light,
 
-  link-inverted:          $nearwhite,
-  link-visited-inverted:  $nearwhite,
-  link-hover-inverted:    $nearwhite,
-  link-active-inverted:   $grey-lessdark,
+  link-inverted: $brand-light,
+  link-visited-inverted: $brand-extra-light,
+  link-hover-inverted: $brand-darker,
+  link-active-inverted: $brand-darker,
 
-  border:                 $brand,
-  border-light:           $brand-light,
-  border-dark:            $brand-dark,
+  link-hover-bg: $brand-darker,
+  link-hover-bg-inverted: $brand-light,
 
-  autocomplete:           $black,
-  autocomplete-bg:        $nearwhite,
-  autocomplete-select:    $nearwhite,
+  border: $brand,
+  border-light: $brand-light,
+  border-dark: $brand-dark,
+
+  autocomplete: $brand-nearblack,
+  autocomplete-bg: $brand-nearwhite,
+  autocomplete-select: $brand-extra-light,
   autocomplete-select-bg: $blue,
 
-  body-bg:                $nearwhite,
-  header-bg:              $brand,
-  footer-bg:              $brand,
-  backdrop:               $grey-light,
+  body-bg: $brand-nearwhite,
+  backdrop: $brand-light,
 
-  mobile-menu:            $brand-dark,
-  mobile-menu-cover:      rgba($black, .2),
+  mobile-menu: $brand-dark,
+  mobile-menu-cover: rgba($black, .2),
 
-  button:                 $brand-dark,
-  button-hover:           $brand,
-  button-text:            $nearwhite,
-  button-text-hover:      $nearwhite,
-  button-disabled:        $grey,
+  button: $brand-dark,
+  button-hover: $brand,
+  button-text: $brand-nearwhite,
+  button-text-hover: $white,
+  button-disabled: $grey,
 
-  form-error:             $red,
+  form-error: $red,
 
-  mark-highlight:         $red,
-  mark-bg:                $yellow,
+  mark-highlight: $red,
+  mark-bg: $yellow,
 
-  menu-active:            $black,
+  menu: $brand-extra-light,
+  menu-inverted: $brand-dark,
+  menu-bg: $brand-dark,
+  menu-bg-inverted: $brand-extra-light,
 
-  preview-bg:             lighten($yellow, 43%),
+  menu-active: $brand-darker,
+  menu-active-inverted: $brand-extra-light,
+  menu-active-bg: $brand-extra-light,
+  menu-active-bg-inverted: $brand-darker,
 
-  row-header:             transparent,
-  row-odd:                $nearwhite,
-  row-even:               transparent,
+  menu-hover: $brand-light,
+  menu-hover-inverted: $brand-nearblack,
+  menu-hover-bg: $brand-nearblack,
+  menu-hover-bg-inverted: $brand-light,
 
-  status:                 $green,
-  status-bg:              lighten($green, 62%),
-  status-highlight:       $nearblack,
-  warning:                $nearblack,
-  warning-bg:             lighten($yellow, 45%),
-  warning-border:         $yellow,
-  error:                  $red,
-  error-bg:               lighten($red, 57%),
+  preview-bg: lighten($yellow, 43%),
 
-  watermark:              $grey-extra-light,
+  row-header: transparent,
+  row-odd: $brand-nearwhite,
+  row-even: transparent,
 
-  headings:               $nearblack,
+  status: $green,
+  status-bg: lighten($green, 62%),
+  status-highlight: $nearblack,
+  warning: $nearblack,
+  warning-bg: lighten($yellow, 45%),
+  warning-border: $yellow,
+  error: $red,
+  error-bg: lighten($red, 57%),
 
-  code:                   $nearblack,
+  watermark: $grey-extra-light,
 
-  highlight:              $brand-alt,
+  headings: $brand-nearblack,
+  headings-inverted: $brand-nearwhite,
+  headings-bg: $brand-light,
+  headings-bg-inverted: $brand-darker,
+
+  footers: $brand-darker,
+  footers-inverted: $brand-light,
+  footers-bg: $brand-light,
+  footers-bg-inverted: $brand-darker,
+
+  footers-link: $brand-darker,
+  footers-link-inverted: $brand-nearwhite,
+  footers-bg-link: $brand-nearwhite,
+  footers-bg-link-inverted: $brand-darker,
+
+  code: $brand-nearblack,
+
+  highlight: $brand-alt,
 );
