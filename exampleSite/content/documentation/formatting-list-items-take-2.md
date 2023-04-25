@@ -11,6 +11,7 @@ content that renders with p elements in the list items.\
 """
 date = 2023-04-02T04:11:00-04:00
 publishDate = 2023-04-02T04:11:00-04:00
+card = true
 +++
 
 * To test this we need very long lines that have words like antidisestablishmentarianism so that we can detect the failure to wrap the lines.

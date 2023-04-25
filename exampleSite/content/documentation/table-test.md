@@ -5,6 +5,7 @@ summary = "Test that default tables are responsive and 'zebra' (striped) tables,
 author = "Daniel F. Dickinson"
 date = "2023-04-23"
 publishDate = "2023-04-23"
+card = true
 +++
 
 ## Table 1 (Responsive, Zebra)
