@@ -47,14 +47,11 @@ label {
 
 // Article and content.
 
-article > .content,
 aside {
   ul {
     @extend %ul-straight-left;
   }
-}
 
-aside {
   ol {
     @extend %ol-straight-left;
   }
