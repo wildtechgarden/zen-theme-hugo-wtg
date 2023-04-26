@@ -195,6 +195,7 @@ videocam
 voluptate
 warnf
 wbr
+wcag
 webp
 wordwrap
 xdeb
