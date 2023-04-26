@@ -386,7 +386,7 @@ li > p {
     min-height: 48px;
 
     li {
-      margin-block: auto;
+      margin-block-start: auto;
 
       a {
         align-items: center;
@@ -711,9 +711,10 @@ p.title {
   width: 100%;
 }
 
-.main > .title,
+.front .main .content > .icon-inline:first-child,
+.main .title,
 .main > article > header > .title {
-  margin-top: .2em;
+  margin-block-start: 0;
 }
 
 .breadcrumb {
