@@ -2,6 +2,34 @@
 
 @import 'components/print-none/print-none';
 
+@mixin screen-respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+@mixin screen-respond-to-max($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
 .main .cards {
   --column-min: 300px;
 }
@@ -80,27 +108,80 @@
   margin-block-start: 0;
 }
 
-@media screen and (min-width: 120ch) {
-  .columns .main .content {
-    column-count: 2;
-    margin-bottom: 2em;
+.main article {
+  display: block;
+
+  .search-results {
+    max-width: var(--max-line-width);
+
+    ~ .content {
+      max-width: var(--max-line-width);
+    }
   }
 
-  .cards,
-  .columns,
-  .codeblock,
-  .tables,
-  .search,
-  :has(.cards, pre code, table) {
-    --line-width: 12fr;
-    --content-line-padding: 0;
-    --sidebar-left-padding: 0;
+  > .content {
+    max-width: 100%;
+    width: max-content;
+
+    &:has(.sitemap-view) {
+      width: 100%;
+
+      li {
+        max-width: unset;
+      }
+    }
+
+    &:has(input) {
+      width: 100%;
+
+      .content {
+        &--bottom {
+          width: var(--max-line-width);
+        }
+      }
+    }
   }
 
-  body {
-    --line-width: 9fr;
-    --content-line-padding: 1fr;
-    --sidebar-left-padding: 1fr;
+  .content {
+    &--bottom {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 140ch) {
+  body.columns .main article {
+    .content {
+      &--main {
+        columns: 2;
+        margin-block-end: 2em;
+        margin-block-start: 1em;
+        max-width: calc(min(calc(100vw - 20em - 2 * var(--gutters)), 2 * var(--max-line-width)));
+
+        h2:first-of-type {
+          margin-block-start: 0;
+        }
+      }
+    }
+  }
+}
+
+@media print {
+  body.columns .main article {
+    > .content {
+      width: 100%;
+    }
+
+    .content {
+      &--main {
+
+        max-width: 100%;
+
+        h2.icon-link > span {
+          display: none;
+        }
+      }
+    }
   }
 }
 
@@ -494,7 +575,6 @@ li > p {
     list-style-type: none;
     margin-left: 0;
     padding-left: 0;
-    width: 100%;
 
     > li {
       box-sizing: border-box;
@@ -548,6 +628,10 @@ li > p {
       ul .section-list-item {
         padding-inline-start: 2em;
       }
+    }
+
+    > ul ul {
+      width: unset;
     }
   }
 
@@ -684,12 +768,21 @@ p.title {
 
 // DFD-Zen overrides
 
+.main header {
+  width: 100%;
+}
+
 .main .content {
   ol,
   ul {
     & > li {
       overflow-wrap: break-word;
     }
+  }
+
+  &--bottom,
+  &--endnote {
+    width: 100%;
   }
 }
 
@@ -804,7 +897,7 @@ p.title {
       grid-template-columns: 1fr;
     }
 
-    @include respond-to(xl) {
+    @include screen-respond-to(xl) {
       &__page {
         grid-template-rows:
           auto
@@ -836,7 +929,7 @@ p.title {
         grid-template-areas:
           'head head'
           'breadcrumb breadcrumb'
-          'nav nav'
+          'nav side2'
           'top side2'
           'main side2'
           'bottom side2'
@@ -851,7 +944,7 @@ p.title {
         grid-template-areas:
           'head head head'
           'breadcrumb breadcrumb breadcrumb'
-          'nav nav nav'
+          'nav nav side2'
           'side1 top side2'
           'side1 main side2'
           'side1 bottom side2'
@@ -864,23 +957,27 @@ p.title {
       }
     }
 
-    @include respond-to(xxxl) {
+    @include screen-respond-to(xxxl) {
       &__sidebar-second {
         grid-template-areas:
-          'head head head head'
-          'breadcrumb breadcrumb breadcrumb breadcrumb'
-          'nav nav nav nav'
-          'pad1 top pad2 side2'
-          'pad1 main pad2 side2'
-          'pad1 bottom pad2 side2'
-          'foot foot foot foot'
-          'notice notice notice notice';
+          'head head'
+          'breadcrumb breadcrumb'
+          'nav side2'
+          'top side2'
+          'main side2'
+          'bottom side2'
+          'foot foot'
+          'notice notice';
         grid-template-columns:
-          var(--content-line-padding)
-          var(--line-width)
-          var(--sidebar-left-padding)
-          5fr;
+          calc(100% - 20em)
+          20em;
       }
+    }
+  }
+
+  .sidebar.layout {
+    &__second-sidebar {
+      margin-top: 1em;
     }
   }
 }
@@ -933,4 +1030,11 @@ article .highlight pre.chroma {
 
 [type='email'] {
   width: Min(30em, 100%);
+}
+
+.main {
+  > .content {
+    max-width: 100%;
+    width: max-content;
+  }
 }

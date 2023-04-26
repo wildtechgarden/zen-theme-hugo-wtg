@@ -10,18 +10,19 @@
     </div>
     </details>
   {{ end }}
+  <div class="content--main">
   {{ . }}
-</div>
+  </div>
+  {{ with $pctx.Param "page_endnote" -}}
+  <div class="content content--endnote">
+    {{ . | $pctx.RenderString }}
+  </div>
+  {{ end -}}
 
-{{ with $pctx.Param "page_endnote" -}}
-<div class="content content--endnote">
-  {{ . | $pctx.RenderString }}
-</div>
-{{ end -}}
-
-<div class="content content--bottom">
+  <div class="content content--bottom">
   {{ if ne $pctx.Lastmod $pctx.PublishDate }}{{ partial "dates.html" $pctx }}{{ end -}}
 
   {{ if $pctx.Param "relatedposts" | default false }}{{ partial "related.html" $pctx }}{{ end -}}
+  </div>
 </div>
 {{ end }}
