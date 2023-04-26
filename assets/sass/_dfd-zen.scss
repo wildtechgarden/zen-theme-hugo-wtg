@@ -808,10 +808,14 @@ p.title {
   width: 100%;
 }
 
-.front .main .content > .icon-inline:first-child,
+.front .main .content .icon-inline:first-child,
 .main .title,
 .main > article > header > .title {
   margin-block-start: 0;
+}
+
+.front .main .content .icon-inline:first-child {
+  font-size: var(--fs-xxl);
 }
 
 .breadcrumb {
