@@ -150,7 +150,8 @@
 }
 
 @media (min-width: 140ch) {
-  body.columns .main article {
+  body.columns .main article,
+  body.columns .main > .content {
     .content {
       &--main {
         columns: 2;
@@ -167,14 +168,17 @@
 }
 
 @media print {
-  body.columns .main article {
+  body.columns .main article,
+  body.columns .main {
     > .content {
       width: 100%;
     }
+  }
 
+  body.columns .main article,
+  body.columns .main > .content {
     .content {
       &--main {
-
         max-width: 100%;
 
         h2.icon-link > span {
