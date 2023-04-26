@@ -1,11 +1,12 @@
 +++
-title = "Test default table styling"
-description = "Test that default tables are responsive and 'zebra' (striped) tables, and that those styles can be independently managed."
-summary = "Test that default tables are responsive and 'zebra' (striped) tables, and that those styles can be independently managed."
+title = "Test styling tables in columns"
+description = "Test that tables in columns are responsive and 'zebra' (striped) tables, and that those styles can be independently managed."
+summary = "Test that  tables in columns are responsive and 'zebra' (striped) tables, and that those styles can be independently managed."
 author = "Daniel F. Dickinson"
 date = "2023-04-23"
 publishDate = "2023-04-23"
 card = true
+bodyclass = "columns"
 +++
 
 ## Table 1 (Responsive, Zebra)
