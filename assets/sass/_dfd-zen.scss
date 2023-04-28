@@ -111,19 +111,19 @@
 .main article {
   display: block;
 
-  .search-results {
-    max-width: var(--max-line-width);
-
-    ~ .content {
-      max-width: var(--max-line-width);
-    }
-  }
-
   > .content {
     max-width: 100%;
     width: max-content;
 
     &:has(.sitemap-view) {
+      width: 100%;
+
+      li {
+        max-width: unset;
+      }
+    }
+
+    &:has(iframe) {
       width: 100%;
 
       li {
@@ -142,11 +142,30 @@
     }
   }
 
+  .search-results {
+    max-width: var(--max-line-width);
+
+    ~ .content {
+      max-width: var(--max-line-width);
+    }
+  }
+
   .content {
     &--bottom {
       width: 100%;
     }
   }
+}
+
+.main article li > pre > code {
+  white-space: pre-wrap;
+}
+
+// DFD-Zen additions
+
+.main article pre {
+  max-height: unset;
+  max-width: 100%;
 }
 
 @media (min-width: 140ch) {
