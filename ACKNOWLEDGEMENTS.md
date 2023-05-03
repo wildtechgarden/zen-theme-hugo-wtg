@@ -8,7 +8,7 @@ configurations I have gleefully extended (for example adding
 
 ## Credits
 
-This is a highly modified fork of the [Hugo theme Zen](https://github.com/frjo/hugo-theme-zen by [Fredrik Jonsson](https://xdeb.net/)
+This is a highly modified fork of the [Hugo theme Zen](https://github.com/frjo/hugo-theme-zen) by [Fredrik Jonsson](https://xdeb.net/)
 
 ### Original credits follow
 
