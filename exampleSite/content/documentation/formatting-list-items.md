@@ -19,7 +19,7 @@ toc = true
 ### List item formatting test 1
 
 * To test this we need very long lines that have words like antidisestablishmentarianism so that we can detect the failure to wrap the lines.
-* As well as regular lines, for filler.
+* As well as regular lines, for filler, [but while we are at it, test `code` in a link text](images.md).
 
 What happens if we have a paragraph in the middle?
 

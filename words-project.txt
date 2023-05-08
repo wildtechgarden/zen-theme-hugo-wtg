@@ -117,6 +117,7 @@ matomo
 menuinheader
 microusername
 mobilemenu
+mobilemenuoutline
 msapplication
 mstile
 navclose

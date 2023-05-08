@@ -51,7 +51,7 @@ $colors: (
   button: $brand-dark,
   button-hover: $brand,
   button-text: $brand-nearwhite,
-  button-text-hover: $white,
+  button-text-hover: $brand-nearwhite,
   button-disabled: $grey,
 
   form-error: $red,
@@ -107,6 +107,7 @@ $colors: (
   footers-bg-link-inverted: $brand-darker,
 
   code: $brand-nearblack,
+  code-bg: $brand-light,
 
   highlight: $brand-alt,
 );

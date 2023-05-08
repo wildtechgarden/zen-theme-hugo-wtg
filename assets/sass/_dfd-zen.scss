@@ -372,9 +372,9 @@
   width: 75%;
 }
 
-article .highlight .chroma {
-  background-color: var(--color-code-bg);
-}
+// article .highlight .chroma {
+//   background-color: var(--color-code-bg);
+// }
 
 // DFD-Zen Overrides
 
@@ -701,6 +701,15 @@ blockquote {
 code,
 pre {
   tab-size: 3;
+}
+
+a:hover,
+a:active {
+  code:not([data-lang]),
+  kbd,
+  samp {
+    background-color: var(--color-code-bg);
+  }
 }
 
 // DFD-Zen additions
