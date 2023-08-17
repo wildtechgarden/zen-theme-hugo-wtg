@@ -11,19 +11,20 @@ It uses HTML5 with a modern CSS grid and flex layout. Care has been taken to pro
 
 #### Demo
 
-<https://dfd-hugo-theme-zen.demo.wildtechgarden.ca/>
+<https://zen-theme-hugo-wtg.wtg-demos.ca/>
 
-##### Netlify status
+##### CI status
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b60bf3bf-3508-4dff-8ad5-c9d78bfcac41/deploy-status)](https://app.netlify.com/sites/dfd-hugo-zen-theme/deploys)
+[![pre-commit.ci
+status](https://results.pre-commit.ci/badge/github/wildtechgarden/zen-theme-hugo-wtg/main-full.svg)](https://results.pre-commit.ci/latest/github/wildtechgarden/zen-theme-hugo-wtg/main-full)
 
 #### Documentation
 
-<https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen/-/blob/main/README.md>
+<https://github.com/wildtechgarden/zen-them-hugo-wtg/-/blob/main/README.md>
 
 ### Repository URL
 
-<https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen>
+<https://github.com/wildtechgarden/zen-them-hugo-wtg>
 
 ## Table of contents
 
