@@ -70,7 +70,7 @@
 {{ if $.Param "feedlinks" }}{{ partial "feedlinks.html" . }}{{ end -}}
 <p>{{ with $.Param "copyright" }}{{ . | markdownify }}{{ else }}<span>© {{ site.Title }}</span>{{ end }}</p>
 {{ with $.Param "footer" }}<p>{{ . | markdownify }}</p>{{ end }}
-{{ if $.Param "poweredby" }}<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen">DFD-Zen theme</a>.</p>{{ end }}
+{{ if $.Param "poweredby" }}<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/wildtechgarden/zen-theme-hugo-wtg">DFD-Zen theme</a>.</p>{{ end }}
 </footer>
 
 {{ if $.Param "cookieconsent" }}{{ partialCached "cookieconsent.html" . }}{{ end -}}

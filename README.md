@@ -148,7 +148,7 @@ Afterwards, declare the `dfd-zen` theme module as a dependency of your site:
 From the root of your site:
 
 ```shell
-hugo mod get -u gitlab.com/danielfdickinson/dfd-hugo-theme-zen
+hugo mod get -u github.com/wildtechgarden/zen-theme-hugo-wtg
 ```
 
 ### Git submodule (installing)
@@ -158,7 +158,7 @@ You can download and unpack the theme manually from Github but it's easier to us
 From the root of your site:
 
 ```shell
-git clone https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen.git themes/dfd-zen
+git clone https://github.com/wildtechgarden/zen-theme-hugo-wtg.git themes/dfd-zen
 ```
 
 If you use git to version control your site you can add the zen theme as a submodule.
@@ -166,7 +166,7 @@ If you use git to version control your site you can add the zen theme as a submo
 From the root of your site:
 
 ```shell
-git submodule add https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen.git themes/dfd-zen
+git submodule add https://github.com/wildtechgarden/zen-theme-hugo-wtg.git themes/dfd-zen
 ```
 
 
@@ -177,7 +177,7 @@ git submodule add https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen.git the
 From the root of your site:
 
 ```shell
-hugo mod get -u gitlab.com/danielfdickinson/dfd-hugo-theme-zen
+hugo mod get -u github.com/wildtechgarden/zen-theme-hugo-wtg
 ```
 
 ### Git submodule (updating)
@@ -861,7 +861,7 @@ Lorem {{< math >}}E=mc^2{{< /math >}} ipsum
 
 ## Getting help, discussing, and/or modifying
 
-If you run into an issue that isn't answered by this documentation or the [`exampleSite`](https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen/-/tree/main/exampleSite), then visit the [Hugo forum](https://discourse.gohugo.io/). The folks there are helpful and friendly. **Before** asking your question, be sure to read the [requesting help guidelines](https://discourse.gohugo.io/t/requesting-help/9132). Feel free to tag me in your question, my forum username is [@cshoredaniel](https://discourse.gohugo.io/u/cshoredaniel/summary).
+If you run into an issue that isn't answered by this documentation or the [`exampleSite`](https://github.com/wildtechgarden/zen-theme-hugo-wtg/-/tree/main/exampleSite), then visit the [Hugo forum](https://discourse.gohugo.io/). The folks there are helpful and friendly. **Before** asking your question, be sure to read the [requesting help guidelines](https://discourse.gohugo.io/t/requesting-help/9132). Feel free to tag me in your question, my forum username is [@cshoredaniel](https://discourse.gohugo.io/u/cshoredaniel/summary).
 
 -------
 

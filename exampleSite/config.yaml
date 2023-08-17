@@ -131,9 +131,9 @@ privacy:
     disable: true
 
 module:
-  replacements: "github.com/wildtechgarden/zen-theme-hugo-dfd -> ../.."
+  replacements: "github.com/wildtechgarden/zen-theme-hugo-wtg -> ../.."
   imports:
-    - path: github.com/wildtechgarden/zen-theme-hugo-dfd
+    - path: github.com/wildtechgarden/zen-theme-hugo-wtg
       mounts:
         - source: archetypes
           target: archetypes
