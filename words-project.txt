@@ -154,6 +154,7 @@ preg
 proident
 quickstart
 quis
+rclone
 realfavicongenerator
 realheight
 realwidth
@@ -200,6 +201,7 @@ wcag
 webp
 wildtechgarden
 wordwrap
+wtgdeml
 xdeb
 xxxs
 xxxxl

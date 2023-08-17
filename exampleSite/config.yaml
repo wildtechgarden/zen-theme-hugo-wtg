@@ -1,6 +1,6 @@
 ---
 title: "DFD Hugo Zen theme"
-baseURL: "https://example.org/"
+baseURL: "https://www.zen-theme-hugo-wtg.wtg-demos.ca/"
 defaultContentLanguage: "en"
 disableKinds: [taxonomy, terms]
 enableGitInfo: true
@@ -43,23 +43,17 @@ outputFormats:
     isPlainText: true
     mediaType: "application/json"
     notAlternative: true
-  nredirects:
-    baseName: _redirects
+  htaccess:
+    baseName: ""
     isPlainText: true
-    mediaType: "text/nredirects"
-  nheaders:
-    baseName: _headers
-    isPlainText: true
-    mediaType: "text/nheaders"
+    mediaType: "text/htaccess"
 
 mediaTypes:
-  "text/nheaders":
-    suffixes: ""
-  "text/nredirects":
-    suffixes: ""
+  "text/htaccess":
+    suffixes: "htaccess"
 
 outputs:
-  home: ["HTML", "RSS", "JSON", "SearchIndex", "nredirects", "nheaders"]
+  home: ["HTML", "RSS", "JSON", "SearchIndex", "htaccess"]
   section: ["HTML", "RSS", "JSON"]
   taxonomy: ["HTML", "RSS", "JSON"]
   term: ["HTML", "RSS", "JSON"]
@@ -100,13 +94,12 @@ params:
   poweredby: true
   realfavicongenerator: true
   redirectsDomains:
-    - "http://dfd-hugo-zen-theme.netlify.app https://dfd-hugo-theme-zen.demo.wildtechgarden.ca 301!"
-    - "https://dfd-hugo-zen-theme.netlify.app https://dfd-hugo-theme-zen.demo.wildtechgarden.ca 301!"
-    - "http://dfd-hugo-theme-zen.wildtechgarden.ca https://dfd-hugo-theme-zen.demo.wildtechgarden.ca 301!"
-    - "https://dfd-hugo-theme-zen.wildtechgarden.ca https://dfd-hugo-theme-zen.demo.wildtechgarden.ca 301!"
-    - "http://dfd-hugo-theme-zen.demo.wildtechgarden.com https://dfd-hugo-theme-zen.demo.wildtechgarden.ca 301!"
-    - "https://dfd-hugo-theme-zen.demo.wildtechgarden.com https://dfd-hugo-theme-zen.demo.wildtechgarden.ca 301!"
-    - "http://dfd-hugo-theme-zen.demo.wildtechgarden.ca https://dfd-hugo-theme-zen.demo.wildtechgarden.ca 301!"
+    - zen-theme-hugo-wtg.wtg-demos.com
+    - www.zen-theme-hugo-wtg.wtg-demos.com
+    - zen-theme-hugo-wtg.wtg-demos.ca
+    - dfd-hugo-theme-zen.wildtechgarden.ca
+    - dfd-hugo-theme-zen.demo.wildtechgarden.com
+    - dfd-hugo-theme-zen.demo.wildtechgarden.ca
   relatedposts: true
   sassTranspiler: libsass
   searchAllPages: true
