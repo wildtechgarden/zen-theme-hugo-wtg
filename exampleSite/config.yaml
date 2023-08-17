@@ -131,9 +131,9 @@ privacy:
     disable: true
 
 module:
-  replacements: "gitlab.com/danielfdickinson/dfd-hugo-theme-zen -> ../.."
+  replacements: "github.com/wildtechgarden/zen-theme-hugo-dfd -> ../.."
   imports:
-    - path: gitlab.com/danielfdickinson/dfd-hugo-theme-zen
+    - path: github.com/wildtechgarden/zen-theme-hugo-dfd
       mounts:
         - source: archetypes
           target: archetypes

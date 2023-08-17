@@ -198,6 +198,7 @@ warnf
 wbr
 wcag
 webp
+wildtechgarden
 wordwrap
 xdeb
 xxxs

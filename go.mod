@@ -1,3 +1,3 @@
-module gitlab.com/danielfdickinson/dfd-hugo-theme-zen
+module gitlab.com/wildtechgarden/zen-theme-hugo-wtg
 
 go 1.18

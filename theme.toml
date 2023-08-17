@@ -1,6 +1,6 @@
 name = "DFD-Zen"
 description = "A solid base for your custom Hugo theme with pipes support for Sass and Javascript."
-homepage = "https://gitlab.com/danielfdickinson/dfd-hugo-theme-zen"
+homepage = "https://github.com/wildtechgarden/zen-theme-hugo-wtg"
 license = "GPLv2"
 licenselink = "http://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 tags = ["accessible", "multilingual", "responsive", "blog", "search", "math", "podcast"]
