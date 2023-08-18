@@ -19,7 +19,10 @@
 <main class="main layout__main">
 {{ if not .IsHome -}}
   <header>
-    <h1 class="title">{{ .Title }}</h1>
+    <h1 class="title">{{ replaceRE  `^(.+) \[.+\]$` "$1" .Title }}</h1>
+    {{- if findRE `^.+ \[.+\]$` .Title }}
+    <p class="subtitle">{{ replaceRE `^.+ \[(.+)\]$` "$1" .Title }}</p>
+    {{- end -}}
   </header>
 {{ else -}}
 {{ with (.Param "subtitle") }}<header><h2 class="subtitle">{{ . }}</h2></header>{{ end }}

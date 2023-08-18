@@ -1,4 +1,4 @@
-{{ $list := where .AlternativeOutputFormats "Name" "not in" (slice "nredirects" "nheaders") -}}
+{{ $list := where .AlternativeOutputFormats "Name" "not in" (slice "nredirects" "nheaders" "htaccess") -}}
 {{ $length := (len $list) -}}
 {{ if $list -}}
 <p>{{ i18n "string_follow" | title }}{{ with .CurrentSection.Page.Title }} '{{ . }}'{{ end }}: {{ range $index, $element := $list -}}

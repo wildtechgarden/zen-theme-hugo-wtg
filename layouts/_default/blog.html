@@ -1,6 +1,6 @@
 {{ define "main" -}}
 {{- $pctx := . -}}
-{{- $showChildPages := (cond (isset .Params "showchildpages") (.Params.showChildPages) (cond (isset site.Params "showchildpages") (site.Params.showChildPages) true))	-}}
+{{- $showChildPages := (cond (isset .Params "showchildpages") (.Params.showChildPages) (cond (isset site.Params "showchildpages") (site.Params.showChildPages) true))  -}}
 {{- if .IsHome -}}
   {{- $showChildPages = or (cond (isset .Params "showchildpages") (.Params.showChildPages) false) (cond (isset site.Params "showchildpages") (site.Params.showChildPages) false) -}}
 {{- end -}}
@@ -9,7 +9,10 @@
 
 <main class="main layout__main">
 {{ if not .IsHome -}}
-  <h1 class="title">{{ .Title }}</h1>
+  <h1 class="title">{{ replaceRE `^(.+) \[.+\]$` "$1" .Title }}</h1>
+  {{- if findRE `^.+ \[.+\]$` .Title }}
+  <p class="subtitle">{{ replaceRE `^.+ \[(.+)\]$` "$1" .Title }}</p>
+  {{- end -}}
 {{- end }}
 
 {{ with .Content }}
