@@ -2,7 +2,7 @@
 <p class="contact-submitted status message hidden">{{ i18n "contact_submitted" }}</p>
 <p class="contact-error error message hidden">{{ i18n "contact_error" }}</p>
 
-<form class="contact-form hidden"{{ with (.Get "name") }} name="{{ . }}"{{ end }} {{ if eq (.Get "netlify") true }}data-netlify="true" netlify-honeypot="url"{{ else }}data-protect="/php/contact.php" action="#"{{ end }} method="post" accept-charset="UTF-8">
+<form class="contact-form hidden"{{ with (.Get "name") }} name="{{ . }}"{{ end }} {{ if eq (.Get "netlify") true }}data-netlify="true" netlify-honeypot="url"{{ else if (.Get "customAction") }}data-protect="{{ .Get "customAction" }}"{{ else }}data-protect="/php/contact.php" action="#"{{ end }} method="post" accept-charset="UTF-8">
   <label for="edit-name">{{ i18n "contact_name" }}</label>
   <input type="text" id="edit-name" name="name" placeholder="{{ i18n "contact_name_placeholder" }}" required autofocus>
   <label for="edit-mail">{{ i18n "contact_mail" }}</label>
