@@ -1074,3 +1074,25 @@ article .highlight pre.chroma {
     width: max-content;
   }
 }
+
+.main article:has(input) {
+  .content {
+    &--bottom {
+      max-width: 100%;
+    }
+  }
+}
+
+.footer a {
+  line-height: 1.75rem;
+  margin-block: 4px;
+  padding-block: 4px;
+}
+
+.list-page .main,
+.single-page header {
+  p.subtitle {
+    font-size: var(--fs-l);
+    font-style: italic;
+  }
+}
