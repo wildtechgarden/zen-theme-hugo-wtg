@@ -97,7 +97,7 @@ repos:
   rev: v1.32.0
   hooks:
   - id: yamllint
-    exclude: ^(_vendor)
+    exclude: ^(_vendor|.github)
 
 - repo: "https://github.com/zricethezav/gitleaks"
   rev: v8.17.0
