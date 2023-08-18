@@ -7,7 +7,7 @@
     {{ warnf "Page '%s' description more than 160 characters" .TranslationKey -}}
   {{ end -}}
 {{ end }}
-{{ range where .AlternativeOutputFormats "Name" "not in" (slice "nheaders" "nredirects" ) -}}
+{{ range where .AlternativeOutputFormats "Name" "not in" (slice "nheaders" "nredirects" "htaccess") -}}
 <link rel="{{ .Rel }}" {{ printf "type=%q" .MediaType.Type | safeHTMLAttr }} title="{{ .Name }}" href="{{ .Permalink | safeURL }}">
 {{ end -}}
 <meta name="description" content="{{ with .Description }}{{ . }}{{ end }}">
