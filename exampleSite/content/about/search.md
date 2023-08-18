@@ -4,6 +4,7 @@ description: Find what you are looking for on the DFD-Zen theme for Hugo demo si
 aliases:
 - /search/
 bodyclass: search
+author: false
 ---
 
 {{< search >}}
