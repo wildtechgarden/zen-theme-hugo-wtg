@@ -15,11 +15,12 @@ h5,
 %h5,
 h6,
 %h6 {
-  @include margin-block(1 .5);
+  @include margin-block(1 .5, 'em');
   color: var(--color-headings);
   font-family: var(--ff-headings);
   font-weight: var(--fw-headings);
   line-height: var(--heading-line-height);
+  text-wrap: balance;
 
   // Set max text line width in main for readability.
   .main & {
@@ -29,6 +30,8 @@ h6,
 
 h1,
 %h1 {
+  // h1 only on top of page so different margins.
+  @include margin-block(1 .5, 'rem');
   font-size: var(--fs-xxl);
 }
 

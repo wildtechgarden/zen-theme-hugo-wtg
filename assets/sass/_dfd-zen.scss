@@ -467,7 +467,7 @@ li > p {
     color: var(--color-menu);
 
     &:active,
-    &.active {
+    &[aria-current] {
       background-color: var(--color-menu-active-bg-inverted);
       color: var(--color-menu-active-inverted);
 

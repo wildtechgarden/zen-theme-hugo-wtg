@@ -129,7 +129,7 @@ status](https://results.pre-commit.ci/badge/github/wildtechgarden/zen-theme-hugo
 
 ## Minimum Hugo version
 
-Hugo Extended version 0.88.1 or higher is required.
+Hugo Extended version 0.93.0 or higher is required.
 
 
 ## Installation
@@ -227,7 +227,7 @@ theme: "dfd-zen"
 languageCode: "en-GB"       # Set your language code (only needed for none multilingual sites).
 
 params:
-  alpine:                   # Add AlpineJS, default false.
+  alpine: true              # Add AlpineJS, default false.
   blogSections:             # Sections whose <schema.org> `JSON+LD` in the page `<head>`
     - blog                  # will be `@type: BlogPosting`.
     - post                  # Defaults to a list including only 'post' and 'blog'.
@@ -497,9 +497,20 @@ Javascript is used for spam protection and to display error/success messages.
 
 Allow users to opt-in to tracking. Matomo and Google analytic are supported out of the box.
 
-See `assets/js/tracking.js` for example how to implement it.
+Set `cookieConsent` param to true to activate. Also set `privacyPolicyUrl` to include a link to your privacy policy in the cookieconsent dialog.
 
-The name of the cookie set is "cookieconsent" and it can have the values "accept" or "decline" depending on what button the visitor clicks.
+See `assets/js/tracking.js` for example how to implement it for other cookies.
+
+The users choice is stored in localStorage item "cookieconsent".
+
+It it recommended to add a link or button to allow users to change their choice. Adding the class "clearcookieconsent" is all that is needed.
+
+```html
+<button class="clearcookieconsent">Cookie settings</button>
+<a src="" class="clearcookieconsent">Cookie settings</a>
+```
+
+When a user clicks the button/link the localStorage item "cookieconsent" is cleared and the cookieconsent dialog is shown again.
 
 ![Lighthouse report](https://raw.githubusercontent.com/frjo/hugo-theme-zen/main/images/cookieconsent.png)
 

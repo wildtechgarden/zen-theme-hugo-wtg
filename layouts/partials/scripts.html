@@ -1,4 +1,9 @@
-{{ $early := resources.Get "js/script-early.js" | minify | fingerprint -}}
+{{ $opts := dict "minify" true -}}
+{{ if eq hugo.Environment "development" -}}
+  {{ $opts = merge $opts (dict "minify" false) -}}
+{{ end -}}
+
+{{ $early := resources.Get "js/script-early.js" | js.Build $opts | fingerprint -}}
 <script src="{{ $early.RelPermalink }}"></script>
 
 {{- if $.Param "alpine" -}}
@@ -16,13 +21,13 @@
 <script defer src="{{ $umbrella.RelPermalink }}"></script>
 {{ end -}}
 
-{{- if $.Param "mobilemenu" -}}
-{{- $mobilemenu := resources.Get "js/mobile.js" | minify | fingerprint }}
+{{ if $.Param "mobilemenu" -}}
+{{ $mobilemenu := resources.Get "js/mobile.js" | js.Build $opts | fingerprint -}}
 <script defer src="{{ $mobilemenu.RelPermalink }}"></script>
 {{- end -}}
 
-{{- if $.Param "cookieconsent" -}}
-{{- $cookieconsent := resources.Get "js/cookieconsent.js" | minify | fingerprint }}
+{{ if $.Param "cookieconsent" -}}
+{{ $cookieconsent := resources.Get "js/cookieconsent.js" | js.Build $opts | fingerprint -}}
 <script defer src="{{ $cookieconsent.RelPermalink }}"></script>
 {{- end -}}
 
@@ -33,24 +38,22 @@
 <script defer src="{{ $listsort.RelPermalink }}"></script>
 {{- end -}}
 
-{{- if $.Param "tables" -}}
-{{- $tables := resources.Get "js/tables.js" | minify | fingerprint }}
+{{ if $.Param "tables" -}}
+{{ $tables := resources.Get "js/tables.js" | js.Build $opts | fingerprint -}}
 <script defer src="{{ $tables.RelPermalink }}"></script>
 {{- end -}}
 
-{{- if .HasShortcode "contact" -}}
-{{- $contact := resources.Get "js/contact.js" | minify | fingerprint }}
+{{ if .HasShortcode "contact" -}}
+{{ $contact := resources.Get "js/contact.js" | js.Build $opts | fingerprint -}}
 <script defer src="{{ $contact.RelPermalink }}"></script>
 {{- end -}}
 
 {{- if or (.HasShortcode "search") (or .Page.Params.enableSearch false) (eq .TranslationKey "404") -}}
-{{- $flexsearch := resources.Get "libs/flexsearch.compact.js" | fingerprint }}
-<script defer src="{{ $flexsearch.RelPermalink }}"></script>
-{{- $search_opts := dict "minify" true "params" (dict "searchLimit" (site.Params.searchLimit | default 20)) -}}
-{{- $search := resources.Get "js/search.js" | js.Build $search_opts | fingerprint }}
+{{ $search_opts := merge $opts (dict "params" (dict "searchLimit" (site.Params.searchLimit | default 20))) -}}
+{{ $search := resources.Get "js/search.js" | js.Build $search_opts | fingerprint -}}
 <script defer src="{{ $search.RelPermalink }}"></script>
 {{- end -}}
 
-{{- $script := resources.Get "js/script.js" | minify | fingerprint }}
+{{ $script := resources.Get "js/script.js" | js.Build $opts | fingerprint -}}
 <script defer src="{{ $script.RelPermalink }}"></script>
 {{- /* Remove trailing newlines */}}

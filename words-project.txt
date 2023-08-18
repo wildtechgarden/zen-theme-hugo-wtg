@@ -42,6 +42,7 @@ browserconfig
 changefreq
 checklinks
 cillum
+clearcookieconsent
 compat
 cond
 consectetur
