@@ -5,7 +5,12 @@
 <meta name="viewport" content="width=device-width">
 <title>{{ block "title" . }}{{- $pageTitle := .Title -}}
   {{- if gt (len ($pageTitle | htmlEscape)) 70 -}}
-    {{- errorf "%s title '%'s > 70 characters" .TranslationKey $pageTitle -}}
+    {{- errorf "%s title '%s' > 70 characters" .TranslationKey $pageTitle -}}
+  {{- end -}}
+  {{- if lt (len ($pageTitle | htmlEscape)) 50 -}}
+    {{- if ne .TranslationKey "404" -}}
+      {{- warnf "%s title '%s' < 50 characters" .TranslationKey $pageTitle -}}
+    {{- end -}}
   {{- end -}}
 {{- $pageTitle -}}{{ end }}</title>
 {{- partial "meta.html" . }}
