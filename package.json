@@ -20,11 +20,15 @@
   "author": "Fredrik Jonsson",
   "license": "GPL-2.0",
   "devDependencies": {
+    "@cspell/dict-en-ca": "^1.0.2",
+    "@cspell/dict-fr-fr": "^2.2.2",
+    "@cspell/dict-fr-reforme": "^2.2.2",
+    "cspell-cli": "^7.0.1",
     "eslint": "^8.45.0",
     "eslint-plugin-template": "^0.7.0",
-    "stylelint": "^15.10.1",
+    "stylelint": "^15.10.3",
     "stylelint-config-standard-scss": "^10.0.0",
-    "stylelint-scss": "^5.0.1"
+    "stylelint-scss": "^5.1.0"
   },
   "engines": {
     "node": ">=16.0.0"

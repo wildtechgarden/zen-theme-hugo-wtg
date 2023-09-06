@@ -56,12 +56,6 @@ repos:
     exclude: ^(_vendor)
     args: [--markdown-linebreak-ext=md]
 
-- repo: "https://github.com/pre-commit/mirrors-csslint"
-  rev: v1.0.5
-  # See https://github.com/CSSLint/csslint
-  hooks:
-  - id: csslint
-
 - repo: "https://github.com/pre-commit/mirrors-eslint"
   rev: v8.48.0
   hooks:
@@ -74,19 +68,19 @@ repos:
     - .eslintrc.yaml
     exclude: ^(assets/libs/.*\.js$)
 
-- repo: "https://github.com/awebdeveloper/pre-commit-stylelint"
-  rev: 0.0.2
+- repo: "https://github.com/thibaudcolas/pre-commit-stylelint"
+  rev: v15.10.3
   hooks:
   - id: stylelint
     additional_dependencies:
-    - stylelint@15.6.0
-    - stylelint-config-standard-scss@9.0.0
-    - stylelint-scss@4.6.0
+    - stylelint@^15.10.3
+    - stylelint-config-standard-scss@^10.0.0
+    - stylelint-scss@^5.1.0
     args:
     - --config
     - .stylelintrc.yaml
     - --allow-empty-input
-    - --quiet-deprecation-warnings
+    files: \.(css$)
 
 - repo: "https://github.com/igorshubovych/markdownlint-cli"
   rev: v0.36.0
