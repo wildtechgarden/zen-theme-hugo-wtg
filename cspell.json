@@ -27,6 +27,7 @@
     "./exampleSite/content/post/quickstart.md",
     "./i18n/**",
     "./node_modules",
+    "./package*.json",
     "./tests/scripts/**",
     "./words-*.txt"
   ],
