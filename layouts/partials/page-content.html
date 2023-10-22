@@ -11,8 +11,12 @@
     </details>
   {{ end }}
   <div class="content--main">
-  {{ . }}
-  </div>
+  {{- if gt (len (findRE "<h1.*>(.|\n)*</h1>" .)) 0 -}}
+    {{- (replaceRE "<h1(.*?)id=\"(.*?)\"(.*?)>((.*|\n)*?)</h1>" "<h2${1}id=\"$2\"$3>$4</h2>" .) | safeHTML -}}
+  {{- else -}}
+    {{- . | safeHTML -}}
+  {{- end -}}
+</div>
   {{ with $pctx.Param "page_endnote" -}}
   <div class="content content--endnote">
     {{ . | $pctx.RenderString }}
