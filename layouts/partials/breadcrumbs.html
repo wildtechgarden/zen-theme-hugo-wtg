@@ -8,12 +8,12 @@
   {{- end }}
   {{- range (last (sub (len .Ancestors) 1) (.Ancestors.Reverse)) }}
     <li>
-      <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      <a href="{{ .RelPermalink }}">{{ replaceRE  `^(.+) \[.+\]$` "$1" .LinkTitle }}</a>
     </li>
   {{- end }}
 {{- end }}
     <li class="active-page">
-      <a aria-current="page" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      <a aria-current="page" href="{{ .RelPermalink }}">{{ replaceRE  `^(.+) \[.+\]$` "$1" .LinkTitle }}</a>
     </li>
   </ul>
 </nav>
