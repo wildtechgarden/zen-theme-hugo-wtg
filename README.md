@@ -204,8 +204,8 @@ hugo server --source exampleSite
 Performance should be excellent.
 
 * Minimal and compliant HTML5
-* Styles 17,7 kB (4,3 kB when gzipped)
-* JavaScript 8,4 kB (2,7 kB when gzipped)
+* Styles 23,2 kB (6,7 kB when gzipped)
+* JavaScript 1 kB (with only mobile menu active, 4 Kb with all features active)
 * All scripts loaded in head with "defer"
 * Optimised for HTTP/2
 
@@ -274,6 +274,7 @@ params:
   sassTranspiler: "dartsass"# The Sass transpiler to use, default "libsass".
   searchLimit: 20           # Max number of search hits, default 20.
   sidebar: true             # Show a sidebar to the right, default false.
+  siteName: false           # Hide the site name (visually-hidden), default true.
   submitted: true           # Show author and date information for a post.
   themeColor:               # Hex color value, used in meta tags, default "#ffffff".
   umbrella: true            # Add Umbrella JS, default false.
@@ -338,6 +339,15 @@ Place your logo at `static/images/logo.png`. If you don't provide a logo, then t
 Upload your image to [RealFaviconGenerator](https://realfavicongenerator.net/) then copy-paste the generated favicon files under `static`.
 
 Then set the "realfavicongenerator" param to true to add the needed meta tags. Also good to set the "themeColor" param to correct colour.
+
+
+### Head and footer partials
+
+If you create partials named `head.html` and/or `footer.html` they will be used. They do not exist in the theme but are supported as a convenience.
+
+Content in the "head" partial will be added to the end of the "head" tag, perhaps some extra css or javascript.
+
+Content in the "footer" partial will replace all the default content in the "footer" tag.
 
 
 ### Layouts
