@@ -1,3 +1,9 @@
+<IfModule mod_headers.c>
+  Header set Content-Security-Policy "default-src {{ site.BaseURL }}; object-src {{ site.BaseURL }}; script-src {{ site.BaseURL }} 'unsafe-inline' 'unsafe-eval'; style-src {{ site.BaseURL }} 'unsafe-inline'"
+  # If have PDFs or other embedded iframes
+  Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
 ErrorDocument 404 /404.html
 RewriteEngine On
 {{- range site.Params.redirectsDomains }}
