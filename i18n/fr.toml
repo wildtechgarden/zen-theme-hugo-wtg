@@ -105,3 +105,9 @@ other = "Decline tracking"
 
 [privacy_policy]
 other = "Privacy policy"
+
+[recentContentInSectionOnSite]
+other = "Contenu récent au section «{{ .pageTitle }}» de {{ .siteTitle }}"
+
+[sectionOnSite]
+other = "{{ .pageTitle }} de {{ .siteTitle }}"

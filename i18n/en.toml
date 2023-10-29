@@ -123,3 +123,9 @@ other = "the sitemap"
 
 [the_home_page]
 other = "the 'home' page"
+
+[recentContentInSectionOnSite]
+other = "Recent content in '{{ .pageTitle }}' section on {{ .siteTitle }}"
+
+[sectionOnSite]
+other = "{{ .pageTitle }} on {{ .siteTitle }}"
