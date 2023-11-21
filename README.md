@@ -1,5 +1,11 @@
 # The DFD Hugo Zen theme
 
+## ARCHIVED HERE: MOVED TO GITLAB
+
+The new repo is <https://gitlab.com/danielfdickinson/zen-theme-hugo-wtg>. This decision was made due to what I consider Microsoft's
+mishandling of GitHub, especially emphasizing 'Copilot'ing over the core functionality and technologies without which the whole
+thing falls apart.
+
 **DFD-Zen** theme strives to be as clean and standard compliant as possible with some neat features. A solid base for your custom [Hugo](https://gohugo.io/) theme.
 It is a fork of the [Zen theme for Hugo](https://github.com/frjo/hugo-theme-zen) that has been modified to suite [Daniel F. Dickinson's](https://www.danielfdickinson.ca) websites and blogs.
 
